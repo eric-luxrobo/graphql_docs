@@ -1,11 +1,11 @@
-const { colors } = require('@apollo/space-kit/colors')
-const wpgqlColors = require('../../utils/colors')
+const {colors} = require('@apollo/space-kit/colors');
 
 exports.colors = {
-  primary: wpgqlColors.primary,
-  primaryLight: wpgqlColors.primaryLight,
-  secondary: colors.pink.dark,
+  primary: colors.indigo.dark,
+  primaryLight: colors.indigo.lighter,
+  secondary: colors.pink.base,
   tertiary: colors.teal.dark,
+  tertiaryLight: colors.teal.base,
   divider: colors.silver.dark,
   background: colors.silver.light,
   background2: colors.silver.base,
@@ -18,5 +18,5 @@ exports.colors = {
   highlight: colors.blue.base,
   highlight2: colors.blue.lighter,
   highlight3: colors.blue.lightest,
-  hoverOpacity: 0.8,
-}
+  hoverOpacity: 0.8
+};
