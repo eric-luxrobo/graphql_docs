@@ -4,6 +4,15 @@
  * couldn't really control (that I know of) by tweaking the LESS variables. . .not sure the best
  * place to put them currently...
  */  
+
+blockquote {
+    font-size: 16px;
+    font-weight: 600;
+    color: #7b7f86;
+    padding: 1px 10px;
+    border-left: 6px solid #ddd;
+}
+
 code {
     background-color: rgba(27, 31, 35, .05);
     border-radius: 3px;

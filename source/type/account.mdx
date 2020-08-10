@@ -2,9 +2,7 @@
 title: Account Types
 ---
 
-import GraphiQL from '../../src/components/GraphiQL'
-import Note from '../../src/components/Note'
-
+import { Link } from 'gatsby'
 
 ## Members
 > 회원리스트 
@@ -13,7 +11,7 @@ import Note from '../../src/components/Note'
 | -------- | -------- | -------- | -------- |
 | total_cnt     | 총수     | int | true |
 | page_cnt | 페이지수 | int | true |
-| datas | 회원 데이타 Array | [Member] | true | 
+| datas | 회원 데이타 Array | [<Link to="/type/account/#Member">Member</Link>] | true | 
 ```javascript
 {
   "data": {

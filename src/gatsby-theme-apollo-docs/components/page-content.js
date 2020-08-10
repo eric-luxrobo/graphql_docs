@@ -32,7 +32,8 @@ const MainContent = styled.div({
 const tableBorder = `1px solid ${colors.divider}`
 const table = {
   marginBottom: '1.45rem',
-  border: tableBorder,
+  fontSize: '16px',
+  //border: tableBorder,
   borderSpacing: 0,
   borderRadius: 4,
   [['th', 'td']]: {
@@ -42,11 +43,15 @@ const table = {
   'tbody tr:last-child td': {
     border: 0,
   },
+  'tbody tr td:first-child': {
+    color: '#000',
+    fontWeight: '600'
+  },
   th: {
     ...smallCaps,
-    fontSize: 13,
-    fontWeight: 'normal',
-    color: colors.text2,
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#09188e',
     textAlign: 'inherit',
   },
   td: {
@@ -54,7 +59,7 @@ const table = {
     code: {
       whiteSpace: 'normal',
     },
-  },
+  }
 }
 
 const BodyContent = styled.div({

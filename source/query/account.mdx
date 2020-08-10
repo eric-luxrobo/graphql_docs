@@ -4,19 +4,21 @@ description: 로그인/로그아웃등 사용자 계정 서비스
 ---
 
 import GraphiQL from '../../src/components/GraphiQL'
-import Note from '../../src/components/Note'
+import { Link } from 'gatsby'
 
 # members 
-> 멤버 리스트
+Type : <Link to="/type/account/#Members/">Members</Link>
 
-**Parameter**
+> Role: [관리자] 회원정보 리스트를 보여줍니다. 
 
-| key | 설명 | 타입 | 필수요청 |
-| -------- | -------- | -------- | -------- | 
-| page     | 페이즈값 디폴트 1   | int | true |
-| size | 리스트 사이즈 개수 | int | true |
-| field | 필드 요청 | int | true |
-| word | 필터링 단어 | int | true |
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| page (Int)  | 페이즈값 디폴트 1  | 
+| size (Int) | 리스트 사이즈 개수 | 
+| field (Int) | 필드 요청 |
+| word (Int) | 필터링 단어 | 
 
 <GraphiQL
   query="
@@ -41,12 +43,14 @@ import Note from '../../src/components/Note'
 />
 
 # member
-> 회원 정보
+Type : <Link to="/type/account/#Member/">Member</Link>
 
-**Parameter**
+> Role: [관리자, 회원] 회원정보 상세
 
-| key | 설명 | 타입 | 필수요청 |
-| -------- | -------- | -------- | -------- | 
+**Arguments**
+
+| Name | Description |
+| -------- | -------- |
 | userId     | 유저 ID   | string | true |
 
 

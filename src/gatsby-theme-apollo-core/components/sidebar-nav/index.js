@@ -16,6 +16,7 @@ const StyledList = styled.ul({
 })
 
 const listItemStyles = {
+  
   color: 'inherit',
   ':hover': {
     opacity: colors.hoverOpacity,
@@ -23,6 +24,7 @@ const listItemStyles = {
 }
 
 const StyledListItem = styled.li({
+  
   fontSize: '1rem',
   lineHeight: 'inherit',
   a: {
