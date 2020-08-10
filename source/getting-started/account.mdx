@@ -6,8 +6,18 @@ description: 로그인/로그아웃등 사용자 계정 서비스
 import GraphiQL from '../../src/components/GraphiQL'
 import Note from '../../src/components/Note'
 
-## members 
-회원 리스트
+# members 
+> 회원 리스트
+
+**Parameter**
+
+| key | 설명 | 타입 | 필수요청 |
+| -------- | -------- | -------- | -------- | 
+| page     | 페이즈값 디폴트 1   | int | true |
+| size | 리스트 사이즈 개수 | int | true |
+| field | 필드 요청 | int | true |
+| word | 필터링 단어 | int | true |
+
 <GraphiQL
   query="
     query members($page: Int!, $size: Int!) {
@@ -15,6 +25,9 @@ import Note from '../../src/components/Note'
         datas {
           id
           user_id
+          user_name
+          created_at
+          updated_at
         }
       }
     }
@@ -25,7 +38,55 @@ import Note from '../../src/components/Note'
   }}
 />
 
-Using Variables with Arguments
-* id : 서비스 하위 키값
-* serviceName : 서비스 이름
-* imageBase64 : 이미지로드하여 base64로 인코딩한 이미지 string
+**Response**
+#### Members
+> 회원리스트 
+
+| key | 설명 | 타입 | 필수제공 |
+| -------- | -------- | -------- | -------- |
+| total_cnt     | 총수     | int | true |
+| page_cnt | 페이지수 | int | true |
+| datas | 회원 데이타 Array | [Member] | true | 
+
+
+# member
+> 회원 정보
+
+**Parameter**
+
+| key | 설명 | 타입 | 필수요청 |
+| -------- | -------- | -------- | -------- | 
+| userId     | 유저 ID   | string | true |
+
+
+<GraphiQL
+  query="
+    query member($userId: String!) {
+      member(userId: $userId) {
+        id
+        user_id
+        user_name
+        created_at
+        updated_at
+      }
+    }
+  "
+  variables={{
+    userId: "howto38",
+  }}
+/>
+
+**Response**
+
+#### Member
+> 회원정보 
+
+| key | 설명 | 타입 | 필수제공 |
+| -------- | -------- | -------- | -------- |
+| id     | member ID    | string | true |
+| user_id | 사용자 ID | string | true |
+| user_name | 사용자 이름 | string | true | 
+| created_at | 생성 날짜 | string | true
+| updated_at | 업데이트 날짜 | string | true
+
+

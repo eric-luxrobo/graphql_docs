@@ -6,8 +6,19 @@ description: 이미지 & 기타 데이타 업로드 서비스를 위해서 만�
 import GraphiQL from '../../src/components/GraphiQL'
 import Note from '../../src/components/Note'
 
-## createUploadImage 
-이미지 업로드 생성
+# createUploadImage 
+> 이미지 업로드
+
+
+**Parameter**
+#### CreateUploadImageInput
+
+| key | 설명 | 타입 | 필수 |
+| -------- | -------- | -------- | -------- | 
+| id     | 서비스 하위 키값     | string | true | 
+| serviceName | 서비스 이름 | string | true | 
+| imageBase64 | 이미지로드하여 base64로 인코딩한 이미지 string | string | true |
+
 <GraphiQL
   query="
   mutation createUploadImage( $input:CreateUploadImageInput! ){
@@ -28,7 +39,14 @@ import Note from '../../src/components/Note'
   }}
 />
 
-Using Variables with Arguments
-* id : 서비스 하위 키값
-* serviceName : 서비스 이름
-* imageBase64 : 이미지로드하여 base64로 인코딩한 이미지 string
+**Response**
+#### ImageInfo
+
+| key | 설명 | 타입 | 필수제공 |
+| -------- | -------- | -------- | -------- |
+| domain     | 이미지 도메인     | string | true |
+| url | 이미지 Full URL | string | true |
+| width | 이미지 넓이 | int | true | 
+| height | 이미지 높이 | int | true
+
+
