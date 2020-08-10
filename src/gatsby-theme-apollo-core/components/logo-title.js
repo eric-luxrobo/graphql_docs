@@ -7,8 +7,9 @@ const Container = styled.div({
   display: 'flex',
   alignItems: 'center',
   flexShrink: 0,
-  fontSize: 18,
-  color: 'white',
+  fontSize: 22,
+  fontWeight: 600,
+  color: '#21dbdb',
 })
 
 export const StyledLogo = styled.div({
@@ -37,7 +38,7 @@ export default function LogoTitle(props) {
         <img
           alt="Luxrobo Logo"
           style={{ marginRight: 10, maxWidth: 70 }}
-          src={'/graphql_docs'+file.childImageSharp.fluid.src}
+          src={"https://d28pw7lag74to8.cloudfront.net/app/icon.png"}
         />
       )}
       {props.title}

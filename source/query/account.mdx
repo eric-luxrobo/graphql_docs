@@ -1,5 +1,5 @@
 ---
-title: Account service
+title: Account Query
 description: 로그인/로그아웃등 사용자 계정 서비스
 ---
 
@@ -7,7 +7,7 @@ import GraphiQL from '../../src/components/GraphiQL'
 import Note from '../../src/components/Note'
 
 # members 
-> 회원 리스트
+> 멤버 리스트
 
 **Parameter**
 
@@ -22,6 +22,8 @@ import Note from '../../src/components/Note'
   query="
     query members($page: Int!, $size: Int!) {
       members(page: $page, size: $size) {
+        total_cnt
+        page_cnt
         datas {
           id
           user_id
@@ -37,17 +39,6 @@ import Note from '../../src/components/Note'
     size: 10,
   }}
 />
-
-**Response**
-#### Members
-> 회원리스트 
-
-| key | 설명 | 타입 | 필수제공 |
-| -------- | -------- | -------- | -------- |
-| total_cnt     | 총수     | int | true |
-| page_cnt | 페이지수 | int | true |
-| datas | 회원 데이타 Array | [Member] | true | 
-
 
 # member
 > 회원 정보
@@ -75,18 +66,3 @@ import Note from '../../src/components/Note'
     userId: "howto38",
   }}
 />
-
-**Response**
-
-#### Member
-> 회원정보 
-
-| key | 설명 | 타입 | 필수제공 |
-| -------- | -------- | -------- | -------- |
-| id     | member ID    | string | true |
-| user_id | 사용자 ID | string | true |
-| user_name | 사용자 이름 | string | true | 
-| created_at | 생성 날짜 | string | true
-| updated_at | 업데이트 날짜 | string | true
-
-

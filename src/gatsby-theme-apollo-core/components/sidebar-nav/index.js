@@ -1,15 +1,14 @@
 import Category from './category'
 import PropTypes from 'prop-types'
-import React, { Fragment, useEffect, useMemo, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import usePrevious from 'react-use/lib/usePrevious'
-import { IconCollapseList } from '@apollo/space-kit/icons/IconCollapseList'
-import { IconExpandList } from '@apollo/space-kit/icons/IconExpandList'
+
 import { Link, withPrefix } from 'gatsby'
 import { colors } from 'gatsby-theme-apollo-core/src/utils/colors'
-import { size } from 'polished'
-import { smallCaps } from 'gatsby-theme-apollo-core/src/utils/typography'
-import wpgqlColors from '../../../utils/colors'
+
+
+//import wpgqlColors from '../../../utils/colors'
 
 const StyledList = styled.ul({
   marginLeft: 0,
@@ -30,26 +29,9 @@ const StyledListItem = styled.li({
     ...listItemStyles,
     textDecoration: 'none',
     '&.active': {
-      color: wpgqlColors.primary,
+      color: '#5e7ed1',
       pointerEvents: 'none',
     },
-  },
-})
-
-const ExpandAll = styled.button(listItemStyles, smallCaps, {
-  display: 'flex',
-  alignItems: 'center',
-  marginBottom: 12,
-  padding: 0,
-  border: 0,
-  fontSize: 12,
-  lineHeight: 1,
-  background: 'none',
-  outline: 'none',
-  cursor: 'pointer',
-  svg: {
-    ...size(14),
-    marginRight: 8,
   },
 })
 
@@ -87,10 +69,6 @@ export default function SidebarNav(props) {
     getSidebarState(props.contents, props.pathname)
   )
 
-  const allExpanded = useMemo(
-    () => props.contents.every(({ title }) => state[getId(title)]),
-    [props.contents, state]
-  )
 
   useEffect(() => {
     if (props.pathname !== prevPathname) {
@@ -125,23 +103,6 @@ export default function SidebarNav(props) {
     })
   }
 
-  function toggleAll() {
-    const expanded = !allExpanded
-    setState(
-      props.contents.reduce(
-        (acc, { title }) => ({
-          ...acc,
-          [getId(title)]: expanded,
-        }),
-        {}
-      )
-    )
-
-    if (props.onToggleAll) {
-      props.onToggleAll(expanded)
-    }
-  }
-
   return (
     <Fragment>
       {props.contents.map(({ title, path, pages }, index, array) => {
@@ -170,16 +131,9 @@ export default function SidebarNav(props) {
         )
 
         if (!title) {
-          const Icon = allExpanded ? IconCollapseList : IconExpandList
           return (
             <Fragment key="root">
-              {contents}
-              {array.length > 2 && (
-                <ExpandAll onClick={toggleAll}>
-                  <Icon />
-                  {allExpanded ? 'Collapse' : 'Expand'} all
-                </ExpandAll>
-              )}
+              {contents} 
             </Fragment>
           )
         }
@@ -190,7 +144,7 @@ export default function SidebarNav(props) {
             title={title}
             path={path}
             isFirst={!index}
-            expanded={Boolean(state[getId(title)] || props.alwaysExpanded)}
+            expanded={true}
             active={isCategorySelected({ pages, path }, props.pathname)}
             onClick={props.alwaysExpanded ? null : toggleCategory}
           >

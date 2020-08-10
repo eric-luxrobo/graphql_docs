@@ -32,12 +32,17 @@ module.exports = {
         short_name: `luxrobo`,
         start_url: `/`,
         background_color: `#14023e`,
-        theme_color: `#0E2339`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
         icon: `source/images/icon.png`,
       },
     },
-    
+    {
+      resolve: 'gatsby-plugin-antd',
+      options: {
+        style: false,
+      },
+    },
 
     //Theme config
     {
@@ -75,9 +80,15 @@ module.exports = {
         },
         sidebarCategories: {
           null: ['index'],
-          'Getting Started': [
-            'getting-started/account',
-            'getting-started/upload',
+          'Query': [
+            'query/account',
+          ],
+          'Mutation': [
+            'mutation/upload',
+          ],
+          'Type': [
+            'type/account',
+            'type/upload',
           ],
           // Guides: [
           //   'guides/testing',

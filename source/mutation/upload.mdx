@@ -1,0 +1,38 @@
+---
+title: Upload Mutation
+description: 이미지 & 기타 데이타 업로드 서비스를 위해서 만들었습니다.
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import Note from '../../src/components/Note'
+
+# createUploadImage 
+> 이미지 업로드
+
+
+**Parameter**
+CreateUploadImageInput
+
+**Response**
+ImageInfo
+
+<GraphiQL
+  query="
+  mutation createUploadImage( $input:CreateUploadImageInput! ){
+    createUploadImage( input: $input ) {
+      domain
+      url
+      width
+      height
+    }
+  }
+  "
+  variables={{
+    input: {
+      id: "walter",
+      serviceName:"lms",
+      imageBase64:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD"
+    },
+  }}
+/>
+

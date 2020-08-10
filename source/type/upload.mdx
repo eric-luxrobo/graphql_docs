@@ -1,17 +1,13 @@
 ---
-title: Upload service
-description: 이미지 & 기타 데이타 업로드 서비스를 위해서 만들었습니다.
+title: Upload Types
 ---
 
 import GraphiQL from '../../src/components/GraphiQL'
 import Note from '../../src/components/Note'
 
-# createUploadImage 
-> 이미지 업로드
 
-
-**Parameter**
-#### CreateUploadImageInput
+## CreateUploadImageInput
+> 이미지 업로드 입력 파라미터 
 
 | key | 설명 | 타입 | 필수 |
 | -------- | -------- | -------- | -------- | 
@@ -19,28 +15,9 @@ import Note from '../../src/components/Note'
 | serviceName | 서비스 이름 | string | true | 
 | imageBase64 | 이미지로드하여 base64로 인코딩한 이미지 string | string | true |
 
-<GraphiQL
-  query="
-  mutation createUploadImage( $input:CreateUploadImageInput! ){
-    createUploadImage( input: $input ) {
-      domain
-      url
-      width
-      height
-    }
-  }
-  "
-  variables={{
-    input: {
-      id: "walter",
-      serviceName:"lms",
-      imageBase64:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD"
-    },
-  }}
-/>
 
-**Response**
-#### ImageInfo
+## ImageInfo
+> 이미지 정보
 
 | key | 설명 | 타입 | 필수제공 |
 | -------- | -------- | -------- | -------- |

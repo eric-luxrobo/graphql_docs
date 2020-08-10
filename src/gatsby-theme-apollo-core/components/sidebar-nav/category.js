@@ -34,7 +34,7 @@ const headingStyles = {
     fill: 'currentColor',
   },
   '&.active': {
-    color: colors.primary,
+    color: '#5e7ed1',
   },
 }
 

@@ -1,7 +1,7 @@
 import breakpoints from 'gatsby-theme-apollo-core/src/utils/breakpoints'
 import styled from '@emotion/styled'
 import { colors } from 'gatsby-theme-apollo-core/src/utils/colors'
-import wpgqlColors from '../../utils/colors'
+//import wpgqlColors from '../../utils/colors'
 
 export const headerHeight = 64
 const Header = styled.header({
@@ -11,7 +11,7 @@ const Header = styled.header({
   height: '70px',
   padding: '0 24px',
   color: colors.white,
-  backgroundColor: wpgqlColors.primary,
+  backgroundColor: '#fff',
   position: 'sticky',
   top: 0,
   zIndex: 1,
