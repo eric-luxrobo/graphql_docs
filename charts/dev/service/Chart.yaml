@@ -1,6 +1,0 @@
-version: 1.0.0
-appVersion: 0.0.1
-name: graphql-docs
-description: Helm chart for graphql_docs
-source:
-  - https://git.luxrobo.net/infra/graphql_docs

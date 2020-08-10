@@ -5,11 +5,11 @@ module.exports = {
     siteName: `Luxrobo`,
     title: `Luxrobo Docs`,
     subtitle: `Luxrobo Docs`,
-    description: `Luxrobo (GraphQL for WordPress) documentation.`,
+    description: `Luxrobo Docs documentation.`,
     twitterHandle: `graphql`,
     author: `Luxrobo`,
   },
-  pathPrefix: ``,
+  pathPrefix: `graphql_docs`,
   plugins: [
     // Data source Plugins
     {
@@ -37,12 +37,7 @@ module.exports = {
         icon: `source/images/icon.png`,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-antd',
-    //   options: {
-    //     style: false,
-    //   },
-    // },
+    
 
     //Theme config
     {
@@ -51,18 +46,15 @@ module.exports = {
         ...themeOptions,
         siteName: 'Luxrobo DOCS',
         menuTitle: 'Luxrobo',
-        baseUrl: 'https://docs.luxrobo.com',
+        baseUrl: 'https://luxrobo.github.io/graphql_docs',
         root: __dirname,
         subtitle: 'Luxrobo',
         description: 'Luxrobo GraphQL for API documentation.',
         githubRepo: 'LUXROBO/pymodi',
-        trackingId: 'UA-111783024-1',
         twitterHandle: 'LUXROBO',
         spectrumHandle: 'LUXROBO',
-        algoliaApiKey: 'fb8b4503ba2093d228a6c9b72facff9b',
-        algoliaIndexName: 'LUXROBO',
         youtubeUrl: 'https://www.youtube.com/channel/UCwav5UKLaEufn0mtvaFAkYw',
-        logoLink: 'https://docs.luxrobo.com',
+        logoLink: 'https://luxrobo.github.io/graphql_docs',
         navConfig: {
           'luxrobo.com': {
             url: 'https://luxrobo.com',
@@ -93,15 +85,6 @@ module.exports = {
         },
       },
     },
-    //Hosting integration
-    //`gatsby-plugin-netlify`,
-
-    //Testing plugins
-    // {
-    //   resolve: `gatsby-plugin-react-axe`,
-    //   options: {
-    //     showInProduction: false,
-    //   },
-    // },
+ 
   ],
 }

@@ -37,7 +37,7 @@ export default function LogoTitle(props) {
         <img
           alt="Luxrobo Logo"
           style={{ marginRight: 10, maxWidth: 70 }}
-          src={file.childImageSharp.fluid.src}
+          src={'/graphql_docs'+file.childImageSharp.fluid.src}
         />
       )}
       {props.title}
