@@ -1,0 +1,31 @@
+---
+title: Account service
+description: 로그인/로그아웃등 사용자 계정 서비스
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import Note from '../../src/components/Note'
+
+## members 
+회원 리스트
+<GraphiQL
+  query="
+    query members($page: Int!, $size: Int!) {
+      members(page: $page, size: $size) {
+        datas {
+          id
+          user_id
+        }
+      }
+    }
+  "
+  variables={{
+    page: 1,
+    size: 10,
+  }}
+/>
+
+Using Variables with Arguments
+* id : 서비스 하위 키값
+* serviceName : 서비스 이름
+* imageBase64 : 이미지로드하여 base64로 인코딩한 이미지 string
