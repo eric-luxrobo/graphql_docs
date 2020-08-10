@@ -1,0 +1,109 @@
+## Created with gatsby-plugin-netlify
+
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin
+/styles.f710ecfa9cb1a5d1699e.css
+  Cache-Control: public, max-age=31536000, immutable
+/styles-c2fe8482057191dca484.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-gatsby-theme-apollo-docs-components-template-js-5c117b964ed6e0e67dcb.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---node-modules-gatsby-theme-apollo-core-src-pages-404-js-6fef7414a49aa89cc8a6.js
+  Cache-Control: public, max-age=31536000, immutable
+/webpack-runtime-2481ad8696d6b94fbfae.js
+  Cache-Control: public, max-age=31536000, immutable
+/framework-b5b229d58c3c710d5429.js
+  Cache-Control: public, max-age=31536000, immutable
+/b88d22df-7bcc03114197d7999c5d.js
+  Cache-Control: public, max-age=31536000, immutable
+/f65a48b9-f3a031d89f8d23adaf7f.js
+  Cache-Control: public, max-age=31536000, immutable
+/29107295-034a50f927180fdf8975.js
+  Cache-Control: public, max-age=31536000, immutable
+/commons-159ef1efa42b4c14af1c.js
+  Cache-Control: public, max-age=31536000, immutable
+/app-3cade50f7d36cea60e66.js
+  Cache-Control: public, max-age=31536000, immutable
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+/sw.js
+  Cache-Control: no-cache
+/template/
+  Link: </webpack-runtime-2481ad8696d6b94fbfae.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </framework-b5b229d58c3c710d5429.js>; rel=preload; as=script
+  Link: </b88d22df-7bcc03114197d7999c5d.js>; rel=preload; as=script
+  Link: </f65a48b9-f3a031d89f8d23adaf7f.js>; rel=preload; as=script
+  Link: </29107295-034a50f927180fdf8975.js>; rel=preload; as=script
+  Link: </commons-159ef1efa42b4c14af1c.js>; rel=preload; as=script
+  Link: </app-3cade50f7d36cea60e66.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </component---src-gatsby-theme-apollo-docs-components-template-js-5c117b964ed6e0e67dcb.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/template/page-data.json>; rel=preload; as=fetch; crossorigin
+/getting-started/account/
+  Link: </webpack-runtime-2481ad8696d6b94fbfae.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </framework-b5b229d58c3c710d5429.js>; rel=preload; as=script
+  Link: </b88d22df-7bcc03114197d7999c5d.js>; rel=preload; as=script
+  Link: </f65a48b9-f3a031d89f8d23adaf7f.js>; rel=preload; as=script
+  Link: </29107295-034a50f927180fdf8975.js>; rel=preload; as=script
+  Link: </commons-159ef1efa42b4c14af1c.js>; rel=preload; as=script
+  Link: </app-3cade50f7d36cea60e66.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </component---src-gatsby-theme-apollo-docs-components-template-js-5c117b964ed6e0e67dcb.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/getting-started/account/page-data.json>; rel=preload; as=fetch; crossorigin
+/
+  Link: </webpack-runtime-2481ad8696d6b94fbfae.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </framework-b5b229d58c3c710d5429.js>; rel=preload; as=script
+  Link: </b88d22df-7bcc03114197d7999c5d.js>; rel=preload; as=script
+  Link: </f65a48b9-f3a031d89f8d23adaf7f.js>; rel=preload; as=script
+  Link: </29107295-034a50f927180fdf8975.js>; rel=preload; as=script
+  Link: </commons-159ef1efa42b4c14af1c.js>; rel=preload; as=script
+  Link: </app-3cade50f7d36cea60e66.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </component---src-gatsby-theme-apollo-docs-components-template-js-5c117b964ed6e0e67dcb.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/index/page-data.json>; rel=preload; as=fetch; crossorigin
+/getting-started/upload/
+  Link: </webpack-runtime-2481ad8696d6b94fbfae.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </framework-b5b229d58c3c710d5429.js>; rel=preload; as=script
+  Link: </b88d22df-7bcc03114197d7999c5d.js>; rel=preload; as=script
+  Link: </f65a48b9-f3a031d89f8d23adaf7f.js>; rel=preload; as=script
+  Link: </29107295-034a50f927180fdf8975.js>; rel=preload; as=script
+  Link: </commons-159ef1efa42b4c14af1c.js>; rel=preload; as=script
+  Link: </app-3cade50f7d36cea60e66.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </component---src-gatsby-theme-apollo-docs-components-template-js-5c117b964ed6e0e67dcb.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/getting-started/upload/page-data.json>; rel=preload; as=fetch; crossorigin
+/404/
+  Link: </webpack-runtime-2481ad8696d6b94fbfae.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </framework-b5b229d58c3c710d5429.js>; rel=preload; as=script
+  Link: </b88d22df-7bcc03114197d7999c5d.js>; rel=preload; as=script
+  Link: </f65a48b9-f3a031d89f8d23adaf7f.js>; rel=preload; as=script
+  Link: </29107295-034a50f927180fdf8975.js>; rel=preload; as=script
+  Link: </commons-159ef1efa42b4c14af1c.js>; rel=preload; as=script
+  Link: </app-3cade50f7d36cea60e66.js>; rel=preload; as=script
+  Link: </component---node-modules-gatsby-theme-apollo-core-src-pages-404-js-6fef7414a49aa89cc8a6.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/404/page-data.json>; rel=preload; as=fetch; crossorigin
+/404.html
+  Link: </webpack-runtime-2481ad8696d6b94fbfae.js>; rel=preload; as=script
+  Link: </styles-c2fe8482057191dca484.js>; rel=preload; as=script
+  Link: </framework-b5b229d58c3c710d5429.js>; rel=preload; as=script
+  Link: </b88d22df-7bcc03114197d7999c5d.js>; rel=preload; as=script
+  Link: </f65a48b9-f3a031d89f8d23adaf7f.js>; rel=preload; as=script
+  Link: </29107295-034a50f927180fdf8975.js>; rel=preload; as=script
+  Link: </commons-159ef1efa42b4c14af1c.js>; rel=preload; as=script
+  Link: </app-3cade50f7d36cea60e66.js>; rel=preload; as=script
+  Link: </component---node-modules-gatsby-theme-apollo-core-src-pages-404-js-6fef7414a49aa89cc8a6.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/404.html/page-data.json>; rel=preload; as=fetch; crossorigin
