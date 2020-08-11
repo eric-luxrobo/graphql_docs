@@ -2,3 +2,61 @@
 title: Upload GRPC
 description: 이미지 서버 GRPC관련 정의
 ---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+# `UploadGraphqlQuery`
+> 업로드 서비스 Graphql 직접입력 
+
+```js:title=UploadGraphqlQueryRequest
+// UploadGraphqlQueryRequest graphql query
+message UploadGraphqlQueryRequest {
+    string query  = 1;
+    string operation_name = 2;
+}
+```
+
+```js:title=UploadGraphqlQueryResponse
+// UploadGraphqlQueryResponse graphql query response
+message UploadGraphqlQueryResponse {
+    Error err = 1;
+    string result = 2;
+}
+```
+
+# `UploadImage`
+> 이미지 업로드 
+
+
+```js:title=UploadImageRequest
+message UploadImageRequest {
+  string id = 1;
+  string serviceName = 2;
+  string imageBase64 = 3;
+}
+```
+
+```js:title=UploadImageResponse
+message UploadImageResponse {
+  Error err = 1;
+  ImageInfoE image = 2;
+}
+```
+
+# `UploadHealth`
+> 업로드 서비스 Health체크 
+
+```js:title=UploadHealthRequest
+// UploadHealthRequest health request 
+message UploadHealthRequest {}
+
+```
+
+```js:title=UploadHealthResponse
+// UploadHealthResponse health response
+message UploadHealthResponse {
+    Error err = 1;
+    bool status = 2;
+}
+```
