@@ -6,21 +6,19 @@ title: Upload Types
 ## `CreateUploadImageInput`
 > 이미지 업로드 입력 파라미터 
 
-| key | 설명 | 타입 | 필수 |
-| -------- | -------- | -------- | -------- | 
-| id     | 서비스 하위 키값     | string | true | 
-| serviceName | 서비스 이름 | string | true | 
-| imageBase64 | 이미지로드하여 base64로 인코딩한 이미지 string | string | true |
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 서비스 하위 키값   | 
+| serviceName (String!)  | 서비스 이름  | 
+| imageBase64 (String!)  | 이미지로드하여 base64로 인코딩한 이미지  | 
 
 
 ## `ImageInfo`
 > 이미지 정보
 
-| key | 설명 | 타입 | 필수제공 |
-| -------- | -------- | -------- | -------- |
-| domain     | 이미지 도메인     | string | true |
-| url | 이미지 Full URL | string | true |
-| width | 이미지 넓이 | int | true | 
-| height | 이미지 높이 | int | true
-
-
+| Name | Description |
+| -------- | -------- | 
+| domain (Int!)  | 이미지 도메인    | 
+| url (Int!)  | 이미지 Full URL | 
+| width (Int!)  | 이미지 넓이  | 
+| height (Int!)  | 이미지 높이  | 

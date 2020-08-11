@@ -4,25 +4,26 @@ title: Account Types
 
 import { Link } from 'gatsby'
 
-## `Members`
-> 회원리스트 
 
-| key | 설명 | 타입 | 필수제공 |
-| -------- | -------- | -------- | -------- |
-| total_cnt     | 총수     | int | true |
-| page_cnt | 페이지수 | int | true |
-| datas | 회원 데이타 Array | [<Link to="/type/account/#Member">Member</Link>] | true | 
+## `AccountMemberConnection`
+> 계정 리스트 
+
+| Name | Description |
+| -------- | -------- | 
+| totalCnt (Int!)  | 총수  | 
+| pageCnt (Int!)  | 페이지수  | 
+| nodes ([<Link to="/type/account/#AccountMember">AccountMember</Link>])  | 회원 데이타 Array  | 
+
 ```javascript
 {
   "data": {
     "members": {
-      "datas": [
+      "nodes": [
         {
-          "created_at": null,
+          "createdAt": null,
           "id": "15",
-          "updated_at": null,
-          "user_id": "",
-          "user_name": null
+          "userId": "",
+          "userName": null
         }
       ]
     }
@@ -30,16 +31,34 @@ import { Link } from 'gatsby'
 }
 ```
 
-
-## `Member`
+## `AccountMember`
 > 회원정보 
 
-| key | 설명 | 타입 | 필수제공 |
-| -------- | -------- | -------- | -------- |
-| id     | member ID    | string | true |
-| user_id | 사용자 ID | string | true |
-| user_name | 사용자 이름 | string | true | 
-| created_at | 생성 날짜 | string | true
-| updated_at | 업데이트 날짜 | string | true
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | member ID  | 
+| userId (String!)  | 사용자 ID  | 
+| userName (String!)  | 사용자 이름  | 
+| createdAt (String!)  | 생성 날짜 | 
 
 
+## `AuthCheckAccountUserEmailInput`
+> 이메일 인증 체크 입력정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!)  | ID  | 
+| authCode (String!)  | 인증코드  | 
+
+
+
+## `CreateAccountMemberInput`
+> 회원가입 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!)  | ID  | 
+| password (String!)  | 비밀번호  | 
+| userName (String!) | 이름 |
+| userEmail (String!) | 이메일 | 
+| gender (String!) |  성별 |

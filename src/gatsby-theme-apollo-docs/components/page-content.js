@@ -113,7 +113,7 @@ const Aside = styled.div({
   display: 'flex',
   flexDirection: 'column',
   flexShrink: 0,
-  width: 200,
+  width: 280,
   maxHeight: `calc(100vh - ${headerHeight}px)`,
   marginTop: -36,
   marginLeft: 'auto',

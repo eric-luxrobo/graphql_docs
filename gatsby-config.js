@@ -88,6 +88,7 @@ module.exports = {
             'query/account',
           ],
           'Mutation': [
+            'mutation/account',
             'mutation/upload',
           ],
           'Type': [

@@ -1,0 +1,75 @@
+---
+title: Account Mutation
+description: 계정관리 로그인/로그아웃등등 ...
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+# `authAccountUserEmail`
+> 이메일 인증하기
+
+`Input fields`
+* input : String
+
+`Return Type`: ID
+
+<GraphiQL
+  query="
+  mutation authAccountUserEmail( $userEmail:String! ){
+    authAccountUserEmail( userEmail: $userEmail )
+  }
+  "
+  variables={{
+    userEmail: ""
+  }}
+/>
+
+
+# `authCheckAccountUserEmail`
+> 이메일 인증여부 확인
+
+`Input fields`
+* input : <Link to="/type/account/#AuthCheckAccountUserEmailInput">AuthCheckAccountUserEmailInput</Link>
+
+`Return Type`: ID
+
+<GraphiQL
+  query="
+  mutation authCheckAccountUserEmail( $input:AuthCheckAccountUserEmailInput! ){
+    authCheckAccountUserEmail( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: "1111",
+      authCode:"11111111",
+    },
+  }}
+/>
+
+# `createAccountMember`
+> 회원가입
+
+`Input fields`
+* input : <Link to="/type/account/#CreateAccountMemberInput">CreateAccountMemberInput</Link>
+
+`Return Type`: ID
+
+<GraphiQL
+  query="
+  mutation createAccountMember( $input:CreateAccountMemberInput! ){
+    createAccountMember( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      userId: "1111",
+      password:"11111111",
+      userName: "월터",
+      userEmail: "walter@gmail.com",
+      gender: "M"
+    },
+  }}
+/>
+
