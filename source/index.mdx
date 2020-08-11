@@ -3,18 +3,7 @@ title: Documentation Home
 description: How to write graphql scheme
 ---
 
-## 1. 타입(Scalar Types)
-
-스키마에 사용할 수 있는 기본 자료형은 다음과 같습니다.
-
-
-1. Int : 32비트 정수
-2. Float : 실수
-3. String : UTF-8 문자열
-4. Boolean : true / false
-5. ID : id 값임을 명시적으로 표현하기 위해 사용. 내부적으로는 String 형태와 동일
-
-## 2. 스키마 디자인 
+## `스키마 디자인`
 * Mutation 작성시 입력 파라미터 하나의 **input**으로 정의한다.  
 * Mutation Response값은 항상 변경된 데이타를 리턴값으로 정의한다. 
 * Enums의 활용 이미 정의된값은 Enum을 이용하여 정의한다. -  항상 허용된 값 검증
@@ -36,12 +25,26 @@ pageInfo는 데이타 페이지 정보 cursor등등
 * Pagenation 처리 아래 문서 참고
 https://graphql.org/learn/pagination/
 * Query에서 arguments가 1개이상인 경우는 type으로 정의의하며 **where** 이름으로 정의해서 사용한다. 
-ex) 
+
+```js:title=ex)accountMembers
 accountMembers(where: AccountMembersWhere) {
     nodes {
         id
         name
     }
 }
+```
+
 또한 타입이름은 **함수명 + Where**를 더한이름으로 작성한다. 
 
+
+## `타입(Scalar Types)`
+
+스키마에 사용할 수 있는 기본 자료형은 다음과 같습니다.
+
+
+1. Int : 32비트 정수
+2. Float : 실수
+3. String : UTF-8 문자열
+4. Boolean : true / false
+5. ID : id 값임을 명시적으로 표현하기 위해 사용. 내부적으로는 String 형태와 동일
