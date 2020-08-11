@@ -49,7 +49,7 @@ const StyledListItem = styled.li({
       opacity: colors.hoverOpacity
     },
     '&.active': {
-      color: colors.primary,
+      color: '#f25cc1', //colors.primary,
       pointerEvents: 'none'
     }
   }
@@ -71,12 +71,13 @@ const categoryTitleStyles = {
   padding: '12px 0',
   color: colors.text1,
   fontWeight: 'bold',
-  fontSize: 14,
-  lineHeight: '15px',
+  fontSize: 15,
+  lineHeight: '15px', 
   ...smallCaps,
   svg: size(10),
   '&.active': {
-    color: colors.primary
+    color: '#f25cc1', //colors.primary
+ 
   }
 };
 
