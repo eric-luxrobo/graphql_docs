@@ -1,0 +1,27 @@
+---
+title: NLP GRPC
+description: AI팀 자연어 처리 GRPC 서비스입니다. 서비스간의 nlp처리를 위해서 사용함.
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+# `Translate`
+> 음성 base64 string을 영문 텍스트로 변환
+
+```js:title=CodeRequest
+// The request message containing the user's sentence.
+message CodeRequest {
+  string audio = 1; // base64 audio string
+}
+```
+
+```js:title=CodeReply
+// The response message containing the C code
+message CodeReply {
+  string sentence = 1;
+  bool valid = 2;
+  string err_message = 3;
+  string code = 4;
+}
+```

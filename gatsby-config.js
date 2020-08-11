@@ -80,6 +80,10 @@ module.exports = {
         },
         sidebarCategories: {
           null: ['index'],
+          'GRPC': [
+            'grpc/nlp',
+            'grpc/upload',
+          ],
           'Query': [
             'query/account',
           ],
@@ -90,9 +94,6 @@ module.exports = {
             'type/account',
             'type/upload',
           ],
-          // Guides: [
-          //   'guides/testing',
-          // ]
         },
       },
     },
