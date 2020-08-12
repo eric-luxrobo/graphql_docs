@@ -218,6 +218,7 @@ export default function SidebarNav(props) {
           const className = isSelected ? 'active' : null;
           return (
             <Category key={index}>
+              
               {!props.alwaysExpanded && (
                 <StyledCheckbox
                   type="checkbox"

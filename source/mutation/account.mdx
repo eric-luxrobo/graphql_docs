@@ -6,6 +6,29 @@ description: 계정관리 로그인/로그아웃등등 ...
 import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
 
+# `accountLogin` 
+`Type` : (boolean) 성공여부
+
+> 로그인
+
+
+`Input fields`
+* input : <Link to="/type/account/#AccountLoginInput">AccountLoginInput</Link>
+
+<GraphiQL
+  query="
+    mutation accountLogin($input: AccountLoginInput!) {
+      accountLogin(input: $input)
+    }
+  "
+  variables={{
+    input: {
+      userId: "howto38",
+      password: "11111111"
+    }
+  }}
+/>
+
 # `authAccountUserEmail`
 > 이메일 인증하기
 

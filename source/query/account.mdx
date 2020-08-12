@@ -112,27 +112,3 @@ import { Link } from 'gatsby'
     userEmail: "howto38"
   }}
 />
-
-# `accountLogin` 
-`Type` : (boolean) 성공여부
-
-> 로그인
-
-**Arguments**
-
-| Name | Description |
-| -------- | -------- | 
-| userId (String!)  | 유저ID  | 
-| password (String!) | 비밀번호 | 
-
-<GraphiQL
-  query="
-    query accountLogin($userId: String!, $password: String!) {
-      accountLogin(userId: $userId, password: $password)
-    }
-  "
-  variables={{
-    userId: "howto38",
-    password: "11111111"
-  }}
-/>
