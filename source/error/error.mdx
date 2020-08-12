@@ -1,0 +1,22 @@
+---
+title: Error 타입정의
+description: 에러코드 JSON정보 & 각각의 필드에 대한 설명을 작성하였습니다. 
+---
+
+## `Error JSON`
+> 에러 리턴값 json
+
+```js:title=ex)error
+{
+    errorCode: 10001,
+    errorMessage: "Exception string error",
+    message: "서버 에러입니다. 다시 실행해주세요."
+}
+```
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 에러코드 고유번호  | 
+| errorMessage (String!)  | 서버에서 발생한 에러메세지   | 
+| message (String!)  | 앱, 웹에서 알림으로 제공되는 메세지 & 사용자의 언어에 따라서 언어 메세지 제공  | 
+

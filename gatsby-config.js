@@ -80,18 +80,22 @@ module.exports = {
         },
         sidebarCategories: {
           null: ['index'],
-          'GRPC': [
+          'ERROR 코드': [
+            'error/error',
+            'error/account',
+          ],
+          'GRPC 서비스': [
             'grpc/nlp',
             'grpc/upload',
           ],
-          'Query': [
+          'Query 메소드': [
             'query/account',
           ],
-          'Mutation': [
+          'Mutation 메소드': [
             'mutation/account',
             'mutation/upload',
           ],
-          'Type': [
+          'Type 정의': [
             'type/account',
             'type/upload',
           ],
