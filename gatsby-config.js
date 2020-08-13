@@ -85,11 +85,13 @@ module.exports = {
             'error/account',
           ],
           'GRPC 서비스': [
+            'grpc/lesson',
             'grpc/nlp',
             'grpc/upload',
           ],
           'Query 메소드': [
             'query/account',
+            'query/lesson',
           ],
           'Mutation 메소드': [
             'mutation/account',
@@ -97,6 +99,9 @@ module.exports = {
           ],
           'Type 정의': [
             'type/account',
+            'type/imageInfo',
+            'type/pageInfo',
+            'type/lesson',
             'type/upload',
           ],
         },

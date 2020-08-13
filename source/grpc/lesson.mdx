@@ -1,0 +1,44 @@
+---
+title: lesson GRPC
+description: 커리큘럼 서비스 GRPC관련 정의
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `LessonGraphqlQuery`
+> 커리큘럼 서비스 Graphql 직접입력 
+
+```js:title=LessonGraphqlQueryRequest
+// LessonGraphqlQueryRequest graphql query
+message LessonGraphqlQueryRequest {
+    string query  = 1;
+    string operationName = 2;
+}
+```
+
+```js:title=LessonGraphqlQueryResponse
+// LessonGraphqlQueryResponse graphql query response
+message LessonGraphqlQueryResponse {
+    Error err = 1;
+    string result = 2;
+}
+```
+
+
+### `LessonHealth`
+> 커리큘럼 서비스 Health체크 
+
+```js:title=LessonHealthRequest
+// LessonHealthRequest health request 
+message LessonHealthRequest {}
+
+```
+
+```js:title=LessonHealthResponse
+// LessonHealthResponse health response
+message LessonHealthResponse {
+    Error err = 1;
+    bool status = 2;
+}
+```
