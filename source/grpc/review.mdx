@@ -1,0 +1,44 @@
+---
+title: review GRPC
+description: 리뷰 서비스 GRPC관련 정의
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `ReviewGraphqlQuery`
+> 리뷰 서비스 Graphql 직접입력 
+
+```js:title=ReviewGraphqlQueryRequest
+// ReviewGraphqlQueryRequest graphql query
+message ReviewGraphqlQueryRequest {
+    string query  = 1;
+    string operationName = 2;
+}
+```
+
+```js:title=ReviewGraphqlQueryResponse
+// ReviewGraphqlQueryResponse graphql query response
+message ReviewGraphqlQueryResponse {
+    Error err = 1;
+    string result = 2;
+}
+```
+
+
+### `ReviewHealth`
+> 리뷰 서비스 Health체크 
+
+```js:title=ReviewHealthRequest
+// ReviewHealthRequest health request 
+message ReviewHealthRequest {}
+
+```
+
+```js:title=ReviewHealthResponse
+// ReviewHealthResponse health response
+message ReviewHealthResponse {
+    Error err = 1;
+    bool status = 2;
+}
+```

@@ -1,0 +1,63 @@
+---
+title: review Query
+description: 리뷰 서비스 Query
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `review`
+`Type` : <Link to="/type/review/#Review/">Review</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/type/review/#ReviewWhere">ReviewWhere</Link>)  | 리뷰 Where  | 
+
+<GraphiQL
+    query="
+        query review($where: ReviewWhere!) {
+            review(where: $where) {
+                id
+            }
+        }
+    "
+    variables={{
+        where: {
+            id: ""
+        }
+    }}
+/>
+
+
+
+### `reviewConnection`
+`Type` : <Link to="/type/review/#ReviewConnection/">ReviewConnection</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/type/review/#ReviewConnectionOrder">ReviewConnectionOrder</Link>)  | Orderby  | 
+| where  (<Link to="/type/review/#ReviewConnectionWhere">ReviewConnectionWhere</Link>)  | Where  | 
+
+<GraphiQL
+    query="
+        query reviewConnection($first: Int!) {
+            reviewConnection(first: $first) {
+                totalCount
+                nodes {
+                    id
+                }
+            }
+        }
+    "
+    variables={{
+        first: 1,
+    }}
+/>
+

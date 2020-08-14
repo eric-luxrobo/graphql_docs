@@ -87,10 +87,12 @@ module.exports = {
           'GRPC 서비스': [
             'grpc/lesson',
             'grpc/nlp',
+            'grpc/review',
             'grpc/upload',
           ],
           'Query 메소드': [
             'query/account',
+            'query/review',
             'query/lesson',
           ],
           'Mutation 메소드': [
@@ -101,6 +103,7 @@ module.exports = {
             'type/account',
             'type/imageInfo',
             'type/pageInfo',
+            'type/review',
             'type/lesson',
             'type/upload',
           ],

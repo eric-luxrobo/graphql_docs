@@ -35,11 +35,12 @@ const ExpandAll = styled.button(smallCaps, {
 const StyledList = styled.ul({
   marginLeft: 0,
   marginBottom: 32,
-  listStyle: 'none'
+  listStyle: 'none',
 });
 
 const StyledListItem = styled.li({
-  fontSize: '13px',
+  color: '#000',
+  fontSize: '15px',
   lineHeight: 1.5,
   marginBottom: '0.8125rem',
   a: {
@@ -67,9 +68,10 @@ const Category = styled.div({
 const categoryTitleStyles = {
   display: 'flex',
   alignItems: 'center',
+  color: '#000',
   justifyContent: 'space-between',
   padding: '12px 0',
-  color: colors.text1,
+  //color: colors.text1,
   fontWeight: '400',
   fontSize: 14,
   lineHeight: '15px', 

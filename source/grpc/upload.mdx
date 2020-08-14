@@ -6,6 +6,22 @@ description: 이미지 서비스 GRPC관련 정의
 import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
 
+
+### 서비스 연결 방법 
+
+* port : 20082
+* namespace : app
+* label : upload 
+
+아래와 같이 port-forward하여 Local TEST한다. 
+
+```js:title=forwarding
+kubectl port-forward `service/upload` 20082:20082 -n app
+```
+
+
+
+
 ### `UploadGraphqlQuery`
 > 업로드 서비스 Graphql 직접입력 
 
