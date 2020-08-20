@@ -79,7 +79,10 @@ module.exports = {
          
         },
         sidebarCategories: {
-          null: ['index'],
+          null: [
+            'index',
+            'introduce',
+          ],
           'ERROR 코드': [
             'error/error',
             'error/account',
