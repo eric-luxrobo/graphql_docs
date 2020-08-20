@@ -1,0 +1,48 @@
+---
+title: lesson ENUM
+---
+
+import { Link } from 'gatsby'
+
+### `LevelType`
+> 강의 레벨 타입
+
+```js:title=LevelType
+enum LevelType {
+  # 초등 초급
+  ELEMENT_BEGINNING
+  # 초등 중급
+  ELEMENT_INTERMEDIATE
+  # 초등 고급 
+  ELEMENT_HIGH
+  # 없음 
+  NONE
+}
+```
+
+### `GroupType`
+> 강의 그룹 타입
+
+```js:title=GroupType
+enum GroupType {
+  # 그룹없음 
+  NONE
+  # 그룹 x 2
+  GROUP2
+  # 그룹 x 3
+  GROUP3
+  # 그룹 x 4
+  GROUP4
+}
+```
+
+
+### `LessonConnectionField`
+> 강의 필드 정보
+
+```js:title=LessonConnectionField
+enum LessonConnectionField {
+  # 디폴트 ID정보 
+  ID
+}
+```

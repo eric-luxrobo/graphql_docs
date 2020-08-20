@@ -112,6 +112,9 @@ module.exports = {
             'type/lesson',
             'type/upload',
           ],
+          'Enum 정의': [
+            'enum/lesson',
+          ],
         },
       },
     },

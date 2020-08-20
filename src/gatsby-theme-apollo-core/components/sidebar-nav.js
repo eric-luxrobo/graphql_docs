@@ -39,8 +39,8 @@ const StyledList = styled.ul({
 });
 
 const StyledListItem = styled.li({
-  color: '#000',
-  fontSize: '15px',
+  color: '#524b5282',
+  fontSize: '16px',
   lineHeight: 1.5,
   marginBottom: '0.8125rem',
   a: {
@@ -50,7 +50,7 @@ const StyledListItem = styled.li({
       opacity: colors.hoverOpacity
     },
     '&.active': {
-      color: '#3f20ba', //colors.primary,
+      color: '#f25cc1', //colors.primary,
       pointerEvents: 'none'
     }
   }
@@ -73,12 +73,12 @@ const categoryTitleStyles = {
   padding: '12px 0',
   //color: colors.text1,
   fontWeight: '400',
-  fontSize: 14,
+  fontSize: 17,
   lineHeight: '15px', 
   ...smallCaps,
   svg: size(10),
   '&.active': {
-    color: '#3f20ba', //colors.primary
+    color: '#f25cc1', //colors.primary
  
   }
 };

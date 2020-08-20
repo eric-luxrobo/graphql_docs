@@ -1,5 +1,5 @@
 ---
-title: lesson Types
+title: lesson TYPE
 ---
 
 import { Link } from 'gatsby'
@@ -13,9 +13,9 @@ import { Link } from 'gatsby'
 | subTitle (String) | 강의 서브제목 
 | describe (String) | 강의 설명
 | classTime (Int) | 수업시간 (분기준)
-| levelType (LevelType) | 강의 레벨
-| groupType (GroupType) | 강의 그룹
-| mainImgs ([ImageInfoInput]) | 강의 메인 이미지 리스트
+| levelType (<Link to="/enum/lesson/#LevelType">LevelType</Link>) | 강의 레벨
+| groupType (<Link to="/enum/lesson/#GroupType">GroupType</Link>) | 강의 그룹
+| mainImgs ([<Link to="/type/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
 | elementJSON (String) | 강의 속성정보 JSON
 
 
@@ -25,20 +25,45 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (String!)  | 강의 ID  | 
-
+| name (String!)  | 강의 제목  | 
+| subTitle (String) | 강의 서브제목 
+| describe (String) | 강의 설명
+| classTime (Int) | 수업시간 (분기준)
+| levelType (<Link to="/enum/lesson/#LevelType">LevelType</Link>) | 강의 레벨
+| groupType (<Link to="/enum/lesson/#GroupType">GroupType</Link>) | 강의 그룹
+| mainImgs ([<Link to="/type/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
+| elementJSON (String) | 강의 속성정보 JSON
+| userActivity (UserActivity!) | 사용자 활동 정보 좋아요..
+| lessonPlans ([LessonPlan]) | 강의 계획 리스트
 
 ### `LessonConnection`
 > 강의 리스트 정보
 
 | Name | Description |
 | -------- | -------- | 
-| edges (String!)  | 유저ID  | 
-| nodes (String!)  | 비밀번호  |
-| totalCount (Int!) | 총 수 
+| edges (String)  | 유저ID  | 
+| nodes ([<Link to="/type/lesson/#Lesson">Lesson</Link>])  | 강의 정보 Array  |
+| totalCount (Int) | 총 수 
 | pageInfo (<Link to="/type/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
+
+### `LessonEdge`
+> 강의 정보
+
+| Name | Description |
+| -------- | -------- | 
+| cursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/type/lesson/#Lesson">Lesson</Link>)  | 강의 정보  |
 
 ### `LessonConnectionOrder`
 > 강의 리스트 Order 정보
 
+| Name | Description |
+| -------- | -------- | 
+| field (<Link to="/enum/lesson/#LessonConnectionField">LessonConnectionField</Link>!)  | 필드 정보 | 
+
 ### `LessonConnectionWhere`
 > 강의 리스트 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| filter (String!)  | 조건 필터링 정보  | 
