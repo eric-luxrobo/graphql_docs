@@ -97,6 +97,8 @@ module.exports = {
           ],
           'Mutation 메소드': [
             'mutation/account',
+            'mutation/lesson',
+            'mutation/review',
             'mutation/upload',
           ],
           'Type 정의': [

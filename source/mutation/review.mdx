@@ -1,0 +1,58 @@
+---
+title: review Mutation
+description: 리뷰 서비스 
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `createReview`
+> 리뷰 등록
+
+
+`Input fields`
+* input : <Link to="/type/review/#CreateReviewInput">CreateReviewInput</Link>
+
+`Return Type`: <Link to="/type/review/#Review">Review</Link>
+
+<GraphiQL
+  query="
+  mutation createReview( $input:CreateReviewInput! ){
+    createReview( input: $input ) {
+      id
+      title
+    }
+  }
+  "
+  variables={{
+    input: {
+      name: "name"
+    },
+  }}
+/>
+
+### `createReviewReply`
+> 답변 등록
+
+
+`Input fields`
+* input : <Link to="/type/review/#CreateReviewReplyInput">CreateReviewReplyInput</Link>
+
+`Return Type`: <Link to="/type/review/#Review">Review</Link>
+
+<GraphiQL
+  query="
+  mutation createReviewReply( $input:CreateReviewReplyInput! ){
+    createReviewReply( input: $input ) {
+      id
+      title
+    }
+  }
+  "
+  variables={{
+    input: {
+      name: "name"
+    },
+  }}
+/>
+

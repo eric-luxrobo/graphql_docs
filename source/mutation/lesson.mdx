@@ -1,0 +1,73 @@
+---
+title: lesson Mutation
+description: 커리큘럼 서비스 
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `createLesson`
+> 강의 등록
+
+
+`Input fields`
+* input : <Link to="/type/lesson/#CreateLessonInput">CreateLessonInput</Link>
+
+`Return Type`: <Link to="/type/lesson/#Lesson">Lesson</Link>
+
+<GraphiQL
+  query="
+  mutation createLesson( $input:CreateLessonInput! ){
+    createLesson( input: $input ) {
+      id
+      title
+      subTitle
+      describe
+      mainImgs {
+        domain
+        url
+      }
+      classTime
+      userActivity {
+        cLike
+        cBookmark
+      }
+      levelType
+      groupType
+      elementJson
+      lessonPlans {
+        id
+        title
+        groups {
+          id
+          idx
+          content 
+        }
+        template {
+          id
+          type
+          describe
+          img {
+            url
+          }
+        }
+      }
+    }
+  }
+  "
+  variables={{
+    input: {
+      name: "333", 
+      subTitle: "ggg11111111111", 
+      describe: "zzzz11111z", 
+      classTime: 10, 
+      levelType: "ELEMENT_INTERMEDIATE", 
+      groupType: "NONE", 
+      mainImgs: [{
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      }],
+      elementJSON: "dsfasdfsdfsdfsfsadfsdfsdfsdf"
+    }
+  }}
+/>
+

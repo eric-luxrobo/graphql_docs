@@ -4,10 +4,47 @@ description: 계정 서비스 에러코드 정의
 ---
 
 ### `10001`
-> 회원가입 실패시 에러코드
+> 이미 존재하는 아이디입니다. 
 
 | Name | Description |
 | -------- | -------- | 
 | errorCode (Int!)  | 10001  | 
-| message (String!)  | 회원가입 실패입니다.   | 
+| errorMessage (String!)  | This id already exists   | 
+| message (String!)  | 이미 존재하는 아이디입니다.  | 
+
+### `10002`
+> 이미 존재하는 이메일입니다.
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 10002  | 
+| errorMessage (String!)  | This email already exists   | 
+| message (String!)  | 이미 존재하는 이메일입니다.  | 
+
+### `10003`
+> 패스워드가 일치하지 않습니다.
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 10003  | 
+| errorMessage (String!)  | Password incorrect   | 
+| message (String!)  | 패스워드가 일치하지 않습니다.  | 
+
+### `10004`
+> 존재하지 않는 아이디입니다.
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 10004  | 
+| errorMessage (String!)  | ID '${input.userId}' doesn't exist | 
+| message (String!)  | 존재하지 않는 아이디입니다.  | 
+
+### `10005`
+> 존재하지 않는 이메일입니다.
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 10005  | 
+| errorMessage (String!)  | Email '${input.userId}' doesn't exist  | 
+| message (String!)  | 존재하지 않는 이메일입니다. | 
 
