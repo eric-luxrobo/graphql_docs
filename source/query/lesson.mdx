@@ -16,50 +16,50 @@ import { Link } from 'gatsby'
 | where  (<Link to="/type/lesson/#LessonWhere">LessonWhere</Link>)  | 커리큘럼 Where  | 
 
 <GraphiQL
-    query="
-        query lesson($where: LessonWhere!) {
-            lesson(where: $where) {
-                id
-                title
-                subTitle
-                describe
-                mainImgs {
-                    domain
-                    url
-                }
-                classTime
-                userActivity {
-                    cLike
-                    cBookmark
-                }
-                levelType
-                groupType
-                elementJson
-                lessonPlans {
-                    id
-                    title
-                    groups {
-                    id
-                    idx
-                    content 
-                    }
-                    template {
-                    id
-                    type
-                    describe
-                    img {
-                        url
-                    }
-                    }
-                }
+  query="
+    query lesson($where: LessonWhere!) {
+      lesson(where: $where) {
+        id
+        title
+        subTitle
+        describe
+        mainImgs {
+          domain
+          url
+        }
+        classTime
+        userActivity {
+          cLike
+          cBookmark
+        }
+        levelType
+        groupType
+        elementJson
+        lessonPlans {
+          id
+          title
+          groups {
+            id
+            idx
+            content 
+          }
+          template {
+            id
+            type
+            describe
+            img {
+              url
             }
+          }
         }
-    "
-    variables={{
-        where: {
-            id: "1011721328"
-        }
-    }}
+      }
+    }
+  "
+  variables={{
+    where: {
+      id: "1011721328"
+    }
+  }}
 />
 
 
@@ -78,62 +78,62 @@ import { Link } from 'gatsby'
 | where  (<Link to="/type/lesson/#LessonConnectionWhere">LessonConnectionWhere</Link>)  | 커리큘럼 Where  | 
 
 <GraphiQL
-    query="
-        query lessonConnection($first: Int!, $after: String, $orderBy: LessonConnectionOrder, $where: LessonConnectionWhere) {
-            lessonConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
-                totalCount
-                pageInfo {
-                    endCursor
-                    startCursor
-                    hasNextPage
-                }
-                nodes {
-                    id
-                    title
-                    subTitle
-                    describe
-                    mainImgs {
-                        domain
-                        url
-                    }
-                    classTime
-                    userActivity {
-                        cLike
-                        cBookmark
-                    }
-                    levelType
-                    groupType
-                    elementJson
-                    lessonPlans {
-                        id
-                        title
-                        groups {
-                        id
-                        idx
-                        content 
-                        }
-                        template {
-                        id
-                        type
-                        describe
-                        img {
-                            url
-                        }
-                        }
-                    }
-                }
+  query="
+    query lessonConnection($first: Int!, $after: String, $orderBy: LessonConnectionOrder, $where: LessonConnectionWhere) {
+      lessonConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+          id
+          title
+          subTitle
+          describe
+          mainImgs {
+            domain
+            url
+          }
+          classTime
+          userActivity {
+            cLike
+            cBookmark
+          }
+          levelType
+          groupType
+          elementJson
+          lessonPlans {
+            id
+            title
+            groups {
+              id
+              idx
+              content 
             }
+            template {
+              id
+              type
+              describe
+              img {
+                url
+              }
+            }
+          }
         }
-    "
-    variables={{
-        first: 10,
-        after: "",
-        orderBy: {
-            field: "ID"
-        },
-        where: {
-            filter: ""
-        }
-    }}
+      }
+    }
+  "
+  variables={{
+    first: 10,
+    after: "",
+    orderBy: {
+      field: "ID"
+    },
+    where: {
+      filter: ""
+    }
+  }}
 />
 

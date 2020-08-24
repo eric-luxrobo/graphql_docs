@@ -33,7 +33,7 @@ class GraphiQLComponent extends Component {
   fetcher = graphQLParams => {
     const { endpoint, showQueryLog = false, showTracing = false } = this.props
 
-    return fetch(endpoint ? endpoint : 'https://dev-apiv1.luxrobo.com/graphql', {
+    return fetch(endpoint ? endpoint : 'https://dev-apiv1.luxrobo.com/gateway/graphql', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ class GraphiQLComponent extends Component {
 
   setAuthHeader = (auth, key) => {
     const { endpoint } = this.props
-    fetch(endpoint ? endpoint : 'https://www.wpgraphql.com/graphql', {
+    fetch(endpoint ? endpoint : 'https://dev-apiv1.luxrobo.com/gateway/graphql', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
