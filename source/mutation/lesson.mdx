@@ -71,3 +71,48 @@ import { Link } from 'gatsby'
   }}
 />
 
+
+### `createLessonPlan`
+> 강의계획 등록
+
+
+`Input fields`
+* input : <Link to="/type/lesson/#CreateLessonPlanInput">CreateLessonPlanInput</Link>
+
+`Return Type`: <Link to="/type/lesson/#LessonPlan">LessonPlan</Link>
+
+<GraphiQL
+  query="
+  mutation createLessonPlan( $input:CreateLessonPlanInput! ){
+    createLessonPlan( input: $input ) {
+      id
+      title
+      groups {
+        id
+        idx
+        content 
+      }
+      template {
+        id
+        type
+        describe
+        img {
+          url
+        }
+      }
+    }
+  }
+  "
+  variables={{
+    input: {
+      title: "333", 
+      lessonId: "1011721328",
+      templateId: "1", 
+      groups: [{
+        content: "first group",
+        idx: 1,
+      }]
+    }
+  }}
+/>
+

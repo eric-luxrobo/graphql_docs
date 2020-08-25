@@ -137,3 +137,23 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `lessonPlanTemplates`
+`Type` : <Link to="/type/lesson/#LessonPlanTemplate/">LessonPlanTemplate</Link>
+
+**Arguments**
+없음 
+
+<GraphiQL
+  query="
+    query lessonPlanTemplates {
+      lessonPlanTemplates {
+        id
+        type
+        describe
+        img {
+          url
+        }
+      }
+    }
+  "
+/>
