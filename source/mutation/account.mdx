@@ -7,7 +7,7 @@ import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
 
 ### `accountLogin` 
-`Type` : (boolean) 성공여부
+`Type` : (String) JWT 인증토큰정보 리턴 
 
 > 로그인
 
@@ -29,13 +29,65 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `accountOAuthLogin` 
+`Type` : (String) JWT 인증토큰정보 리턴 
+
+> 소셜로그인
+
+
+`Input fields`
+* input : <Link to="/type/account/#AccountOAuthLoginInput">AccountOAuthLoginInput</Link>
+
+<GraphiQL
+  query="
+    mutation accountOAuthLogin($input: AccountOAuthLoginInput!) {
+      accountOAuthLogin(input: $input)
+    }
+  "
+  variables={{
+    input: {
+      userId: "howto38",
+      userName: "walter",
+      userEmail: "walter@daum.net",
+      provider: "google",
+      accountType: 1111,
+      memberType: 2222,
+      accessToken: "1212122",
+      refreshToken: "we3e3432"
+    }
+  }}
+/>
+
+### `accountResetUserPassword`
+`Type` : (String) 
+
+> 소셜로그인
+
+`Input fields`
+* input : userEmail(String!)
+
+
+
+<GraphiQL
+  query="
+  mutation accountResetUserPassword( $userEmail:String! ){
+    accountResetUserPassword( userEmail: $userEmail )
+  }
+  "
+  variables={{
+    userEmail: ""
+  }}
+/>
+
+
+
 ### `authAccountUserEmail`
+`Type` : (ID) 
+
 > 이메일 인증하기
 
 `Input fields`
 * input : String
-
-`Return Type`: ID
 
 <GraphiQL
   query="
@@ -50,12 +102,12 @@ import { Link } from 'gatsby'
 
 
 ### `authCheckAccountUserEmail`
+`Type` : (ID) 
+
 > 이메일 인증여부 확인
 
 `Input fields`
 * input : <Link to="/type/account/#AuthCheckAccountUserEmailInput">AuthCheckAccountUserEmailInput</Link>
-
-`Return Type`: ID
 
 <GraphiQL
   query="
@@ -72,12 +124,12 @@ import { Link } from 'gatsby'
 />
 
 ### `createAccountMember`
+`Type` : (ID) 
+
 > 회원가입
 
 `Input fields`
 * input : <Link to="/type/account/#CreateAccountMemberInput">CreateAccountMemberInput</Link>
-
-`Return Type`: ID
 
 <GraphiQL
   query="
@@ -91,7 +143,9 @@ import { Link } from 'gatsby'
       password:"11111111",
       userName: "월터",
       userEmail: "walter@gmail.com",
-      gender: "M"
+      gender: "M",
+      accountType: 1,
+      memberType: 1,
     },
   }}
 />

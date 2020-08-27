@@ -36,7 +36,7 @@ description: 계정 서비스 에러코드 정의
 | Name | Description |
 | -------- | -------- | 
 | errorCode (Int!)  | 10004  | 
-| errorMessage (String!)  | ID '${input.userId}' doesn't exist | 
+| errorMessage (String!)  | UserID doesn't exist. | 
 | message (String!)  | 존재하지 않는 아이디입니다.  | 
 
 ### `10005`
@@ -45,6 +45,56 @@ description: 계정 서비스 에러코드 정의
 | Name | Description |
 | -------- | -------- | 
 | errorCode (Int!)  | 10005  | 
-| errorMessage (String!)  | Email '${input.userId}' doesn't exist  | 
+| errorMessage (String!)  | Email doesn't exist.  | 
 | message (String!)  | 존재하지 않는 이메일입니다. | 
+
+
+### `10006`
+> Code incorrect.
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 10006  | 
+| errorMessage (String!)  | Code incorrect.  | 
+| message (String!)  | 코드값이 정확하지 않습니다. | 
+
+
+
+### `10007`
+> The email format is not valid.
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 10007  | 
+| errorMessage (String!)  | The email format is not valid. | 
+| message (String!)  | 이메일이 형식이 유효하지 않습니다. | 
+
+
+### `10008`
+> This email is not verified.
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 10008  | 
+| errorMessage (String!)  | This email is not verified. | 
+| message (String!)  | 인증되지 않은 이메일입니다. | 
+
+### `10009`
+> Membership registration failed.
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 10009  | 
+| errorMessage (String!)  | Membership registration failed. | 
+| message (String!)  | 회원 가입에 실패했습니다. | 
+
+
+### `10010`
+> Authorization incorrect.
+
+| Name | Description |
+| -------- | -------- | 
+| errorCode (Int!)  | 10010  | 
+| errorMessage (String!)  | Authorization incorrect. | 
+| message (String!)  | 인증이 잘못되었습니다. | 
 
