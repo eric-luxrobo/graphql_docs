@@ -1,0 +1,39 @@
+---
+title: lesson Input Object
+---
+
+import { Link } from 'gatsby'
+
+### `CreateLessonInput`
+> 강의 등록 
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!)  | 강의 제목  | 
+| subTitle (String) | 강의 서브제목 
+| describe (String) | 강의 설명
+| classTime (Int) | 수업시간 (분기준)
+| levelType (<Link to="/enum/lesson/#LessonLevelType">LevelType</Link>) | 강의 레벨
+| groupType (<Link to="/enum/lesson/#LessonGroupType">GroupType</Link>) | 강의 그룹
+| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
+| elementJSON (String) | 강의 속성정보 JSON
+
+### `CreateLessonPlanInput`
+> 강의 계획 등록 
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!)  | 강의 제목  | 
+| lessonId (String!) | 강의 ID
+| templateId (String!) | 강의계획 템플릿 ID
+| groups ([<Link to="/input/lesson/#LessonPlanGroupInput">LessonPlanGroupInput</Link>]) | 강의계획 그룹정보 Array
+
+
+### `LessonPlanGroupInput`
+> 강의 계획 그룹 입력 
+
+| Name | Description |
+| -------- | -------- | 
+| content (String!)  | 내용  | 
+| idx (Int!) | 순서
+

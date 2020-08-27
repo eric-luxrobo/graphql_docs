@@ -1,5 +1,5 @@
 ---
-title: account MUTATION
+title: account Mutation
 description: 계정관리 로그인/로그아웃등등 ...
 ---
 
@@ -13,7 +13,7 @@ import { Link } from 'gatsby'
 
 
 `Input fields`
-* input : <Link to="/type/account/#AccountLoginInput">AccountLoginInput</Link>
+* input : <Link to="/input/account/#AccountLoginInput">AccountLoginInput</Link>
 
 <GraphiQL
   query="
@@ -36,7 +36,7 @@ import { Link } from 'gatsby'
 
 
 `Input fields`
-* input : <Link to="/type/account/#AccountOAuthLoginInput">AccountOAuthLoginInput</Link>
+* input : <Link to="/input/account/#AccountOAuthLoginInput">AccountOAuthLoginInput</Link>
 
 <GraphiQL
   query="
@@ -107,7 +107,7 @@ import { Link } from 'gatsby'
 > 이메일 인증여부 확인
 
 `Input fields`
-* input : <Link to="/type/account/#AuthCheckAccountUserEmailInput">AuthCheckAccountUserEmailInput</Link>
+* input : <Link to="/input/account/#AuthCheckAccountUserEmailInput">AuthCheckAccountUserEmailInput</Link>
 
 <GraphiQL
   query="
@@ -129,7 +129,7 @@ import { Link } from 'gatsby'
 > 회원가입
 
 `Input fields`
-* input : <Link to="/type/account/#CreateAccountMemberInput">CreateAccountMemberInput</Link>
+* input : <Link to="/input/account/#CreateAccountMemberInput">CreateAccountMemberInput</Link>
 
 <GraphiQL
   query="
@@ -143,7 +143,7 @@ import { Link } from 'gatsby'
       password:"11111111",
       userName: "월터",
       userEmail: "walter@gmail.com",
-      gender: "M",
+      gender: "MALE",
       accountType: 1,
       memberType: 1,
       provider: "LOCALS",

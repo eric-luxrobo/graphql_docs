@@ -1,0 +1,86 @@
+---
+title: account Object
+---
+
+import { Link } from 'gatsby'
+
+
+### `AccountCode` 
+> 계정 코드 정보
+
+| Name | Description |
+| -------- | -------- | 
+| code (Int) | 코드 정보
+| name (String) | 코드 이름
+| description (String) | 코드 설명
+
+
+### `AccountCodeConnection` 
+> 계정 코드 리스트
+
+| Name | Description |
+| -------- | -------- | 
+| groupCode (Int)  | 그룹 코드  | 
+| groupName (String)  | 그룹 이름  | 
+| description (String) | 설명
+| nodes ([<Link to="/object/account/#AccountCode">AccountCode</Link>])  | 계정 코드 데이타 Array  | 
+
+
+### `AccountSchool`
+> 학교 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID) | 학교 ID
+| gubunName (String) | 구분
+| schoolName (String) | 학교 이름
+| schoolLink  (String) | 학교 링크
+| schoolAddress (String) | 학교 주소
+
+
+### `AccountSchoolConnection`
+> 학교정보 리스트
+
+| Name | Description |
+| -------- | -------- | 
+| totalCount (Int!)  | 총수  | 
+| pageCount (Int!)  | 페이지수  | 
+| nodes ([<Link to="/object/account/#AccountSchool">AccountSchool</Link>])  | 학교 데이타 Array  | 
+
+
+
+### `AccountMemberConnection`
+> 계정 리스트 
+
+| Name | Description |
+| -------- | -------- | 
+| totalCount (Int!)  | 총수  | 
+| pageCount (Int!)  | 페이지수  | 
+| nodes ([<Link to="/object/account/#AccountMember">AccountMember</Link>])  | 회원 데이타 Array  | 
+
+```javascript
+{
+  "data": {
+    "members": {
+      "nodes": [
+        {
+          "createdAt": null,
+          "id": "15",
+          "userId": "",
+          "userName": null
+        }
+      ]
+    }
+  }
+}
+```
+
+### `AccountMember`
+> 회원정보 
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | member ID  | 
+| userId (String!)  | 사용자 ID  | 
+| userName (String!)  | 사용자 이름  | 
+| createdAt (String!)  | 생성 날짜 | 

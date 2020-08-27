@@ -83,36 +83,40 @@ module.exports = {
             'index',
             'introduce',
           ],
-          'ERROR 코드': [
+          'Errors': [
             'error/error',
             'error/account',
           ],
-          'GRPC 서비스': [
+          'Grpc': [
             'grpc/lesson',
             'grpc/nlp',
             'grpc/review',
             'grpc/upload',
           ],
-          'Query 메소드': [
+          'Queries': [
             'query/account',
             'query/review',
             'query/lesson',
           ],
-          'Mutation 메소드': [
+          'Mutations': [
             'mutation/account',
             'mutation/lesson',
             'mutation/review',
             'mutation/upload',
           ],
-          'Type 정의': [
-            'type/account',
-            'type/imageInfo',
-            'type/pageInfo',
-            'type/review',
-            'type/lesson',
-            'type/upload',
+          'Objects': [
+            'object/account',
+            'object/imageInfo',
+            'object/pageInfo',
+            'object/review',
+            'object/lesson',
           ],
-          'Enum 정의': [
+          'Input Objects': [
+            'object/account',
+            'object/lesson',
+            'object/upload',
+          ],
+          'Enums': [
             'enum/account',
             'enum/lesson',
           ],

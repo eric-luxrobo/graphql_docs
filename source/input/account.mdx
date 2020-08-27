@@ -1,0 +1,52 @@
+---
+title: account Input Object
+---
+
+import { Link } from 'gatsby'
+
+### `AccountLoginInput`
+> 로그인 입력정보
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!)  | 유저ID  | 
+| password (String!)  | 비밀번호  | 
+
+### `AccountOAuthLoginInput`
+> 소셜 로그인 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!)  | 소셜 ID  | 
+| userName (String!)  | 소셜 이름  | 
+| userEmail (String!) | 소셜 이메일 
+| provider (<Link to="/enum/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
+| accountType (Int!) | 계정 타입
+| memberType (Int!) | 멤버 타입
+| accessToken (String!) | 소셜 로그인 AccessToken 정보
+| refreshToken (String) | 소셜 로그인 refreshToken 연장 토큰 정보
+
+
+### `AuthCheckAccountUserEmailInput`
+> 이메일 인증 체크 입력정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!)  | ID  | 
+| authCode (String!)  | 인증코드  | 
+
+
+
+### `CreateAccountMemberInput`
+> 회원가입 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!)  | ID  | 
+| password (String!)  | 비밀번호  | 
+| userName (String!) | 이름 |
+| userEmail (String!) | 이메일 | 
+| gender (<Link to="/enum/account/#AccountGenderEnumType">AccountGenderEnumType</Link>)  | 계정  성별 |
+| accountType (Int!) | 계정 타입
+| memberType (Int!) | 멤버 타입
+| provider (<Link to="/enum/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입

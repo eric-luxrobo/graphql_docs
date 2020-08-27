@@ -1,33 +1,8 @@
 ---
-title: lesson TYPE
+title: lesson Object
 ---
 
 import { Link } from 'gatsby'
-
-### `CreateLessonInput`
-> 강의 등록 
-
-| Name | Description |
-| -------- | -------- | 
-| title (String!)  | 강의 제목  | 
-| subTitle (String) | 강의 서브제목 
-| describe (String) | 강의 설명
-| classTime (Int) | 수업시간 (분기준)
-| levelType (<Link to="/enum/lesson/#LessonLevelType">LevelType</Link>) | 강의 레벨
-| groupType (<Link to="/enum/lesson/#LessonGroupType">GroupType</Link>) | 강의 그룹
-| mainImgs ([<Link to="/type/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
-| elementJSON (String) | 강의 속성정보 JSON
-
-### `CreateLessonPlanInput`
-> 강의 계획 등록 
-
-| Name | Description |
-| -------- | -------- | 
-| title (String!)  | 강의 제목  | 
-| lessonId (String!) | 강의 ID
-| templateId (String!) | 강의계획 템플릿 ID
-| groups ([<Link to="/type/lesson/#LessonPlanGroupInput">LessonPlanGroupInput</Link>]) | 강의계획 그룹정보 Array
-
 
 
 ### `Lesson`
@@ -42,10 +17,10 @@ import { Link } from 'gatsby'
 | classTime (Int) | 수업시간 (분기준)
 | levelType (<Link to="/enum/lesson/#LessonLevelType">LevelType</Link>) | 강의 레벨
 | groupType (<Link to="/enum/lesson/#LessonGroupType">GroupType</Link>) | 강의 그룹
-| mainImgs ([<Link to="/type/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
+| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
 | elementJSON (String) | 강의 속성정보 JSON
 | userActivity (UserActivity!) | 사용자 활동 정보 좋아요..
-| lessonPlans ([LessonPlan]) | 강의 계획 리스트
+| lessonPlans ([<Link to="/object/lesson/#LessonPlan">LessonPlan</Link>])  | 강의 계획 리스트
 
 ### `LessonConnection`
 > 강의 리스트 정보
@@ -53,9 +28,9 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | edges (String)  | 유저ID  | 
-| nodes ([<Link to="/type/lesson/#Lesson">Lesson</Link>])  | 강의 정보 Array  |
+| nodes ([<Link to="/object/lesson/#Lesson">Lesson</Link>])  | 강의 정보 Array  |
 | totalCount (Int) | 총 수 
-| pageInfo (<Link to="/type/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
 
 ### `LessonEdge`
 > 강의 정보
@@ -63,7 +38,7 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | cursor (String!)  | 페이지 커서 ID  | 
-| node (<Link to="/type/lesson/#Lesson">Lesson</Link>)  | 강의 정보  |
+| node (<Link to="/object/lesson/#Lesson">Lesson</Link>)  | 강의 정보  |
 
 ### `LessonConnectionOrder`
 > 강의 리스트 Order 정보
@@ -87,8 +62,8 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | id (ID!)  | 강의계획 ID  |
 | title (String!) | 제목
-| groups |  ([<Link to="/type/lesson/#LessonPlanGroup">LessonPlanGroup</Link>!]) | 수업계획 그룹
-| template | (<Link to="/type/lesson/#LessonPlanTemplate">LessonPlanTemplate</Link>!) | 수업계획 디자인 템플릿
+| groups |  ([<Link to="/object/lesson/#LessonPlanGroup">LessonPlanGroup</Link>!]) | 수업계획 그룹
+| template | (<Link to="/object/lesson/#LessonPlanTemplate">LessonPlanTemplate</Link>!) | 수업계획 디자인 템플릿
 
 
 ### `LessonPlanGroup`
@@ -97,14 +72,6 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (ID!) | 그룹 ID
-| content (String!)  | 내용  | 
-| idx (Int!) | 순서
-
-### `LessonPlanGroupInput`
-> 강의 계획 그룹 입력 
-
-| Name | Description |
-| -------- | -------- | 
 | content (String!)  | 내용  | 
 | idx (Int!) | 순서
 
@@ -117,5 +84,5 @@ import { Link } from 'gatsby'
 | id (ID!)  | 강의계획 템플릿 ID  | 
 | type (<Link to="/enum/lesson/#LessonPlanTemplateType">LessonPlanTemplateType</Link>!) | 수업계획 레이아웃 타입
 | describe (String!) | 설명
-| img (<Link to="/type/imageInfo/#ImageInfo">ImageInfo</Link>!) | 템플릿 이미지
+| img (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 템플릿 이미지
 
