@@ -107,13 +107,14 @@ module.exports = {
           'Objects': [
             'object/account',
             'object/imageInfo',
-            'object/pageInfo',
-            'object/review',
             'object/lesson',
+            'object/review',
+            'object/pageInfo',
           ],
           'Input Objects': [
             'input/account',
             'input/lesson',
+            'input/review',
             'input/upload',
           ],
           'Enums': [

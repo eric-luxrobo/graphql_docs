@@ -26,27 +26,15 @@ import { Link } from 'gatsby'
 | nodes ([<Link to="/object/account/#AccountCode">AccountCode</Link>])  | 계정 코드 데이타 Array  | 
 
 
-### `AccountSchool`
-> 학교 정보
+### `AccountMember`
+> 회원정보 
 
 | Name | Description |
 | -------- | -------- | 
-| id (ID) | 학교 ID
-| gubunName (String) | 구분
-| schoolName (String) | 학교 이름
-| schoolLink  (String) | 학교 링크
-| schoolAddress (String) | 학교 주소
-
-
-### `AccountSchoolConnection`
-> 학교정보 리스트
-
-| Name | Description |
-| -------- | -------- | 
-| totalCount (Int!)  | 총수  | 
-| pageCount (Int!)  | 페이지수  | 
-| nodes ([<Link to="/object/account/#AccountSchool">AccountSchool</Link>])  | 학교 데이타 Array  | 
-
+| id (String!)  | member ID  | 
+| userId (String!)  | 사용자 ID  | 
+| userName (String!)  | 사용자 이름  | 
+| createdAt (String!)  | 생성 날짜 | 
 
 
 ### `AccountMemberConnection`
@@ -75,12 +63,28 @@ import { Link } from 'gatsby'
 }
 ```
 
-### `AccountMember`
-> 회원정보 
+
+
+
+### `AccountSchool`
+> 학교 정보
 
 | Name | Description |
 | -------- | -------- | 
-| id (String!)  | member ID  | 
-| userId (String!)  | 사용자 ID  | 
-| userName (String!)  | 사용자 이름  | 
-| createdAt (String!)  | 생성 날짜 | 
+| id (ID) | 학교 ID
+| gubunName (String) | 구분
+| schoolName (String) | 학교 이름
+| schoolLink  (String) | 학교 링크
+| schoolAddress (String) | 학교 주소
+
+
+### `AccountSchoolConnection`
+> 학교정보 리스트
+
+| Name | Description |
+| -------- | -------- | 
+| totalCount (Int!)  | 총수  | 
+| pageCount (Int!)  | 페이지수  | 
+| nodes ([<Link to="/object/account/#AccountSchool">AccountSchool</Link>])  | 학교 데이타 Array  | 
+
+

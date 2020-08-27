@@ -18,6 +18,7 @@ import { Link } from 'gatsby'
 | mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
 | elementJSON (String) | 강의 속성정보 JSON
 
+
 ### `CreateLessonPlanInput`
 > 강의 계획 등록 
 
@@ -27,6 +28,21 @@ import { Link } from 'gatsby'
 | lessonId (String!) | 강의 ID
 | templateId (String!) | 강의계획 템플릿 ID
 | groups ([<Link to="/input/lesson/#LessonPlanGroupInput">LessonPlanGroupInput</Link>]) | 강의계획 그룹정보 Array
+
+
+### `LessonConnectionOrder`
+> 강의 리스트 Order 정보
+
+| Name | Description |
+| -------- | -------- | 
+| field (<Link to="/enum/lesson/#LessonConnectionField">LessonConnectionField</Link>!)  | 필드 정보 | 
+
+### `LessonConnectionWhere`
+> 강의 리스트 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| filter (String!)  | 조건 필터링 정보  | 
 
 
 ### `LessonPlanGroupInput`

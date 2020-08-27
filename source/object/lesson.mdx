@@ -22,6 +22,8 @@ import { Link } from 'gatsby'
 | userActivity (UserActivity!) | 사용자 활동 정보 좋아요..
 | lessonPlans ([<Link to="/object/lesson/#LessonPlan">LessonPlan</Link>])  | 강의 계획 리스트
 
+
+
 ### `LessonConnection`
 > 강의 리스트 정보
 
@@ -32,6 +34,9 @@ import { Link } from 'gatsby'
 | totalCount (Int) | 총 수 
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
 
+
+
+
 ### `LessonEdge`
 > 강의 정보
 
@@ -39,20 +44,6 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | cursor (String!)  | 페이지 커서 ID  | 
 | node (<Link to="/object/lesson/#Lesson">Lesson</Link>)  | 강의 정보  |
-
-### `LessonConnectionOrder`
-> 강의 리스트 Order 정보
-
-| Name | Description |
-| -------- | -------- | 
-| field (<Link to="/enum/lesson/#LessonConnectionField">LessonConnectionField</Link>!)  | 필드 정보 | 
-
-### `LessonConnectionWhere`
-> 강의 리스트 조건 정보
-
-| Name | Description |
-| -------- | -------- | 
-| filter (String!)  | 조건 필터링 정보  | 
 
 
 ### `LessonPlan`
