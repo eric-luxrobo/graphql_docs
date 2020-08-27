@@ -113,6 +113,7 @@ module.exports = {
             'type/upload',
           ],
           'Enum 정의': [
+            'enum/account',
             'enum/lesson',
           ],
         },
