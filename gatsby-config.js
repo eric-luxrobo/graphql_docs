@@ -112,9 +112,9 @@ module.exports = {
             'object/lesson',
           ],
           'Input Objects': [
-            'object/account',
-            'object/lesson',
-            'object/upload',
+            'input/account',
+            'input/lesson',
+            'input/upload',
           ],
           'Enums': [
             'enum/account',
