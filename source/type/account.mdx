@@ -12,6 +12,21 @@ import { Link } from 'gatsby'
 | userId (String!)  | 유저ID  | 
 | password (String!)  | 비밀번호  | 
 
+### `AccountOAuthLoginInput`
+> 소셜 로그인 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!)  | 소셜 ID  | 
+| userName (String!)  | 소셜 이름  | 
+| userEmail (String!) | 소셜 이메일 
+| provider (<Link to="/type/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
+| accountType (Int!) | 계정 타입
+| memberType (Int!) | 멤버 타입
+| accessToken (String!) | 소셜 로그인 AccessToken 정보
+| refreshToken (String) | 소셜 로그인 refreshToken 연장 토큰 정보
+
+
 ### `AccountCode` 
 > 계정 코드 정보
 
@@ -112,4 +127,7 @@ import { Link } from 'gatsby'
 | password (String!)  | 비밀번호  | 
 | userName (String!) | 이름 |
 | userEmail (String!) | 이메일 | 
-| gender (String!) |  성별 |
+| gender (<Link to="/type/account/#AccountGenderEnumType">AccountGenderEnumType</Link>)  | 계정  성별 |
+| accountType (Int!) | 계정 타입
+| memberType (Int!) | 멤버 타입
+| provider (<Link to="/type/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
