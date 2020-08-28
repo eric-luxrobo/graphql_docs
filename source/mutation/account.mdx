@@ -6,82 +6,6 @@ description: 계정관리 로그인/로그아웃등등 ...
 import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
 
-### `loginAccount` 
-`Type` : (String) JWT 인증토큰정보 리턴 
-
-> 로그인
-
-
-`Input fields`
-* input : <Link to="/input/account/#LoginAccountInput">LoginAccountInput</Link>
-
-<GraphiQL
-  query="
-    mutation loginAccount($input: LoginAccountInput!) {
-      loginAccount(input: $input)
-    }
-  "
-  variables={{
-    input: {
-      userId: "howto38",
-      password: "11111111"
-    }
-  }}
-/>
-
-### `oauthLoginAccount` 
-`Type` : (String) JWT 인증토큰정보 리턴 
-
-> 소셜 로그인
-
-
-`Input fields`
-* input : <Link to="/input/account/#OAuthLoginAccountInput">OAuthLoginAccountInput</Link>
-
-<GraphiQL
-  query="
-    mutation oauthLoginAccount($input: OAuthLoginAccountInput!) {
-      oauthLoginAccount(input: $input)
-    }
-  "
-  variables={{
-    input: {
-      userId: "howto38",
-      userName: "walter",
-      userEmail: "walter@daum.net",
-      provider: "GOOGLE",
-      accountCode: 1111,
-      memberCode: 2222,
-      accessToken: "1212122",
-      refreshToken: "we3e3432"
-    }
-  }}
-/>
-
-### `resetAccountPassword`
-`Type` : (String) 
-
-> 비밀번호 리셋
-
-`Input fields`
-* input : userEmail(String!)
-
-
-
-<GraphiQL
-  query="
-  mutation resetAccountPassword( $input:ResetAccountPasswordInput! ){
-    resetAccountPassword( input: $input )
-  }
-  "
-  variables={{
-    input: {
-      userEmail: ""
-    }
-  }}
-/>
-
-
 
 ### `authAccountUserEmail`
 `Type` : (ID) 
@@ -155,3 +79,79 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `loginAccount` 
+`Type` : (String) JWT 인증토큰정보 리턴 
+
+> 로그인
+
+
+`Input fields`
+* input : <Link to="/input/account/#LoginAccountInput">LoginAccountInput</Link>
+
+<GraphiQL
+  query="
+    mutation loginAccount($input: LoginAccountInput!) {
+      loginAccount(input: $input)
+    }
+  "
+  variables={{
+    input: {
+      userId: "howto38",
+      password: "11111111"
+    }
+  }}
+/>
+
+
+### `resetAccountPassword`
+`Type` : (String) 
+
+> 비밀번호 리셋
+
+`Input fields`
+* input : userEmail(String!)
+
+
+
+<GraphiQL
+  query="
+  mutation resetAccountPassword( $input:ResetAccountPasswordInput! ){
+    resetAccountPassword( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      userEmail: ""
+    }
+  }}
+/>
+
+
+### `oauthLoginAccount` 
+`Type` : (String) JWT 인증토큰정보 리턴 
+
+> 소셜 로그인
+
+
+`Input fields`
+* input : <Link to="/input/account/#OAuthLoginAccountInput">OAuthLoginAccountInput</Link>
+
+<GraphiQL
+  query="
+    mutation oauthLoginAccount($input: OAuthLoginAccountInput!) {
+      oauthLoginAccount(input: $input)
+    }
+  "
+  variables={{
+    input: {
+      userId: "howto38",
+      userName: "walter",
+      userEmail: "walter@daum.net",
+      provider: "GOOGLE",
+      accountCode: 1111,
+      memberCode: 2222,
+      accessToken: "1212122",
+      refreshToken: "we3e3432"
+    }
+  }}
+/>
