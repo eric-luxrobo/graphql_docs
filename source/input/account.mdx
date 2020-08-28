@@ -27,6 +27,14 @@ import { Link } from 'gatsby'
 | refreshToken (String) | 소셜 로그인 refreshToken 연장 토큰 정보
 
 
+### `AuthAccountUserEmailInput`
+> 이메일 인증 요청 입력 
+
+| Name | Description |
+| -------- | -------- | 
+| userEmail (String!) | 사용자 이메일
+
+
 ### `AuthCheckAccountUserEmailInput`
 > 이메일 인증 체크 입력정보
 
@@ -50,3 +58,10 @@ import { Link } from 'gatsby'
 | accountType (Int!) | 계정 타입
 | memberType (Int!) | 멤버 타입
 | provider (<Link to="/enum/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
+
+### `ResetAccountPasswordInput`
+> 회원 비밀번호 Reset 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| userEmail (String!) | 이메일

@@ -58,10 +58,10 @@ import { Link } from 'gatsby'
   }}
 />
 
-### `accountResetUserPassword`
+### `resetAccountPassword`
 `Type` : (String) 
 
-> 소셜로그인
+> 비밀번호 리셋
 
 `Input fields`
 * input : userEmail(String!)
@@ -70,12 +70,14 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-  mutation accountResetUserPassword( $userEmail:String! ){
-    accountResetUserPassword( userEmail: $userEmail )
+  mutation resetAccountPassword( $input:ResetAccountPasswordInput! ){
+    resetAccountPassword( input: $input )
   }
   "
   variables={{
-    userEmail: ""
+    input: {
+      userEmail: ""
+    }
   }}
 />
 
@@ -84,19 +86,21 @@ import { Link } from 'gatsby'
 ### `authAccountUserEmail`
 `Type` : (ID) 
 
-> 이메일 인증하기
+> 이메일 인증 요청하기
 
 `Input fields`
-* input : String
+* input : <Link to="/input/account/#AuthAccountUserEmailInput">AuthAccountUserEmailInput</Link>
 
 <GraphiQL
   query="
-  mutation authAccountUserEmail( $userEmail:String! ){
-    authAccountUserEmail( userEmail: $userEmail )
+  mutation authAccountUserEmail( $input:AuthAccountUserEmailInput! ){
+    authAccountUserEmail( input: $input )
   }
   "
   variables={{
-    userEmail: ""
+    input: {
+      userEmail: "walter@gmail.com"
+    }
   }}
 />
 
