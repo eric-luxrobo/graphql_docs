@@ -6,19 +6,19 @@ description: 계정관리 로그인/로그아웃등등 ...
 import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
 
-### `accountLogin` 
+### `loginAccount` 
 `Type` : (String) JWT 인증토큰정보 리턴 
 
 > 로그인
 
 
 `Input fields`
-* input : <Link to="/input/account/#AccountLoginInput">AccountLoginInput</Link>
+* input : <Link to="/input/account/#LoginAccountInput">LoginAccountInput</Link>
 
 <GraphiQL
   query="
-    mutation accountLogin($input: AccountLoginInput!) {
-      accountLogin(input: $input)
+    mutation loginAccount($input: LoginAccountInput!) {
+      loginAccount(input: $input)
     }
   "
   variables={{
@@ -29,19 +29,19 @@ import { Link } from 'gatsby'
   }}
 />
 
-### `accountOAuthLogin` 
+### `oauthLoginAccount` 
 `Type` : (String) JWT 인증토큰정보 리턴 
 
-> 소셜로그인
+> 소셜 로그인
 
 
 `Input fields`
-* input : <Link to="/input/account/#AccountOAuthLoginInput">AccountOAuthLoginInput</Link>
+* input : <Link to="/input/account/#OAuthLoginAccountInput">OAuthLoginAccountInput</Link>
 
 <GraphiQL
   query="
-    mutation accountOAuthLogin($input: AccountOAuthLoginInput!) {
-      accountOAuthLogin(input: $input)
+    mutation oauthLoginAccount($input: OAuthLoginAccountInput!) {
+      oauthLoginAccount(input: $input)
     }
   "
   variables={{
