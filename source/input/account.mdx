@@ -5,11 +5,11 @@ title: account Input Object
 import { Link } from 'gatsby'
 
 ### `AuthAccountUserEmailInput`
-> 이메일 인증 요청 입력 
+> 이메일 인증 발송요청 
 
 | Name | Description |
 | -------- | -------- | 
-| userEmail (String!) | 사용자 이메일
+| userEmail (String!) | 발송 이메일
 
 
 ### `AuthCheckAccountUserEmailInput`
@@ -17,8 +17,8 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| id (ID!)  | ID  | 
-| authCode (String!)  | 인증코드  | 
+| id (ID!)  |  이메일 인증발송 요청후 리턴된 고유ID | 
+| authCode (String!)  | 메일에서 확인된 인증코드 값  | 
 
 
 
@@ -32,8 +32,8 @@ import { Link } from 'gatsby'
 | userName (String!) | 이름 |
 | userEmail (String!) | 이메일 | 
 | gender (<Link to="/enum/account/#AccountGenderEnumType">AccountGenderEnumType</Link>)  | 계정  성별 |
-| accountType (Int!) | 계정 타입
-| memberType (Int!) | 멤버 타입
+| accountCode (Int!) | 계정 타입
+| memberCode (Int!) | 멤버 타입
 | provider (<Link to="/enum/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
 
 ### `LoginAccountInput`
@@ -62,7 +62,7 @@ import { Link } from 'gatsby'
 | userName (String!)  | 소셜 이름  | 
 | userEmail (String!) | 소셜 이메일 
 | provider (<Link to="/enum/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
-| accountType (Int!) | 계정 타입
-| memberType (Int!) | 멤버 타입
+| accountCode (Int!) | 계정 타입
+| memberCode (Int!) | 멤버 타입
 | accessToken (String!) | 소셜 로그인 AccessToken 정보
 | refreshToken (String) | 소셜 로그인 refreshToken 연장 토큰 정보
