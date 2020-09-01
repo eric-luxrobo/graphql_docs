@@ -71,6 +71,80 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `createLessonCurriculum`
+> 커리큘럼 등록
+
+
+`Input fields`
+* input : <Link to="/input/lesson/#CreateLessonCurriculumInput">CreateLessonCurriculumInput</Link>
+
+`Return Type`: <Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>
+
+<GraphiQL
+  query="
+  mutation createLessonCurriculum( $input:CreateLessonCurriculumInput! ){
+    createLessonCurriculum( input: $input ) {
+      id
+      title
+      subTitle
+      describe
+      mainImgs {
+        domain
+        url
+      }
+      tags 
+      lessons {
+        id
+        title
+        subTitle
+        describe
+        mainImgs {
+          domain
+          url
+        }
+        classTime
+        userActivity {
+          cLike
+          cBookmark
+        }
+        levelType
+        groupType
+        elementJson
+        lessonPlans {
+          id
+          title
+          groups {
+            id
+            idx
+            content 
+          }
+          template {
+            id
+            type
+            describe
+            img {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+  "
+  variables={{
+    input: {
+      title: "333", 
+      subTitle: "ggg11111111111", 
+      describe: "zzzz11111z", 
+      mainImgs: [{
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      }],
+      tags: ["강의"]
+    }
+  }}
+/>
+
+
 
 ### `createLessonPlan`
 > 강의계획 등록

@@ -4,14 +4,13 @@ title: lesson Object
 
 import { Link } from 'gatsby'
 
-
 ### `Lesson`
 > 강의 정보
 
 | Name | Description |
 | -------- | -------- | 
 | id (String!)  | 강의 ID  | 
-| name (String!)  | 강의 제목  | 
+| title (String!)  | 강의 제목  | 
 | subTitle (String) | 강의 서브제목 
 | describe (String) | 강의 설명
 | classTime (Int) | 수업시간 (분기준)
@@ -22,6 +21,14 @@ import { Link } from 'gatsby'
 | userActivity (UserActivity!) | 사용자 활동 정보 좋아요..
 | lessonPlans ([<Link to="/object/lesson/#LessonPlan">LessonPlan</Link>])  | 강의 계획 리스트
 
+
+### `LessonEdge`
+> 강의 정보
+
+| Name | Description |
+| -------- | -------- | 
+| cursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/object/lesson/#Lesson">Lesson</Link>)  | 강의 정보  |
 
 
 ### `LessonConnection`
@@ -35,15 +42,39 @@ import { Link } from 'gatsby'
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
 
 
+### `LessonCurriculum`
+> 커리큘럼 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 커리큘럼 ID  | 
+| title (String!)  | 커리큘럼 제목  | 
+| subTitle (String!) | 커리큘럼 서브제목 
+| describe (String!) | 커리큘럼 설명
+| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!]!) | 커리큘럼 메인 이미지 리스트
+| userActivity (UserActivity!) | 사용자 활동 정보 좋아요..
+| tags ([String!]!) | 태그 리스트
+| lessons ([<Link to="/object/lesson/#Lesson">Lesson</Link>!]!)  | 강의 리스트
 
 
-### `LessonEdge`
-> 강의 정보
+### `LessonCurriculumEdge`
+> 커리큘럼 Edge 정보
 
 | Name | Description |
 | -------- | -------- | 
 | cursor (String!)  | 페이지 커서 ID  | 
-| node (<Link to="/object/lesson/#Lesson">Lesson</Link>)  | 강의 정보  |
+| node (<Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>)  | 커리큘럼 정보  |
+
+
+### `LessonCurriculumConnection`
+> 커리큘럼 리스트 정보
+
+| Name | Description |
+| -------- | -------- | 
+| edges (String)  | 유저ID  | 
+| nodes ([<Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>])  | 커리큘럼 정보 Array  |
+| totalCount (Int) | 총 수 
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
 
 
 ### `LessonPlan`

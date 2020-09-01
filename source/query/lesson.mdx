@@ -137,6 +137,159 @@ import { Link } from 'gatsby'
   }}
 />
 
+
+### `lessonCurriculum`
+`Type` : <Link to="/object/lesson/#LessonCurriculum/">LessonCurriculum</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/lesson/#LessonCurriculumWhere">LessonCurriculumWhere</Link>)  | 커리큘럼 Where  | 
+
+<GraphiQL
+  query="
+    query lessonCurriculum($where: LessonCurriculumWhere!) {
+      lessonCurriculum(where: $where) {
+        id
+        title
+        subTitle
+        describe
+        mainImgs {
+          domain
+          url
+        }
+        tags 
+        lessons {
+          id
+          title
+          subTitle
+          describe
+          mainImgs {
+            domain
+            url
+          }
+          classTime
+          userActivity {
+            cLike
+            cBookmark
+          }
+          levelType
+          groupType
+          elementJson
+          lessonPlans {
+            id
+            title
+            groups {
+              id
+              idx
+              content 
+            }
+            template {
+              id
+              type
+              describe
+              img {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  "
+  variables={{
+    where: {
+      id: "1011721328"
+    }
+  }}
+/>
+
+### `lessonCurriculumConnection`
+`Type` : <Link to="/object/lesson/#LessonCurriculumConnection/">LessonCurriculumConnection</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/input/lesson/#LessonCurriculumConnectionOrder">LessonCurriculumConnectionOrder</Link>)  | 커리큘럼 Orderby  | 
+| where  (<Link to="/input/lesson/#LessonCurriculumConnectionWhere">LessonCurriculumConnectionWhere</Link>)  | 커리큘럼 Where  | 
+
+<GraphiQL
+  query="
+    query lessonCurriculumConnection($first: Int!, $after: String, $orderBy: LessonCurriculumConnectionOrder, $where: LessonCurriculumConnectionWhere) {
+      lessonCurriculumConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+          id
+          title
+          subTitle
+          describe
+          mainImgs {
+            domain
+            url
+          }
+          tags 
+          lessons {
+            id
+            title
+            subTitle
+            describe
+            mainImgs {
+              domain
+              url
+            }
+            classTime
+            userActivity {
+              cLike
+              cBookmark
+            }
+            levelType
+            groupType
+            elementJson
+            lessonPlans {
+              id
+              title
+              groups {
+                id
+                idx
+                content 
+              }
+              template {
+                id
+                type
+                describe
+                img {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  "
+  variables={{
+    first: 10,
+    after: "",
+    orderBy: {
+      field: "ID"
+    },
+    where: {
+      filter: ""
+    }
+  }}
+/>
+
+
 ### `lessonPlanTemplates`
 `Type` : <Link to="/object/lesson/#LessonPlanTemplate/">LessonPlanTemplate</Link>
 
