@@ -1,0 +1,44 @@
+---
+title: Resizing Image
+description: 클라이언트에서 캐싱 이미지 Resize요청시 How 방법
+---
+
+
+### Resize Images 
+![cloudfront workflow Image](images/cloudfront-workflow.png)
+
+### `Thumbnail 호출 방법`
+
+* 원본) https://d28pw7lag74to8.cloudfront.net/flight-landscape-nature-sky-36717.jpg
+* 썸네일) https://d28pw7lag74to8.cloudfront.net/flight-landscape-nature-sky-36717.jpg?s=500x500&q=100&t=cover
+
+
+### `Parameters` 
+
+## `t`
+```:title=비율설정
+fit (default cover > contain > fill > inside > outside)
+cover : crop/clipping 을 통한 가로/세로 비율 유지
+contain : 레터박싱을 사용하여 가로/세로 비율 유지
+fill : 비율 무시하고 가로/세로 채우기
+inside/outside : 종횡비를 유지하며 가로/세로 비율 유지
+```
+
+## `s`
+
+```:title=사이즈설정
+width, height 입력 
+예) 100x100, 300x300
+```
+
+## `q`
+
+```:title=퀄리티설정
+Quality, integer 1-100 (optional, default 80)
+```
+
+## `f`
+
+```:title=이미지포멧
+format (optional, webp*)
+```

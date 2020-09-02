@@ -82,6 +82,7 @@ module.exports = {
           null: [
             'index',
             'introduce',
+            'image',
           ],
           'Errors': [
             'error/error',
