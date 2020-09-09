@@ -21,12 +21,27 @@ import { Link } from 'gatsby'
     createReview( input: $input ) {
       id
       title
+      comment
+      serviceId
+      serviceType
+      replies {
+        id
+        comment
+        reviewId
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
     }
   }
   "
   variables={{
     input: {
-      name: "name"
+      title: "리뷰제목",
+      comment: "리뷰 내용입니다.",
+      serviceId: "415551198",
+      serviceType: "LESSON"
     },
   }}
 />
@@ -46,12 +61,25 @@ import { Link } from 'gatsby'
     createReviewReply( input: $input ) {
       id
       title
+      comment
+      serviceId
+      serviceType
+      replies {
+        id
+        comment
+        reviewId
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
     }
   }
   "
   variables={{
     input: {
-      name: "name"
+      comment: "답변내용",
+      reviewId: "1"
     },
   }}
 />

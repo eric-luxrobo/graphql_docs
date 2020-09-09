@@ -4,20 +4,47 @@ title: review Object
 
 import { Link } from 'gatsby'
 
+### `Reply`
+> 리뷰답변 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 답변 ID  | 
+| comment (String!) | 답변 내용
+| reviewId (String!) | 리뷰 ID
+| createdAt (String!) | 생성 날짜 
+| updatedAt (String!) | 업데이트 날짜
+
+
 ### `Review`
 > 리뷰 정보
 
 | Name | Description |
 | -------- | -------- | 
 | id (String!)  | 리뷰 ID  | 
-
+| title (String!) | 리뷰 제목 
+| comment (String!) | 리뷰 내용
+| serviceId (String!) | 서비스 ID
+| serviceType  (<Link to="/enum/review/#ReviewServiceType">ReviewServiceType!</Link>) | 서비스 타입
+| replies (<Link to="/object/review/#Reply">[Reply]!</Link>) | 답변 Array
+| createdAt (String!) | 생성 날짜 
+| updatedAt (String!) | 업데이트 날짜
 
 ### `ReviewConnection`
 > 리뷰 리스트 정보
 
 | Name | Description |
 | -------- | -------- | 
-| edges (String!)  | 유저ID  | 
-| nodes (String!)  | 비밀번호  |
+| edges (<Link to="/object/review/#Review">[ReviewEdge]!</Link>)  | 리뷰 엣지 Array 정보 
+| nodes (<Link to="/object/review/#Review">[Review]!</Link>)  | 리뷰 Array 정보 
 | totalCount (Int!) | 총 수 
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
+
+
+### `ReviewEdge`
+> 리뷰 연결 정보
+
+| Name | Description |
+| -------- | -------- | 
+| node (<Link to="/object/review/#Review">Review!</Link>)  | 리뷰 정보
+| cursor (String!) | 리뷰 페이즈 cursor string

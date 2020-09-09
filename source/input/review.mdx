@@ -4,12 +4,76 @@ title: review Input Object
 
 import { Link } from 'gatsby'
 
+
+### `CreateReviewInput`
+> 리뷰 등록 
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!)  | 리뷰 제목  | 
+| comment (String!) | 리뷰 내용 
+| serviceId (String!) | 서비스 ID
+| serviceType  (<Link to="/enum/review/#ReviewServiceType">ReviewServiceType!</Link>) | 서비스 타입
+
+### `CreateReviewReplyInput`
+> 답변 등록 
+
+| Name | Description |
+| -------- | -------- | 
+| comment (String!) | 리뷰 내용 
+| reviewId (String!) | 리뷰 ID
+
+### `DeleteReviewInput`
+> 리뷰 삭제
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!) | 리뷰 ID
+
+### `DeleteReviewReplyInput`
+> 답변 삭제
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!) | 답변 ID
+
+
 ### `ReviewWhere`
 > 리뷰 상세 조건 
 
+| Name | Description |
+| -------- | -------- | 
+| id (String!) | 리뷰 ID
 
 ### `ReviewConnectionOrder`
 > 리뷰 리스트 Order 정보
 
+| Name | Description |
+| -------- | -------- | 
+| field (<Link to="/enum/review/#ReviewConnectionField">ReviewConnectionField</Link>!)  | 필드 정보 | 
+
+
 ### `ReviewConnectionWhere`
 > 리뷰 리스트 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| keyword (String!)  | 키워드 필터 | 
+
+
+### `UpdateReviewInput`
+> 리뷰 수정 
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!) | 리뷰 ID
+| title (String!)  | 리뷰 제목  | 
+| comment (String!) | 리뷰 내용 
+
+### `UpdateReviewReplyInput`
+> 답변 수정
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!) | 답변 ID
+| comment (String!) | 답변 내용 
