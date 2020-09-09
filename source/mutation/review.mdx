@@ -60,17 +60,8 @@ import { Link } from 'gatsby'
   mutation createReviewReply( $input:CreateReviewReplyInput! ){
     createReviewReply( input: $input ) {
       id
-      title
       comment
-      serviceId
-      serviceType
-      replies {
-        id
-        comment
-        reviewId
-        createdAt
-        updatedAt
-      }
+      reviewId
       createdAt
       updatedAt
     }

@@ -16,18 +16,28 @@ import { Link } from 'gatsby'
 | where  (<Link to="/input/review/#ReviewWhere">ReviewWhere</Link>)  | 리뷰 Where  | 
 
 <GraphiQL
-    query="
-        query review($where: ReviewWhere!) {
-            review(where: $where) {
-                id
-            }
+  query="
+    query review($where: ReviewWhere!) {
+      review(where: $where) {
+        id
+        title
+        comment
+        serviceId
+        serviceType
+        replies {
+          id
+          comment
         }
-    "
-    variables={{
-        where: {
-            id: ""
-        }
-    }}
+        createdAt
+        updatedAt
+      }
+    }
+  "
+  variables={{
+    where: {
+      id: ""
+    }
+  }}
 />
 
 
@@ -52,6 +62,16 @@ import { Link } from 'gatsby'
                 totalCount
                 nodes {
                     id
+                    title
+                    comment
+                    serviceId
+                    serviceType
+                    replies {
+                        id
+                        comment
+                    }
+                    createdAt
+                    updatedAt
                 }
             }
         }
