@@ -6,3 +6,96 @@ description: 문의사항/FAQ 서비스 Query
 import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
 
+### `boardFaqConnection`
+> FAQ 리스트
+
+
+`Input fields`
+* input : <Link to="/input/board/#CreateBoardFaqInput">CreateBoardFaqInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  query boardFaqConnection(
+    $first: Int!
+    $after: String
+    $where: BoardFaqConnectionWhere
+    $orderBy: BoardFaqConnectionOrder
+  ){
+    boardFaqConnection(first: $first, after: $after, where: $where, orderBy: $orderBy) {
+      nodes {
+        id
+        title
+        content
+        faqCode
+        faqCodeName
+        isView
+        serviceType
+        createdAt
+      }
+      totalCount
+      pageInfo {
+        startCursor
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+  "
+  variables={{
+    first: 10,
+    after: "",
+  }}
+/>
+
+### `boardNoticeConnection`
+> Notice 리스트
+
+
+`Input fields`
+* input : <Link to="/input/board/#CreateBoardNoticeInput">CreateBoardNoticeInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  query boardNoticeConnection(
+    $first: Int!
+    $after: String
+    $where: BoardNoticeConnectionWhere
+    $orderBy: BoardNoticeConnectionOrder
+  ){
+    boardNoticeConnection(first: $first, after: $after, where: $where, orderBy: $orderBy) {
+      nodes {
+        id
+        title
+        content
+        isTop
+        isView
+        serviceType
+        createdAt
+        images {
+          id
+          serviceId
+          serviceName
+          imageKey
+          imageUrl
+          idx
+          createdAt
+        }
+      }
+      totalCount
+      pageInfo {
+        startCursor
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+  "
+  variables={{
+    first: 10,
+    after: "",
+  }}
+/>

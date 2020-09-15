@@ -5,3 +5,60 @@ description: 공지사항/FAQ 서비스
 
 import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
+
+### `createBoardFaq`
+> FAQ 등록
+
+
+`Input fields`
+* input : <Link to="/input/board/#CreateBoardFaqInput">CreateBoardFaqInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation createBoardFaq( $input:CreateBoardFaqInput! ){
+    createBoardFaq( input: $input ) {
+      
+    }
+  }
+  "
+  variables={{
+    input: {
+      title: "문의 제목", 
+      content: "문의 내용", 
+      faqCode: 20101, 
+      isView: true, 
+      serviceType: "LMS", 
+    }
+  }}
+/>
+
+### `createBoardNotice`
+> Notice 등록
+
+
+`Input fields`
+* input : <Link to="/input/board/#CreateBoardNoticeInput">CreateBoardNoticeInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation createBoardNotice( $input:CreateBoardNoticeInput! ){
+    createBoardNotice( input: $input ) {
+      
+    }
+  }
+  "
+  variables={{
+    input: {
+      title: "문의 제목", 
+      content: "문의 내용", 
+      isTop: true, 
+      isView: true, 
+      serviceType: "LMS", 
+      images: ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"],
+    }
+  }}
+/>
