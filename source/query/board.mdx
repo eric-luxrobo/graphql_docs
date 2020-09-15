@@ -10,10 +10,17 @@ import { Link } from 'gatsby'
 > FAQ 리스트
 
 
-`Input fields`
-* input : <Link to="/input/board/#CreateBoardFaqInput">CreateBoardFaqInput</Link>
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| where (<Link to="/input/board/#BoardFaqConnectionWhere">BoardFaqConnectionWhere</Link>)  |  Where  | 
+| orderBy (<Link to="/input/board/#BoardFaqConnectionOrder">BoardFaqConnectionOrder</Link>)  |  Orderby  | 
 
 `Return Type`: String
+
 
 <GraphiQL
   query="
@@ -52,9 +59,14 @@ import { Link } from 'gatsby'
 ### `boardNoticeConnection`
 > Notice 리스트
 
+**Arguments**
 
-`Input fields`
-* input : <Link to="/input/board/#CreateBoardNoticeInput">CreateBoardNoticeInput</Link>
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| where (<Link to="/input/board/#BoardNoticeConnectionWhere">BoardNoticeConnectionWhere</Link>)  |  Where  | 
+| orderBy (<Link to="/input/board/#BoardNoticeConnectionOrder">BoardNoticeConnectionOrder</Link>)  |  Orderby  | 
 
 `Return Type`: String
 
