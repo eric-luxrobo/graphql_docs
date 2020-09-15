@@ -1,0 +1,95 @@
+---
+title: product QUERY
+description: 상품 서비스 Query
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `product`
+`Type` : <Link to="/object/product/#Product/">Product</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/product/#ProductWhere">ProductWhere</Link>)  | 상품 Where  | 
+
+<GraphiQL
+  query="
+    query product($where: ProductWhere!) {
+      product(where: $where) {
+        id
+        title
+        subTitle
+        describe
+        mainImgs {
+          domain
+          url
+        }
+      }
+    }
+  "
+  variables={{
+    where: {
+      id: "1011721328"
+    }
+  }}
+/>
+
+
+
+### `productConnection`
+`Type` : <Link to="/object/product/#ProductConnection/">ProductConnection</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/input/product/#ProductConnectionOrder">ProductConnectionOrder</Link>)  | 상품 Orderby  | 
+| where  (<Link to="/input/product/#ProductConnectionWhere">ProductConnectionWhere</Link>)  | 상품 Where  | 
+
+<GraphiQL
+  query="
+    query productConnection(
+        $first: Int!, 
+        $after: String, 
+        $orderBy: ProductConnectionOrder, 
+        $where: ProductConnectionWhere
+    ) {
+      productConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+          id
+          title
+          subTitle
+          describe
+          mainImgs {
+            domain
+            url
+          }
+        }
+      }
+    }
+  "
+  variables={{
+    first: 10,
+    after: "",
+    orderBy: {
+      field: "ID"
+    },
+    where: {
+      filter: ""
+    }
+  }}
+/>
+
+

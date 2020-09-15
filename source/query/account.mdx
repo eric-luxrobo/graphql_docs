@@ -20,17 +20,23 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query accountMember($userId: String!) {
-      accountMember(userId: $userId) {
+    query accountMember($where: AccountMemberWhere!) {
+      accountMember(where: $where) {
         id
         userId
         userName
+        userEmail
+        provider
+        accountCode
+        memberCode
         createdAt
       }
     }
   "
   variables={{
-    userId: "howto38",
+    where: {
+      memberId: "howto38",
+    }
   }}
 />
 
@@ -43,29 +49,42 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| page (Int!)  | 페이즈값 디폴트 1  | 
-| size (Int!) | 리스트 사이즈 개수 | 
-| field (String) | 필드 요청 |
-| word (String) | 필터링 단어 | 
+| first (Int!)  | 페이즈값 디폴트 1  | 
+| after (Int!) | 리스트 사이즈 개수 | 
+| where (String) | 필드 요청 |
+| orderBy (String) | 필터링 단어 | 
 
 <GraphiQL
   query="
-    query accountMemberConnection($page: Int!, $size: Int!) {
-      accountMemberConnection(page: $page, size: $size) {
+    query accountMemberConnection(
+      $first: Int!, 
+      $after: String!, 
+      $where: AccountMemberConnectionWhere, 
+      $orderBy: AccountMemberConnectionOrder
+    ) {
+      accountMemberConnection(first: $first, after: $after, where: $where, orderBy: $orderBy) {
         totalCount
-        pageCount
+        pageInfo {
+          startCursor
+          endCursor
+          hasNextPage
+        }
         nodes {
           id
           userId
           userName
+          userEmail
+          provider
+          accountCode
+          memberCode
           createdAt
         }
       }
     }
   "
   variables={{
-    page: 1,
-    size: 10,
+    first: 10,
+    after: '',
   }}
 />
 
@@ -84,10 +103,19 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query accountSchoolConnection($page: Int!, $size: Int!, $word: String) {
-      accountSchoolConnection(page: $page, size: $size, word: $word) {
+    query accountSchoolConnection(
+      $first: Int!, 
+      $after: String!, 
+      $where: AccountSchoolConnectionWhere, 
+      $orderBy: AccountSchoolConnectionOrder
+    ) {
+      accountSchoolConnection(first: $first, after: $after, where: $where, orderBy: $orderBy) {
         totalCount
-        pageCount
+        pageInfo {
+          startCursor
+          endCursor
+          hasNextPage
+        }
         nodes {
           id
           gubunName
@@ -99,9 +127,8 @@ import { Link } from 'gatsby'
     }
   "
   variables={{
-    page: 1,
-    size: 10,
-    word: "",
+    first: 10,
+    after: "",
   }}
 />
 
@@ -119,8 +146,8 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query accountCodeConnection($code: Int!) {
-      accountCodeConnection(code: $code) {
+    query accountCodeConnection($where: AccountCodeConnectionWhere!) {
+      accountCodeConnection(where: $where) {
         groupCode
         groupName
         description
@@ -133,7 +160,9 @@ import { Link } from 'gatsby'
     }
   "
   variables={{
-    code: 1,
+    where: {
+      code: 1,
+    }
   }}
 />
 
@@ -151,12 +180,14 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query accountIsDuplicateUserId($userId: String!) {
-      accountIsDuplicateUserId(userId: $userId)
+    query accountIsDuplicateUserId($where: AccountIsDuplicateUserIdWhere!) {
+      accountIsDuplicateUserId(where: $where)
     }
   "
   variables={{
-    userId: "howto38"
+    where: {
+      userId: "howto38"
+    }
   }}
 />
 
@@ -174,13 +205,15 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query accountIsDuplicateUserEmail($provider: String!, $userEmail: String!) {
-      accountIsDuplicateUserEmail(provider: $provider, userEmail: $userEmail)
+    query accountIsDuplicateUserEmail($where: AccountIsDuplicateUserEmailWhere!) {
+      accountIsDuplicateUserEmail(where: $where)
     }
   "
   variables={{
-    provider: "locals",
-    userEmail: "howto38@gmail.com"
+    where: {
+      provider: "LOCALS",
+      userEmail: "howto38@gmail.com"
+    }
   }}
 />
 
@@ -197,11 +230,13 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query accountFindUserId($userEmail: String!) {
+    query accountFindUserId($where: AccountFindUserIdWhere!) {
       accountFindUserId(userEmail: $userEmail)
     }
   "
   variables={{
-    userEmail: "howto38@gmail.com"
+    where: {
+      userEmail: "howto38@gmail.com"
+    }
   }}
 />
