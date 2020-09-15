@@ -6,6 +6,42 @@ description: 문의사항/FAQ 서비스 Query
 import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
 
+### `boardCodeConnection`
+> Board Code 리스트
+
+`Type` : <Link to="/object/board/#BoardCodeConnection/">BoardCodeConnection</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where (<Link to="/input/board/#BoardCodeConnectionWhere">BoardCodeConnectionWhere</Link>)  |  Where  | 
+
+
+<GraphiQL
+  query="
+  query boardCodeConnection(
+    $where: BoardCodeConnectionWhere!
+  ){
+    boardCodeConnection(where: $where) {
+      nodes {
+        code
+        name
+        description
+      }
+      groupCode
+      groupName
+      description
+    }
+  }
+  "
+  variables={{
+    where: {
+      code: 20100
+    }
+  }}
+/>
+
 ### `boardFaqConnection`
 > FAQ 리스트
 
