@@ -1,7 +1,104 @@
 ---
 title: product Mutation
-description: 상품 서비스
+description: 상품 서비스 
 ---
 
 import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
+
+### `createProduct`
+> 상품 등록
+
+
+`Input fields`
+* input : <Link to="/input/product/#CreateProductInput">CreateProductInput</Link>
+
+`Return Type`: <Link to="/object/product/#Product">Product</Link>
+
+<GraphiQL
+  query="
+  mutation createProduct( $input:CreateProductInput! ){
+    createProduct( input: $input ) {
+      id
+      title
+      subTitle
+      describe
+      mainImgs {
+        domain
+        url
+      }
+    }
+  }
+  "
+  variables={{
+    input: {
+      title: "333", 
+      subTitle: "ggg11111111111", 
+      describe: "zzzz11111z", 
+      mainImgs: [{
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      }]
+    }
+  }}
+/>
+
+
+### `deleteProduct`
+> 상품 삭제
+
+
+`Input fields`
+* input : <Link to="/input/product/#DeleteProductInput">DeleteProductInput</Link>
+
+`Return Type`: Boolean
+
+<GraphiQL
+  query="
+  mutation deleteProduct( $input:DeleteProductInput! ){
+    deleteProduct( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: "333", 
+    }
+  }}
+/>
+
+
+### `updateProduct`
+> 상품 수정
+
+
+`Input fields`
+* input : <Link to="/input/product/#UpdateProductInput">UpdateProductInput</Link>
+
+`Return Type`: <Link to="/object/product/#Product">Product</Link>
+
+<GraphiQL
+  query="
+  mutation updateProduct( $input:UpdateProductInput! ){
+    updateProduct( input: $input ) {
+      id
+      title
+      subTitle
+      describe
+      mainImgs {
+        domain
+        url
+      }
+    }
+  }
+  "
+  variables={{
+    input: {
+      id: "1111",
+      title: "333", 
+      subTitle: "ggg11111111111", 
+      describe: "zzzz11111z", 
+      mainImgs: [{
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      }]
+    }
+  }}
+/>

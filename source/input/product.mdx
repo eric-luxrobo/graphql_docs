@@ -3,3 +3,32 @@ title: product Input Object
 ---
 
 import { Link } from 'gatsby'
+
+### `CreateProductInput`
+> 상품 등록 
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!)  |  제목  | 
+| subTitle (String) | 서브제목 
+| describe (String) | 설명
+| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) |  메인 이미지 리스트
+
+### `DeleteProductInput`
+> 상품 삭제
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) |  ID 
+
+### `UpdateProductInput`
+> 상품 수정
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | ID 
+| title (String)  | 제목  | 
+| subTitle (String) | 서브제목 
+| describe (String) | 설명
+| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) | 메인 이미지 리스트
+
