@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/gatsby-theme-apollo-core/pages/404.js"],"names":["NotFound"],"mappings":"2FAAA,yEAEe,SAASA,IACtB,OAAO","file":"component---src-gatsby-theme-apollo-core-pages-404-js-e8e7d322d34b2b0f7c3f.js","sourcesContent":["import React from 'react';\n\nexport default function NotFound() {\n  return <div>not found</div>;\n}\n"],"sourceRoot":""}
