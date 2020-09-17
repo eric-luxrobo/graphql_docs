@@ -86,6 +86,9 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | id (ID!)  | 강의계획 ID  |
 | title (String!) | 제목
+| subTitle (String) | 서브제목 
+| videoURL (String) | 비디오 URL
+| videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType</Link>) | 비디오 타입 (유튜브, 비메오..)
 | groups |  ([<Link to="/object/lesson/#LessonPlanGroup">LessonPlanGroup</Link>!]) | 수업계획 그룹
 | template | (<Link to="/object/lesson/#LessonPlanTemplate">LessonPlanTemplate</Link>!) | 수업계획 디자인 템플릿
 
