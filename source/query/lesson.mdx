@@ -213,11 +213,11 @@ import { Link } from 'gatsby'
 | after (String) | Cursor다음 페이지 String | 
 | offset (Int) | 다음페이지 offset limit정보 |
 | orderBy (<Link to="/input/lesson/#LessonCurriculumConnectionOrder">LessonCurriculumConnectionOrder</Link>)  | 커리큘럼 Orderby  | 
-| where  (<Link to="/input/lesson/#LessonCurriculumConnectionWhere">LessonCurriculumConnectionWhere</Link>)  | 커리큘럼 Where  | 
+| where  (<Link to="/input/lesson/#LessonCurriculumConnectionWhere">LessonCurriculumConnectionWhere!</Link>)  | 커리큘럼 Where  | 
 
 <GraphiQL
   query="
-    query lessonCurriculumConnection($first: Int!, $after: String, $orderBy: LessonCurriculumConnectionOrder, $where: LessonCurriculumConnectionWhere) {
+    query lessonCurriculumConnection($first: Int!, $after: String, $orderBy: LessonCurriculumConnectionOrder, $where: LessonCurriculumConnectionWhere!) {
       lessonCurriculumConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
         totalCount
         pageInfo {
@@ -276,11 +276,8 @@ import { Link } from 'gatsby'
   variables={{
     first: 10,
     after: "",
-    orderBy: {
-      field: "ID"
-    },
     where: {
-      filter: ""
+       serviceType: "MAKING_PACK"
     }
   }}
 />
