@@ -42,6 +42,45 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `createProductPack`
+> 상품패키지 등록
+
+
+`Input fields`
+* input : <Link to="/input/product/#CreateProductPackInput">CreateProductPackInput</Link>
+
+`Return Type`: <Link to="/object/product/#ProductPack">ProductPack</Link>
+
+<GraphiQL
+  query="
+  mutation createProductPack( $input:CreateProductPackInput! ){
+    createProductPack( input: $input ) {
+      id
+      products {
+        id
+        title
+        subTitle
+        describe
+        mainImgs {
+          url
+        }
+      }
+    }
+  }
+  "
+  variables={{
+    input: {
+      productNo: "333", 
+      subTitle: "ggg11111111111", 
+      describe: "zzzz11111z", 
+      mainImgs: [{
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      }]
+    }
+  }}
+/>
+
+
 
 ### `deleteProduct`
 > 상품 삭제
