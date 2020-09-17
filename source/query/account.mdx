@@ -33,6 +33,9 @@ import { Link } from 'gatsby'
       }
     }
   "
+  authButtons={{
+    login: ['howto06', '1324qewr'],
+  }}
   variables={{
     where: {
       memberId: 11,
@@ -231,7 +234,7 @@ import { Link } from 'gatsby'
 <GraphiQL
   query="
     query accountFindUserId($where: AccountFindUserIdWhere!) {
-      accountFindUserId(userEmail: $userEmail)
+      accountFindUserId(where: $where)
     }
   "
   variables={{

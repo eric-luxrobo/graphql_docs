@@ -5,7 +5,6 @@ import uniqueId from 'react-html-id'
 import fetch from 'isomorphic-fetch'
 import classNames from 'classnames'
 import { get, map } from 'lodash'
-import v4 from 'uuid/v4'
 import Joyride from 'react-joyride'
 import ToggleButton from '../ToggleButton'
 import 'graphiql/graphiql.css'
@@ -135,18 +134,14 @@ class GraphiQLComponent extends Component {
       },
       body: JSON.stringify({
         query: `
-          mutation ($clientId: String!, $user: String!, $pass: String!) {
-            login (input: {
-                clientMutationId: $clientId
-                username: $user
+          mutation ($user: String!, $pass: String!) {
+            loginAccount (input: {
+                userId: $user
                 password: $pass
-            }) {
-              authToken
-            }
+            }) 
           }
         `,
         variables: {
-          clientId: v4(),
           user: auth[0],
           pass: auth[1],
         },
@@ -154,10 +149,11 @@ class GraphiQLComponent extends Component {
     })
       .then(response => response.json())
       .then(res => {
-        const token = get(res, 'data.login.authToken')
+        const token = get(res, 'data.loginAccount')
+        console.log('token', token);
         if (token) {
           this.setState({
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `${token}` },
             selected: { [key]: 'green' },
           })
         }
@@ -175,7 +171,7 @@ class GraphiQLComponent extends Component {
     const {
       query,
       variables,
-      withDocs = false,
+      withDocs = true,
       showJoyride = false,
       authButtons = {},
     } = this.props
