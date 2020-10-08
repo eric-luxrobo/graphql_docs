@@ -39,18 +39,17 @@ import { Link } from 'gatsby'
           id
           title
           subTitle
-          videoURL
-          videoType
-          groups {
-            idx
-            content 
-          }
-          template {
-            id
-            type
-            describe
-            img {
-              url
+          contents {
+            __typename
+            ... on LessonPlanContentBase {
+              idx
+              type
+              content
+            }
+            ... on LessonPlanContentVideo {
+              videoURL
+              videoType
+              type
             }
           }
         }
@@ -110,18 +109,17 @@ import { Link } from 'gatsby'
             id
             title
             subTitle
-            videoURL
-            videoType
-            groups {
-              idx
-              content 
-            }
-            template {
-              id
-              type
-              describe
-              img {
-                url
+            contents {
+              __typename
+              ... on LessonPlanContentBase {
+                idx
+                type
+                content
+              }
+              ... on LessonPlanContentVideo {
+                videoURL
+                videoType
+                type
               }
             }
           }
@@ -185,18 +183,17 @@ import { Link } from 'gatsby'
             id
             title
             subTitle
-            videoURL
-            videoType
-            groups {
-              idx
-              content 
-            }
-            template {
-              id
-              type
-              describe
-              img {
-                url
+            contents {
+              __typename
+              ... on LessonPlanContentBase {
+                idx
+                type
+                content
+              }
+              ... on LessonPlanContentVideo {
+                videoURL
+                videoType
+                type
               }
             }
           }
@@ -265,18 +262,17 @@ import { Link } from 'gatsby'
               id
               title
               subTitle
-              videoURL
-              videoType
-              groups {
-                idx
-                content 
-              }
-              template {
-                id
-                type
-                describe
-                img {
-                  url
+              contents {
+                __typename
+                ... on LessonPlanContentBase {
+                  idx
+                  type
+                  content
+                }
+                ... on LessonPlanContentVideo {
+                  videoURL
+                  videoType
+                  type
                 }
               }
             }
