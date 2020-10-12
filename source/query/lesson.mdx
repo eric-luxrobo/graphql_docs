@@ -140,6 +140,172 @@ import { Link } from 'gatsby'
 />
 
 
+
+### `lessonBook`
+`Type` : <Link to="/object/lesson/#LessonBook/">LessonBook</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/lesson/#LessonBookWhere">LessonBookWhere</Link>)  | 책 Where  | 
+
+<GraphiQL
+  query="
+    query lessonBook($where: LessonBookWhere!) {
+      lessonBook(where: $where) {
+        id
+        title
+        subTitle
+        describe
+        mainImgs {
+          domain
+          url
+        }
+        tags 
+        lessonCurriculums {
+          title
+          subTitle
+          tags
+          lessons {
+            id
+            title
+            subTitle
+            describe
+            mainImgs {
+              domain
+              url
+            }
+            classTime
+            userActivity {
+              cLike
+              cBookmark
+            }
+            levelType
+            groupType
+            elementJson
+            lessonPlans {
+              id
+              title
+              subTitle
+              contents {
+                __typename
+                ... on LessonPlanContentBase {
+                  idx
+                  type
+                  content
+                }
+                ... on LessonPlanContentVideo {
+                  videoURL
+                  videoType
+                  type
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  "
+  variables={{
+    where: {
+      id: "1011721328"
+    }
+  }}
+/>
+
+
+### `lessonBookConnection`
+`Type` : <Link to="/object/lesson/#LessonBookConnection/">LessonBookConnection</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/input/lesson/#LessonBookConnectionOrder">LessonBookConnectionOrder</Link>)  | Book Orderby  | 
+| where  (<Link to="/input/lesson/#LessonBookConnectionWhere">LessonBookConnectionWhere!</Link>)  | Book Where  | 
+
+<GraphiQL
+  query="
+    query lessonBookConnection($first: Int!, $after: String, $orderBy: LessonBookConnectionOrder, $where: LessonBookConnectionWhere!) {
+      lessonBookConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+          id
+          title
+          subTitle
+          describe
+          mainImgs {
+            domain
+            url
+          }
+          tags 
+          lessonCurriculums {
+            title
+            subTitle
+            tags
+            lessons {
+              id
+              title
+              subTitle
+              describe
+              mainImgs {
+                domain
+                url
+              }
+              classTime
+              userActivity {
+                cLike
+                cBookmark
+              }
+              levelType
+              groupType
+              elementJson
+              lessonPlans {
+                id
+                title
+                subTitle
+                contents {
+                  __typename
+                  ... on LessonPlanContentBase {
+                    idx
+                    type
+                    content
+                  }
+                  ... on LessonPlanContentVideo {
+                    videoURL
+                    videoType
+                    type
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  "
+  variables={{
+    first: 10,
+    after: "",
+    where: {
+       serviceType: "CENGAGE"
+    }
+  }}
+/>
+
+
+
+
+
 ### `lessonCurriculum`
 `Type` : <Link to="/object/lesson/#LessonCurriculum/">LessonCurriculum</Link>
 
