@@ -56,6 +56,26 @@ import { Link } from 'gatsby'
 | tags ([String!]!) | 태그 리스트
 | lessonCurriculums ([<Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>!]!)  | 강의 커리큘럼 리스트
 
+### `LessonBookEdge`
+> 커리큘럼 Edge 정보
+
+| Name | Description |
+| -------- | -------- | 
+| cursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/object/lesson/#LessonBook">LessonBook</Link>)  | 책 정보  |
+
+
+### `LessonBookConnection`
+> 커리큘럼 리스트 정보
+
+| Name | Description |
+| -------- | -------- | 
+| edges (String)  | 유저ID  | 
+| nodes ([<Link to="/object/lesson/#LessonBook">LessonBook</Link>])  | 책 정보 Array  |
+| totalCount (Int) | 총 수 
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
+
+
 
 
 ### `LessonCurriculum`
@@ -101,19 +121,36 @@ import { Link } from 'gatsby'
 | id (ID!)  | 강의계획 ID  |
 | title (String!) | 제목
 | subTitle (String) | 서브제목 
-| videoURL (String) | 비디오 URL
-| videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType</Link>) | 비디오 타입 (유튜브, 비메오..)
-| groups |  ([<Link to="/object/lesson/#LessonPlanGroup">LessonPlanGroup</Link>!]) | 수업계획 그룹
-| template | (<Link to="/object/lesson/#LessonPlanTemplate">LessonPlanTemplate</Link>!) | 수업계획 디자인 템플릿
+| contents |  ([<Link to="/object/lesson/#LessonPlanContent">LessonPlanContent</Link>!]) | 수업계획 컨텐츠
 
 
-### `LessonPlanGroup`
-> 강의 계획 그룹 정보
+### `LessonPlanContent`
+> 강의 계획 컨텐츠 Union타입
 
 | Name | Description |
 | -------- | -------- | 
-| content (String!)  | 내용  | 
-| idx (Int!) | 순서
+| base (<Link to="/enum/lesson/#LessonPlanContentBase">LessonPlanContentBase</Link>!)  | 기본 컨텐츠  | 
+| video (<Link to="/enum/lesson/#LessonPlanContentVideo">LessonPlanContentVideo</Link>!)  | 비디오 컨텐츠
+
+### `LessonPlanContentBase`
+> 기본 컨텐츠 
+
+| Name | Description |
+| -------- | -------- | 
+| type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>!) | 수업계획 컨텐츠 타입
+| img (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) |메인 이미지
+| content (String!) | 컨텐츠 내용
+| idx (Int!) | 순서 
+
+### `LessonPlanContentVideo`
+> 비디오 컨텐츠 
+
+| Name | Description |
+| -------- | -------- | 
+| type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>!) | 수업계획 컨텐츠 타입
+| videoURL (String!) | 비디오 경로
+| videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType</Link>!) | 비디오 타입
+
 
 
 ### `LessonPlanTemplate`
