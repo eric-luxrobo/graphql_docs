@@ -61,6 +61,46 @@ import { Link } from 'gatsby'
   }}
 />
 
+
+### `createLessonBook`
+> 강의책 등록
+
+
+`Input fields`
+* input : <Link to="/input/lesson/#CreateLessonBookInput">CreateLessonBookInput</Link>
+
+`Return Type`: <Link to="/object/lesson/#LessonBook">LessonBook</Link>
+
+<GraphiQL
+  query="
+  mutation createLessonBook( $input:CreateLessonBookInput! ){
+    createLessonBook( input: $input ) {
+      id
+      title
+      subTitle
+      mainImgs {
+        domain
+        url
+      }
+      tags 
+    }
+  }
+  "
+  variables={{
+    input: {
+      title: "333", 
+      subTitle: "ggg11111111111", 
+      lessonCurriculumIds: [],
+      mainImgs: [{
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      }],
+      tags: ["강의"]
+    }
+  }}
+/>
+
+
+
 ### `createLessonCurriculum`
 > 커리큘럼 등록
 
@@ -148,11 +188,22 @@ import { Link } from 'gatsby'
   variables={{
     input: {
       title: "333", 
+      subTitle: "",
       lessonId: "1011721328",
-      templateId: "1", 
-      groups: [{
-        content: "first group",
-        idx: 1,
+      contents: [{
+        base: {
+          type: "BASE",
+          img: {
+            rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+          },
+          content: '',
+          idx: 1
+        },
+        video: {
+          type: "VIDEO",
+          videoType: "HLS",
+          videoURL: ""
+        }
       }]
     }
   }}
@@ -173,6 +224,29 @@ import { Link } from 'gatsby'
   query="
   mutation deleteLesson( $input:DeleteLessonInput! ){
     deleteLesson( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: "333", 
+    }
+  }}
+/>
+
+
+### `deleteLessonBook`
+> 책 삭제
+
+
+`Input fields`
+* input : <Link to="/input/lesson/#DeleteLessonBookInput">DeleteLessonBookInput</Link>
+
+`Return Type`: Boolean
+
+<GraphiQL
+  query="
+  mutation deleteLessonBook( $input:DeleteLessonBookInput! ){
+    deleteLessonBook( input: $input )
   }
   "
   variables={{
@@ -287,6 +361,44 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `updateLessonBook`
+> 책 수정
+
+
+`Input fields`
+* input : <Link to="/input/lesson/#UpdateLessonBookInput">UpdateLessonBookInput</Link>
+
+`Return Type`: <Link to="/object/lesson/#LessonBook">LessonBook</Link>
+
+<GraphiQL
+  query="
+  mutation updateLessonBook( $input:UpdateLessonBookInput! ){
+    updateLessonBook( input: $input ) {
+      id
+      title
+      subTitle
+      mainImgs {
+        domain
+        url
+      }
+      tags 
+    }
+  }
+  "
+  variables={{
+    input: {
+      id: "1111",
+      title: "333", 
+      subTitle: "ggg11111111111", 
+      lessonCurriculumIds: [],
+      mainImgs: [{
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      }],
+      tags: ["강의"]
+    }
+  }}
+/>
+
 
 ### `updateLessonCurriculum`
 > 커리큘럼 수정
@@ -374,12 +486,23 @@ import { Link } from 'gatsby'
   variables={{
     input: {
       id: "1111",
-      title: "333", 
+      title: "강의계획", 
+      subTitle: "강의계획 서브"
       lessonId: "1011721328",
-      templateId: "1", 
-      groups: [{
-        content: "first group",
-        idx: 1,
+      contents: [{
+        base: {
+          type: "BASE",
+          img: {
+            rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+          },
+          content: '',
+          idx: 1
+        },
+        video: {
+          type: "VIDEO",
+          videoType: "HLS",
+          videoURL: ""
+        }
       }]
     }
   }}
