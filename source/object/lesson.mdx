@@ -44,6 +44,20 @@ import { Link } from 'gatsby'
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
 
 
+### `LessonBook`
+> 강의 책 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 커리큘럼 ID  | 
+| title (String!)  | 커리큘럼 제목  | 
+| subTitle (String!) | 커리큘럼 서브제목 
+| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!]!) | 커리큘럼 메인 이미지 리스트
+| tags ([String!]!) | 태그 리스트
+| lessonCurriculums ([<Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>!]!)  | 강의 커리큘럼 리스트
+
+
+
 ### `LessonCurriculum`
 > 커리큘럼 정보
 
