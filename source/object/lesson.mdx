@@ -13,6 +13,7 @@ import { Link } from 'gatsby'
 | title (String!)  | 강의 제목  | 
 | subTitle (String) | 강의 서브제목 
 | color (String) | Hex 색상
+| bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지
 | describe (String) | 강의 설명
 | videoURL (String) | 비디오 URL
 | videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType</Link>) | 비디오 타입 (유튜브, 비메오..)
@@ -56,6 +57,7 @@ import { Link } from 'gatsby'
 | title (String!)  | 커리큘럼 제목  | 
 | subTitle (String!) | 커리큘럼 서브제목 
 | color (String) | Hex 색상
+| bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지
 | mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!]!) | 커리큘럼 메인 이미지 리스트
 | tags ([String!]!) | 태그 리스트
 | lessonCurriculums ([<Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>!]!)  | 강의 커리큘럼 리스트
@@ -91,6 +93,7 @@ import { Link } from 'gatsby'
 | title (String!)  | 커리큘럼 제목  | 
 | subTitle (String!) | 커리큘럼 서브제목 
 | color (String) | Hex 색상
+| bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지
 | describe (String!) | 커리큘럼 설명
 | mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!]!) | 커리큘럼 메인 이미지 리스트
 | userActivity (UserActivity!) | 사용자 활동 정보 좋아요..
