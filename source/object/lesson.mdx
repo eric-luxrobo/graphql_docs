@@ -124,8 +124,6 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (ID!)  | 강의계획 ID  |
-| title (String!) | 제목
-| subTitle (String) | 서브제목 
 | contents |  ([<Link to="/object/lesson/#LessonPlanContent">LessonPlanContent</Link>!]) | 수업계획 컨텐츠
 | idx (Int!) | 순서 
 | createdAt (String!) | 생성날짜
@@ -138,15 +136,15 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>!) | 컨텐츠 타입
 | viewType (<Link to="/enum/lesson/#LessonPlanContentViewType">LessonPlanContentViewType</Link>!) | 뷰 타입
-| template | (<Link to="/enum/lesson/#LessonPlanContentTemplate">LessonPlanContentTemplate</Link>!) | Union 템플릿 정보
+| template | (<Link to="/object/lesson/#LessonPlanContentTemplate">LessonPlanContentTemplate</Link>!) | Union 템플릿 정보
 
 ### `LessonPlanContentTemplate`
 > 강의 계획 컨텐츠 Union타입
 
 | Name | Description |
 | -------- | -------- | 
-| base (<Link to="/enum/lesson/#LessonPlanContentBase">LessonPlanContentBase</Link>!)  | 기본 컨텐츠  | 
-| video (<Link to="/enum/lesson/#LessonPlanContentVideo">LessonPlanContentVideo</Link>!)  | 비디오 컨텐츠
+| base (<Link to="/object/lesson/#LessonPlanContentBase">LessonPlanContentBase</Link>!)  | 기본 컨텐츠  | 
+| video (<Link to="/object/lesson/#LessonPlanContentVideo">LessonPlanContentVideo</Link>!)  | 비디오 컨텐츠
 
 ### `LessonPlanContentTemplateBase`
 > 기본 컨텐츠 

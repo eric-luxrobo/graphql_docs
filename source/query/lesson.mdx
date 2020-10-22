@@ -40,8 +40,6 @@ import { Link } from 'gatsby'
         elementJson
         lessonPlans {
           id
-          title
-          subTitle
           contents {
             type
             viewType
@@ -118,8 +116,6 @@ import { Link } from 'gatsby'
           elementJson
           lessonPlans {
             id
-            title
-            subTitle
             contents {
               type
               viewType
@@ -205,8 +201,6 @@ import { Link } from 'gatsby'
             elementJson
             lessonPlans {
               id
-              title
-              subTitle
               contents {
                 type
                 viewType
@@ -299,8 +293,6 @@ import { Link } from 'gatsby'
               elementJson
               lessonPlans {
                 id
-                title
-                subTitle
                 contents {
                   type
                   viewType
@@ -384,8 +376,6 @@ import { Link } from 'gatsby'
           elementJson
           lessonPlans {
             id
-            title
-            subTitle
             contents {
               type
               viewType
@@ -470,8 +460,6 @@ import { Link } from 'gatsby'
             elementJson
             lessonPlans {
               id
-              title
-              subTitle
               contents {
                 type
                 viewType
@@ -503,26 +491,4 @@ import { Link } from 'gatsby'
        serviceType: "MAKING_PACK"
     }
   }}
-/>
-
-
-### `lessonPlanTemplates`
-`Type` : <Link to="/object/lesson/#LessonPlanTemplate/">LessonPlanTemplate</Link>
-
-**Arguments**
-없음 
-
-<GraphiQL
-  query="
-    query lessonPlanTemplates {
-      lessonPlanTemplates {
-        id
-        type
-        describe
-        img {
-          url
-        }
-      }
-    }
-  "
 />
