@@ -12,12 +12,15 @@ import { Link } from 'gatsby'
 | id (String!)  | 강의 ID  | 
 | title (String!)  | 강의 제목  | 
 | subTitle (String) | 강의 서브제목 
+| color (String) | Hex 색상
 | describe (String) | 강의 설명
 | videoURL (String) | 비디오 URL
 | videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType</Link>) | 비디오 타입 (유튜브, 비메오..)
 | classTime (Int) | 수업시간 (분기준)
 | levelType (<Link to="/enum/lesson/#LessonLevelType">LevelType</Link>) | 강의 레벨
 | groupType (<Link to="/enum/lesson/#LessonGroupType">GroupType</Link>) | 강의 그룹
+| lockType (<Link to="/enum/lesson/#TrueFalseType">LockType</Link>) | 잠금여부 타입
+| creationType (<Link to="/enum/lesson/#LessonCodingCreationType">CreationType</Link>) | 코딩화면 생성자 타입
 | mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
 | elementJSON (String) | 강의 속성정보 JSON
 | userActivity (UserActivity!) | 사용자 활동 정보 좋아요..
@@ -52,6 +55,7 @@ import { Link } from 'gatsby'
 | id (String!)  | 커리큘럼 ID  | 
 | title (String!)  | 커리큘럼 제목  | 
 | subTitle (String!) | 커리큘럼 서브제목 
+| color (String) | Hex 색상
 | mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!]!) | 커리큘럼 메인 이미지 리스트
 | tags ([String!]!) | 태그 리스트
 | lessonCurriculums ([<Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>!]!)  | 강의 커리큘럼 리스트
@@ -86,6 +90,7 @@ import { Link } from 'gatsby'
 | id (String!)  | 커리큘럼 ID  | 
 | title (String!)  | 커리큘럼 제목  | 
 | subTitle (String!) | 커리큘럼 서브제목 
+| color (String) | Hex 색상
 | describe (String!) | 커리큘럼 설명
 | mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!]!) | 커리큘럼 메인 이미지 리스트
 | userActivity (UserActivity!) | 사용자 활동 정보 좋아요..
@@ -122,9 +127,20 @@ import { Link } from 'gatsby'
 | title (String!) | 제목
 | subTitle (String) | 서브제목 
 | contents |  ([<Link to="/object/lesson/#LessonPlanContent">LessonPlanContent</Link>!]) | 수업계획 컨텐츠
-
+| idx (Int!) | 순서 
+| createdAt (String!) | 생성날짜
+| updatedAt (String!) | 업데이트 날짜
 
 ### `LessonPlanContent`
+> 강의 계획 컨텐츠 
+
+| Name | Description |
+| -------- | -------- | 
+| type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>!) | 컨텐츠 타입
+| viewType (<Link to="/enum/lesson/#LessonPlanContentViewType">LessonPlanContentViewType</Link>!) | 뷰 타입
+| template | (<Link to="/enum/lesson/#LessonPlanContentTemplate">LessonPlanContentTemplate</Link>!) | Union 템플릿 정보
+
+### `LessonPlanContentTemplate`
 > 강의 계획 컨텐츠 Union타입
 
 | Name | Description |
@@ -132,25 +148,23 @@ import { Link } from 'gatsby'
 | base (<Link to="/enum/lesson/#LessonPlanContentBase">LessonPlanContentBase</Link>!)  | 기본 컨텐츠  | 
 | video (<Link to="/enum/lesson/#LessonPlanContentVideo">LessonPlanContentVideo</Link>!)  | 비디오 컨텐츠
 
-### `LessonPlanContentBase`
+### `LessonPlanContentTemplateBase`
 > 기본 컨텐츠 
 
 | Name | Description |
 | -------- | -------- | 
-| type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>!) | 수업계획 컨텐츠 타입
 | img (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) |메인 이미지
 | content (String!) | 컨텐츠 내용
 | idx (Int!) | 순서 
 
-### `LessonPlanContentVideo`
+### `LessonPlanContentTemplateVideo`
 > 비디오 컨텐츠 
 
 | Name | Description |
 | -------- | -------- | 
-| type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>!) | 수업계획 컨텐츠 타입
 | videoURL (String!) | 비디오 경로
 | videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType</Link>!) | 비디오 타입
-
+| idx (Int!) | 순서 
 
 
 ### `LessonPlanTemplate`

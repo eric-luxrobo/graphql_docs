@@ -23,6 +23,7 @@ import { Link } from 'gatsby'
         title
         subTitle
         describe
+        color
         mainImgs {
           domain
           url
@@ -34,22 +35,29 @@ import { Link } from 'gatsby'
         }
         levelType
         groupType
+        lockType
+        creationType
         elementJson
         lessonPlans {
           id
           title
           subTitle
           contents {
-            __typename
-            ... on LessonPlanContentBase {
-              idx
-              type
-              content
-            }
-            ... on LessonPlanContentVideo {
-              videoURL
-              videoType
-              type
+            type
+            viewType
+            template {
+              ... on LessonPlanContentTemplateBase  {
+                img {
+                  url
+                }
+                content
+                idx
+              }
+              ... on LessonPlanContentTemplateVideo  {
+                videoURL
+                videoType
+                idx
+              }
             }
           }
         }
@@ -93,6 +101,7 @@ import { Link } from 'gatsby'
           title
           subTitle
           describe
+          color
           mainImgs {
             domain
             url
@@ -104,22 +113,29 @@ import { Link } from 'gatsby'
           }
           levelType
           groupType
+          lockType
+          creationType
           elementJson
           lessonPlans {
             id
             title
             subTitle
             contents {
-              __typename
-              ... on LessonPlanContentBase {
-                idx
-                type
-                content
-              }
-              ... on LessonPlanContentVideo {
-                videoURL
-                videoType
-                type
+              type
+              viewType
+              template {
+                ... on LessonPlanContentTemplateBase  {
+                  img {
+                    url
+                  }
+                  content
+                  idx
+                }
+                ... on LessonPlanContentTemplateVideo  {
+                  videoURL
+                  videoType
+                  idx
+                }
               }
             }
           }
@@ -165,11 +181,13 @@ import { Link } from 'gatsby'
         lessonCurriculums {
           title
           subTitle
+          color
           tags
           lessons {
             id
             title
             subTitle
+            color
             describe
             mainImgs {
               domain
@@ -182,22 +200,29 @@ import { Link } from 'gatsby'
             }
             levelType
             groupType
+            lockType
+            creationType
             elementJson
             lessonPlans {
               id
               title
               subTitle
               contents {
-                __typename
-                ... on LessonPlanContentBase {
-                  idx
-                  type
-                  content
-                }
-                ... on LessonPlanContentVideo {
-                  videoURL
-                  videoType
-                  type
+                type
+                viewType
+                template {
+                  ... on LessonPlanContentTemplateBase  {
+                    img {
+                      url
+                    }
+                    content
+                    idx
+                  }
+                  ... on LessonPlanContentTemplateVideo  {
+                    videoURL
+                    videoType
+                    idx
+                  }
                 }
               }
             }
@@ -241,6 +266,7 @@ import { Link } from 'gatsby'
           id
           title
           subTitle
+          color
           mainImgs {
             domain
             url
@@ -249,11 +275,13 @@ import { Link } from 'gatsby'
           lessonCurriculums {
             title
             subTitle
+            color
             tags
             lessons {
               id
               title
               subTitle
+              color
               describe
               mainImgs {
                 domain
@@ -266,22 +294,29 @@ import { Link } from 'gatsby'
               }
               levelType
               groupType
+              lockType
+              creationType
               elementJson
               lessonPlans {
                 id
                 title
                 subTitle
                 contents {
-                  __typename
-                  ... on LessonPlanContentBase {
-                    idx
-                    type
-                    content
-                  }
-                  ... on LessonPlanContentVideo {
-                    videoURL
-                    videoType
-                    type
+                  type
+                  viewType
+                  template {
+                    ... on LessonPlanContentTemplateBase  {
+                      img {
+                        url
+                      }
+                      content
+                      idx
+                    }
+                    ... on LessonPlanContentTemplateVideo  {
+                      videoURL
+                      videoType
+                      idx
+                    }
                   }
                 }
               }
@@ -320,6 +355,7 @@ import { Link } from 'gatsby'
         id
         title
         subTitle
+        color
         describe
         mainImgs {
           domain
@@ -331,6 +367,7 @@ import { Link } from 'gatsby'
           title
           subTitle
           describe
+          color
           mainImgs {
             domain
             url
@@ -342,22 +379,29 @@ import { Link } from 'gatsby'
           }
           levelType
           groupType
+          lockType
+          creationType
           elementJson
           lessonPlans {
             id
             title
             subTitle
             contents {
-              __typename
-              ... on LessonPlanContentBase {
-                idx
-                type
-                content
-              }
-              ... on LessonPlanContentVideo {
-                videoURL
-                videoType
-                type
+              type
+              viewType
+              template {
+                ... on LessonPlanContentTemplateBase  {
+                  img {
+                    url
+                  }
+                  content
+                  idx
+                }
+                ... on LessonPlanContentTemplateVideo  {
+                  videoURL
+                  videoType
+                  idx
+                }
               }
             }
           }
@@ -399,6 +443,7 @@ import { Link } from 'gatsby'
           id
           title
           subTitle
+          color
           describe
           mainImgs {
             domain
@@ -409,6 +454,7 @@ import { Link } from 'gatsby'
             id
             title
             subTitle
+            color
             describe
             mainImgs {
               domain
@@ -427,16 +473,21 @@ import { Link } from 'gatsby'
               title
               subTitle
               contents {
-                __typename
-                ... on LessonPlanContentBase {
-                  idx
-                  type
-                  content
-                }
-                ... on LessonPlanContentVideo {
-                  videoURL
-                  videoType
-                  type
+                type
+                viewType
+                template {
+                  ... on LessonPlanContentTemplateBase  {
+                    img {
+                      url
+                    }
+                    content
+                    idx
+                  }
+                  ... on LessonPlanContentTemplateVideo  {
+                    videoURL
+                    videoType
+                    idx
+                  }
                 }
               }
             }
