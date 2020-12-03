@@ -9,11 +9,19 @@ software팀에서는 graphql를 API로 사용하고 있으며 서비스마다 gr
 ## Memo
 https://luxrobo.github.io/graphql_docs/
 
+## Local Start
+```
+yarn start
+```
+
 ## Deploy Github
 GitHub Pages에 배포하기 위해서는 gh-pages라는 패키지 설치합니다.
 ```
 yarn add gh-pages --dev
+yarn deploy
 ```
 
 ## Reference
 This site is built using [Gatsby](https://gatsbyjs.org).
+
+

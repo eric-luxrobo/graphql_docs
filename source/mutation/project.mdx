@@ -1,0 +1,98 @@
+---
+title: project Mutation
+description: 프로젝트 서비스 
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `createProject`
+> 프로젝트 등록
+
+
+`Input fields`
+* input : <Link to="/input/project/#CreateProjectInput">CreateProjectInput</Link>
+
+`Return Type`: <Link to="/object/project/#Project">Project</Link>
+
+<GraphiQL
+  query="
+  mutation createProject( $input:CreateProjectInput! ){
+    createProject( input: $input ) {
+      id
+      title
+      userKey
+      codeType
+    }
+  }
+  "
+  variables={{
+    input: {
+      title: "1",
+      userKey: "1",
+      codeType: "SCRATCH",
+    },
+  }}
+/>
+
+
+### `updateProject`
+> 프로젝트 수정
+
+
+`Input fields`
+* input : <Link to="/input/project/#UpdateProjectInput">UpdateProjectInput</Link>
+
+`Return Type`: <Link to="/object/project/#Project">Project</Link>
+
+<GraphiQL
+  query="
+  mutation updateProject( $input:UpdateProjectInput! ){
+    updateProject( input: $input ) {
+      id
+      title
+      userKey
+      codeType
+      thumb {
+          url
+      }
+    }
+  }
+  "
+  variables={{
+    input: {
+      id: "66",
+      userKey: "1",
+      title: "1",
+      codeType: "SCRATCH",
+      jsonData: "111",
+      thumb: {
+          rawFile: ""
+      }
+    },
+  }}
+/>
+
+
+### `deleteProject`
+> 프로젝트 삭제
+
+
+`Input fields`
+* input : <Link to="/input/project/#DeleteProjectInput">DeleteProjectInput</Link>
+
+`Return Type`: Boolean
+
+<GraphiQL
+  query="
+  mutation deleteProject( $input:DeleteProjectInput! ){
+    deleteProject( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: "66",
+      userKey: "1",
+    },
+  }}
+/>

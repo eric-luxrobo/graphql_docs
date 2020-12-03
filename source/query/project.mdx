@@ -1,0 +1,77 @@
+---
+title: project QUERY
+description: 프로젝트 서비스 Query
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `project`
+`Type` : <Link to="/object/project/#Project/">Project</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/project/#ProjectWhere">ProjectWhere</Link>)  | 프로젝트 Where  | 
+
+<GraphiQL
+  query="
+    query project($where: ProjectWhere!) {
+      project(where: $where) {
+        id
+        title
+        userKey
+        codeType
+        thumb {
+            url
+        }
+      }
+    }
+  "
+  variables={{
+    where: {
+      id: "66",
+      userKey: "08C904CB-7E14-4CB8-866A-35E588C3FEE1"
+    }
+  }}
+/>
+
+
+### `projectConnection`
+`Type` : <Link to="/object/project/#ProjectConnection/">ProjectConnection</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int) | 초기 개수
+| after (String) | 다음 데이타 커서
+| offset (Int) | 페이지 네이션 수
+| orderBy (<Link to="/input/project/#ProjectConnectionOrder">ProjectConnectionOrder</Link>)  | 프로젝트 Orderby  | 
+| where  (<Link to="/input/project/#ProjectConnectionWhere">ProjectConnectionWhere</Link>)  | 프로젝트 Where  | 
+
+<GraphiQL
+  query="
+    query projectConnection($where: ProjectConnectionWhere!) {
+      projectConnection(where: $where) {
+        totalCount
+        nodes {
+            id
+            title
+            userKey
+            codeType
+            thumb {
+                url
+            }
+        }
+      }
+    }
+  "
+  variables={{
+    where: {
+      filter: "",
+      userKey: "08C904CB-7E14-4CB8-866A-35E588C3FEE1"
+    }
+  }}
+/>

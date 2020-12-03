@@ -1,0 +1,57 @@
+---
+title: project Input Object
+---
+
+import { Link } from 'gatsby'
+
+### `CreateProjectInput`
+> 프로젝트 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!)  | 프로젝트 제목  | 
+| userKey (String!) | 유저 UUID
+| codeType (ProjectCodeType!) | 프로젝트 타입 (SCRATCH,ENTRY)
+
+### `UpdateProjectInput`
+> 프로젝트 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!)  | 프로젝트 ID
+| userKey (String!) | 유저 UUID
+| title (String) | 프로젝트 제목
+| codeType (ProjectCodeType) | 프로젝트 타입 (스크레치...)
+| jsonData (String) | 프로젝트 코딩 데이타 정보
+| thumb (ImageInfoInput) | 이미지 정보
+
+### `DeleteProjectInput`
+> 프로젝트 삭제 입력
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!)  | 프로젝트 ID  | 
+| userKey (String!) | 유저 UUID
+
+### `ProjectConnectionOrder`
+> 순서 OrderBy
+
+| Name | Description |
+| -------- | -------- | 
+| field (ProjectConnectionField!)  |   | 
+
+### `ProjectWhere`
+> 조건
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!)  | 프로젝트 ID  | 
+| userKey (String!) | 유저 UUID
+
+## `ProjectConnectionWhere`
+> 프로젝트 리스트 조건
+
+| Name | Description |
+| -------- | -------- | 
+| userKey (String!) | 유저 UUID
+| filter (String)  | 검색 필터  | 
