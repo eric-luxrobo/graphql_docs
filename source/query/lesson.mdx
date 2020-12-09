@@ -9,6 +9,8 @@ import { Link } from 'gatsby'
 ### `lesson`
 `Type` : <Link to="/object/lesson/#Lesson/">Lesson</Link>
 
+> 강의 상세정보
+
 **Arguments**
 
 | Name | Description |
@@ -41,6 +43,8 @@ import { Link } from 'gatsby'
         lockType
         creationType
         elementJson
+        tags 
+        userId
         lessonPlans {
           id
           contents {
@@ -77,6 +81,8 @@ import { Link } from 'gatsby'
 ### `lessonConnection`
 `Type` : <Link to="/object/lesson/#LessonConnection/">LessonConnection</Link>
 
+> 강의 리스트 (검색을 통해 제공)
+
 **Arguments**
 
 | Name | Description |
@@ -89,8 +95,8 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query lessonConnection($first: Int!, $after: String, $orderBy: LessonConnectionOrder, $where: LessonConnectionWhere) {
-      lessonConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+    query lessonConnection($first: Int!, $after: String, $offset: Int, $orderBy: LessonConnectionOrder, $where: LessonConnectionWhere) {
+      lessonConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
         totalCount
         pageInfo {
             endCursor
@@ -120,6 +126,8 @@ import { Link } from 'gatsby'
           lockType
           creationType
           elementJson
+          tags 
+          userId
           lessonPlans {
             id
             contents {
@@ -148,6 +156,7 @@ import { Link } from 'gatsby'
   variables={{
     first: 10,
     after: "",
+    offset: 0,
     orderBy: {
       field: "ID"
     },
@@ -161,6 +170,8 @@ import { Link } from 'gatsby'
 
 ### `lessonBook`
 `Type` : <Link to="/object/lesson/#LessonBook/">LessonBook</Link>
+
+> 강의북 상세 (사용안함)
 
 **Arguments**
 
@@ -245,6 +256,8 @@ import { Link } from 'gatsby'
 ### `lessonBookConnection`
 `Type` : <Link to="/object/lesson/#LessonBookConnection/">LessonBookConnection</Link>
 
+> 강의 책(현재 사용안함)
+
 **Arguments**
 
 | Name | Description |
@@ -257,8 +270,8 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query lessonBookConnection($first: Int!, $after: String, $orderBy: LessonBookConnectionOrder, $where: LessonBookConnectionWhere!) {
-      lessonBookConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+    query lessonBookConnection($first: Int!, $after: String, $offset: Int, $orderBy: LessonBookConnectionOrder, $where: LessonBookConnectionWhere!) {
+      lessonBookConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
         totalCount
         pageInfo {
             endCursor
@@ -336,6 +349,7 @@ import { Link } from 'gatsby'
   variables={{
     first: 10,
     after: "",
+    offset: 0,
     where: {
        serviceType: "CENGAGE"
     }
@@ -348,6 +362,8 @@ import { Link } from 'gatsby'
 
 ### `lessonCurriculum`
 `Type` : <Link to="/object/lesson/#LessonCurriculum/">LessonCurriculum</Link>
+
+> 강의 커리큘럼 상세 
 
 **Arguments**
 
@@ -422,13 +438,15 @@ import { Link } from 'gatsby'
   "
   variables={{
     where: {
-      id: "1011721328"
+      id: "3257992158"
     }
   }}
 />
 
 ### `lessonCurriculumConnection`
 `Type` : <Link to="/object/lesson/#LessonCurriculumConnection/">LessonCurriculumConnection</Link>
+
+> 강의 커리큘럼 리스트 (검색을 통한 리스트 제공)
 
 **Arguments**
 
@@ -442,8 +460,8 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query lessonCurriculumConnection($first: Int!, $after: String, $orderBy: LessonCurriculumConnectionOrder, $where: LessonCurriculumConnectionWhere!) {
-      lessonCurriculumConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+    query lessonCurriculumConnection($first: Int!, $after: String, $offset: Int, $orderBy: LessonCurriculumConnectionOrder, $where: LessonCurriculumConnectionWhere!) {
+      lessonCurriculumConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
         totalCount
         pageInfo {
             endCursor
@@ -514,8 +532,30 @@ import { Link } from 'gatsby'
   variables={{
     first: 10,
     after: "",
+    offset: 0,
     where: {
        serviceType: "MAKING_PACK"
     }
   }}
+/>
+
+
+
+### `lessonLevelTypes`
+`Type` : <Link to="/object/lesson/#LessonLevel/">LessonLevel</Link>
+
+> 강의 레벨 타입 리스트 정보
+
+**Arguments**
+없음 
+
+<GraphiQL
+  query="
+    query lessonLevelTypes {
+      lessonLevelTypes {
+        label
+        type
+      }
+    }
+  "
 />
