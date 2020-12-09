@@ -41,3 +41,98 @@ import { Link } from 'gatsby'
     }
   }}
 />
+
+### `appInit`
+`Type` : <Link to="/object/app/#AppInit/">AppInit</Link>
+
+> 앱 초기 필요정보 제공
+
+<GraphiQL
+  query="
+  query appInit {
+    appInit {
+      bgAudioUrls
+      codingUrl
+      guideLanguage {
+        ko {
+          main {
+            image {
+              url
+            }
+          }
+          coding {
+            image {
+              url
+            }
+          }
+          freeCoding {
+            image {
+              url
+            }
+          }
+          project {
+            image {
+              url
+            }
+          }
+        }
+        en {
+          main {
+              image {
+                url
+              }
+            }
+            coding {
+              image {
+                url
+              }
+            }
+            freeCoding {
+              image {
+                url
+              }
+            }
+            project {
+              image {
+                url
+              }
+            }
+          }
+        }
+      }
+  }
+  "
+/>
+
+### `appVersion`
+`Type` : <Link to="/object/app/#AppVersion/">AppVersion</Link>
+
+> 앱 초기 필요정보 제공
+
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/app/#AppVersionWhere">AppVersionWhere</Link>)  | 버전 Where  | 
+
+<GraphiQL
+  query="
+  query appVersion(
+    $where: AppVersionWhere!
+  ){
+    appVersion(where: $where) {
+      isUpdate
+      version 
+      downloadURL
+      comment
+    }
+  }
+  "
+  variables={{
+    where: {
+      os: "IOS",
+      version: "1.0.0"
+    }
+  }}
+/>

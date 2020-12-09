@@ -12,8 +12,53 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | title (String!)  | 배너 타이틀 | 
 | subTitle (String!)  | 배너 설명  | 
-| image (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 내용 
+| image (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 이미지
 | type (<Link to="/object/enum/#AppBannerType">AppBannerType!</Link>) | 배너 타입
 | idx (Int!) | 순서
 | openType  (<Link to="/object/enum/#AppBannerOpenType">AppBannerOpenType!</Link>) | 오픈 여부
 
+### `AppInit`
+> 앱 Init정보
+
+| Name | Description |
+| -------- | -------- | 
+| bgAudioUrls (String!)  | 배경 오디오음악 URL | 
+| codingUrl (String!)  | 코딩툴 URL | 
+| guideLanguage (<Link to="/object/app/#AppGuideLanguage">AppGuideLanguage</Link>!) | 가이드 정보
+
+
+### `AppGuideLanguage`
+> 가이드 언어 정보
+
+| Name | Description |
+| -------- | -------- | 
+| ko (<Link to="/object/app/#AppGuide">AppGuide</Link>!)  | 한국어 가이드
+| en (<Link to="/object/app/#AppGuide">AppGuide</Link>!)  | 영어 가이드
+
+### `AppGuide`
+> 가이드 정보
+
+| Name | Description |
+| -------- | -------- | 
+| main [(<Link to="/object/app/#AppGuideContent">AppGuideContent</Link>!)]! | 가이드 컨텐츠 정보 리스트
+| coding [(<Link to="/object/app/#AppGuideContent">AppGuideContent</Link>!)]! | 가이드 컨텐츠 정보 리스트
+| freeCoding [(<Link to="/object/app/#AppGuideContent">AppGuideContent</Link>!)]! | 가이드 컨텐츠 정보 리스트
+| project [(<Link to="/object/app/#AppGuideContent">AppGuideContent</Link>!)]! | 가이드 컨텐츠 정보 리스트
+
+### `AppGuideContent`
+> 가이드 컨텐츠 정보
+
+| Name | Description |
+| -------- | -------- | 
+| image (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 이미지 
+
+
+### `AppVersion`
+> 앱 버전 정보
+
+| Name | Description |
+| -------- | -------- | 
+| isUpdate (Boolean!) | 업데이트 유무 
+| version (String!) | 업데이트 버전 정보
+| downloadURL (String!) | 다운로드 주소
+| comment (String!) | 업데이트 버전 설명
