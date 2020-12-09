@@ -18,7 +18,7 @@ import { withPrefix } from 'gatsby'
 const Container = styled.div({
   display: 'flex',
   alignItems: 'flex-start',
-  maxWidth: 1200,
+  //maxWidth: 1200,
 })
 
 const MainContent = styled.div({
@@ -112,7 +112,7 @@ const Aside = styled.div({
   display: 'flex',
   flexDirection: 'column',
   flexShrink: 0,
-  minWidth: 350,
+  minWidth: 300,
   maxHeight: `calc(100vh - ${headerHeight}px)`,
   marginTop: -36,
   marginLeft: 'auto',
