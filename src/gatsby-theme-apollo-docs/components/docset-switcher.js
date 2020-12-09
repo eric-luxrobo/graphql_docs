@@ -6,8 +6,6 @@ import { boxShadow } from 'gatsby-theme-apollo-docs/src/components/search'
 import { breakpoints, colors, smallCaps } from 'gatsby-theme-apollo-core'
 import { transparentize } from 'polished'
 
-import wpgqlColors from  '../../utils/colors'
-
 const Wrapper = styled.div({
   width: '100%',
   height: '100%',
@@ -79,9 +77,9 @@ const NavItemInner = styled.a({
   '@media (hover: hover)': {
     ':hover': {
       color: 'white',
-      backgroundColor: wpgqlColors.primary,
+      backgroundColor: colors.primary,
       p: {
-        color: wpgqlColors.primaryLight,
+        color: colors.primaryLight,
       },
     },
   },

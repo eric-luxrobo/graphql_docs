@@ -9,7 +9,6 @@ import {Link, withPrefix} from 'gatsby';
 import {colors} from '../utils/colors';
 import {size} from 'polished';
 import {smallCaps} from '../utils/typography';
-import wpgqlColors from  '../../utils/colors'
 
 const ExpandAll = styled.button(smallCaps, {
   display: 'flex',
@@ -51,7 +50,7 @@ const StyledListItem = styled.li({
       opacity: colors.hoverOpacity
     },
     '&.active': {
-      color: wpgqlColors.primaryLight, //colors.primary,
+      color: colors.primaryLight, //colors.primary,
       pointerEvents: 'none'
     }
   }
@@ -79,7 +78,7 @@ const categoryTitleStyles = {
   ...smallCaps,
   svg: size(10),
   '&.active': {
-    color: wpgqlColors.primaryLight, //colors.primary
+    color: colors.primaryLight, //colors.primary
  
   }
 };

@@ -103,3 +103,12 @@ pre > code {
     width: 100%;
     height: 100%;
 }
+
+  
+.content-wrapper p > code[class*='language-'] {
+    color: #1474ce;
+}
+
+:not(pre) > code[class*="language-"] {
+    color: #1474ce;
+}
