@@ -1,0 +1,43 @@
+---
+title: app QUERY
+description: 앱 서비스 Query
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+
+### `appBanners`
+`Type` : <Link to="/object/app/#AppBanner/">AppBanner</Link>
+
+> 배너 리스트 (메인, 하단 Ads광고등의 정보를 제공한다.)
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/app/#AppBannersWhere">AppBannersWhere</Link>)  | 배너 Where  | 
+
+<GraphiQL
+  query="
+  query appBanners(
+    $where: AppBannersWhere!
+  ){
+    appBanners(where: $where) {
+      title
+      subTitle
+      image {
+        url
+      }
+      type 
+      idx 
+      openType
+    }
+  }
+  "
+  variables={{
+    where: {
+      type: "MAIN"
+    }
+  }}
+/>

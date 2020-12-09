@@ -100,6 +100,7 @@ module.exports = {
           ],
           'Queries': [
             'query/account',
+            'query/app',
             'query/board',
             'query/category',
             'query/classroom',
@@ -121,6 +122,7 @@ module.exports = {
           ],
           'Objects': [
             'object/account',
+            'object/app',
             'object/board',
             'object/category',
             'object/classroom',
@@ -133,6 +135,7 @@ module.exports = {
           ],
           'Input Objects': [
             'input/account',
+            'input/app',
             'input/board',
             'input/category',
             'input/classroom',
@@ -144,7 +147,10 @@ module.exports = {
           ],
           'Enums': [
             'enum/account',
+            'enum/app',
+            'enum/board',
             'enum/lesson',
+            'enum/review',
           ],
         },
       },
