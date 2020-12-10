@@ -1,0 +1,36 @@
+---
+title: 통계 서비스 Input Object
+---
+
+import { Link } from 'gatsby'
+
+
+### `CreateStatLessonInput`
+> 통계 강의 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!) | 사용자 ID
+| lessonId (String!)  | 강의 ID  | 
+| questionType  (<Link to="/enum/stat/#StatQuestionType">StatQuestionType!</Link>) | 통계 문제 타입
+| sTime (String!) | 시작시간 format 2006-01-02 15:04:05 
+| eTime (String!) | 종료시간 format 2006-01-02 15:04:05
+| cRetry (Int!) | 시도 수
+| cSuccess (Int!) | 정답 수
+
+
+### `CreateStatViewInput`
+> 통계 뷰 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!) | 사용자 ID
+| lessonId (String!)  | 강의 ID
+| curriculumId (String!) | 커리큘럼 ID
+
+### `StatUserSummaryWhere`
+> 통계 사용자 Summary 조건
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!) | 사용자 ID

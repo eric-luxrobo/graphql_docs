@@ -108,6 +108,7 @@ module.exports = {
             'query/product',
             'query/project',
             'query/review',
+            'query/stat',
           ],
           'Mutations': [
             'mutation/account',
@@ -119,6 +120,7 @@ module.exports = {
             'mutation/product',
             'mutation/project',
             'mutation/review',
+            'mutation/stat',
             'mutation/upload',
           ],
           'Objects': [
@@ -133,6 +135,7 @@ module.exports = {
             'object/product',
             'object/project',
             'object/review',
+            'object/stat',
           ],
           'Input Objects': [
             'input/account',
@@ -144,6 +147,7 @@ module.exports = {
             'input/product',
             'input/project',
             'input/review',
+            'input/stat',
             'input/upload',
           ],
           'Enums': [
@@ -152,6 +156,7 @@ module.exports = {
             'enum/board',
             'enum/lesson',
             'enum/review',
+            'enum/stat',
           ],
         },
       },

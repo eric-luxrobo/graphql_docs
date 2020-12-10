@@ -26,6 +26,7 @@ import { Link } from 'gatsby'
 | lockType (<Link to="/enum/lesson/#TrueFalseType">LockType!</Link>) | 잠금여부 타입
 | creationType (<Link to="/enum/lesson/#LessonCodingCreationType">CreationType!</Link>) | 코딩화면 생성자 타입
 | openType (<Link to="/enum/lesson/#LessonOpenType">LessonOpenType!</Link>) | 오픈 여부
+| serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType!</Link>) | 서비스 타입
 | elementJSON (String!) | 강의 속성정보 JSON
 | answerCode (String!) | 코딩 정답 코드
 | lessonPlans ([<Link to="/object/lesson/#LessonPlan">LessonPlan!</Link>]!)  | 강의 계획 리스트
@@ -66,7 +67,7 @@ import { Link } from 'gatsby'
 | color (String!) | Hex 색상
 | textColor (String!) | 텍스트 색상 
 | bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지
-| serviceType (LessonServiceType!) | 서비스 타입
+| serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType!</Link>) | 서비스 타입
 | mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!]!) | 커리큘럼 메인 이미지 리스트
 | tags ([String!]!) | 태그 리스트
 | lessonCurriculums ([<Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>!]!)  | 강의 커리큘럼 리스트
@@ -109,7 +110,7 @@ import { Link } from 'gatsby'
 | color (String!) | Hex 색상
 | textColor (String!) | 텍스트 색상 
 | bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지
-| serviceType (LessonServiceType!) | 서비스 타입
+| serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType!</Link>) | 서비스 타입
 | viewType (LessonViewType!) | 뷰 타입
 | openType (<Link to="/enum/lesson/#LessonOpenType">LessonOpenType!</Link>) | 오픈 여부
 | mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!]!) | 커리큘럼 메인 이미지 리스트

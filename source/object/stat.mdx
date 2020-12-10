@@ -1,0 +1,78 @@
+---
+title: 통계 Object
+---
+
+import { Link } from 'gatsby'
+
+### `StatUserSummary`
+> 통계 유저 Summary
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!)  | userId  | 
+| rate (StatRate!) | 비율 정보
+| studyTime (StatUserStudyTime!) | 공부시간 정보
+| capacityMean (StatUserCapacityMean!) | 평균 능려기
+| capacityWeekly (StatUserCapacityWeekly!) | 주간 능력치
+
+
+### `StatUserStudyTime`
+> 공부시간 정보
+
+| Name | Description |
+| -------- | -------- | 
+| coding (String!)  | 코딩영역  | 
+| game (String!) | 게임
+| english (String!) | 영어
+| days (String!) | 학습일
+
+
+
+### `StatUserCapacityMean`
+> 평균점수
+
+| Name | Description |
+| -------- | -------- | 
+| memory (StatUserCapacityInfo!)  | 기억력  | 
+| concentration (StatUserCapacityInfo!) | 집중력
+| changingSituation (StatUserCapacityInfo!) | 순발력
+| thinkingSkill (StatUserCapacityInfo!) | 사고력
+| language (StatUserCapacityInfo!) | 언어능력
+
+
+### `StatUserCapacityWeeky`
+> 주간 각각의 점수
+
+| Name | Description |
+| -------- | -------- | 
+| memories ([StatUserCapacity!]!)  | 기억력  | 
+| concentrations ([StatUserCapacity!]!)  | 집중력
+| changingSituations ([StatUserCapacity!]!) | 순발력
+| thinkingSkills ([StatUserCapacity!]!)  | 사고력
+| languages ([StatUserCapacity!]!)  | 언어능력
+
+### `StatRate`
+> 통계 비율 정보
+
+| Name | Description |
+| -------- | -------- | 
+| success (Int!)  | 정답율 
+| accuracy (Int!)  | 정확도
+
+
+### `StatUserCapacityInfo`
+> 통계 유저 평균 능력치 
+
+| Name | Description |
+| -------- | -------- | 
+| mean (Int!)  | 평균 
+| describe (String!)  | 설명
+
+
+### `StatUserCapacity`
+> 통계 유저 능력값
+
+| Name | Description |
+| -------- | -------- | 
+| value (Int!)  | 값 
+| date (String!)  | 날짜

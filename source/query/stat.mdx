@@ -1,0 +1,85 @@
+---
+title: 통계 QUERY
+description: 통계 서비스 Query
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `statUserSummary`
+`Type` : <Link to="/object/stat/#StatUserSummary/">StatUserSummary</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/stat/#StatUserSummaryWhere">StatUserSummaryWhere</Link>)  | 통계 유저 Summary Where  | 
+
+<GraphiQL
+  query="
+    query statUserSummary($where: StatUserSummaryWhere!) {
+      statUserSummary(where: $where) {
+        userId
+        studyTime {
+          days
+          coding
+          game
+          english
+        }
+        rate {
+          success
+          accuracy
+        }
+        capacityMean {
+          memory {
+            mean
+            describe
+          }
+          concentration {
+            mean
+            describe
+          }
+          language {
+            mean
+            describe
+          }
+          changingSituation {
+            mean
+            describe
+          }
+          thinkingSkill {
+            mean
+            describe
+          }
+        }
+        capacityWeekly {
+          memories {
+            value
+            date
+          }
+          concentrations {
+            value
+            date
+          }
+          languages {
+            value
+            date
+          }
+          changingSituations {
+            value
+            date
+          }
+          thinkingSkills {
+            value
+            date
+          }
+        }
+      }
+    }
+  "
+  variables={{
+    where: {
+      userId: "1"
+    }
+  }}
+/>

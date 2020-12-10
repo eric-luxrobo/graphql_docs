@@ -1,0 +1,60 @@
+---
+title: 통계 Mutation
+description: 통계 서비스 강의, 커리큘럼..등등의 모든 서비스 전반적인 사용자 통계를 제공하는데 사용한다. 
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `createStatLesson`
+> 통계 강의 등록
+
+
+`Input fields`
+* input : <Link to="/input/stat/#CreateStatLessonInput">CreateStatLessonInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation createStatLesson( $input:CreateStatLessonInput! ){
+    createStatLesson( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      userId: "1",
+      lessonId: "1",
+      questionType: "SENTENCE",
+      sTime: "2006-01-02 15:04:05",
+      eTime: "2006-01-02 15:04:05",
+      cRetry: 1,
+      cSuccess: 1,
+    }
+  }}
+/>
+
+
+### `createStatView`
+> 통계 View 등록
+
+
+`Input fields`
+* input : <Link to="/input/stat/#CreateStatViewInput">CreateStatViewInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation createStatView( $input:CreateStatViewInput! ){
+    createStatView( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      userId: "1",
+      lessonId: "1",
+      curriculumeId: "1",
+    }
+  }}
+/>
