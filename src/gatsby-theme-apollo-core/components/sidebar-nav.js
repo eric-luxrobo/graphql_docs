@@ -196,7 +196,7 @@ export default function SidebarNav(props) {
       props.onToggleCategory(value, checked);
     }
   }
-
+  
   return (
     <>
       {root && (

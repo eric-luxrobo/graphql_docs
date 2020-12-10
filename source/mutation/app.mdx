@@ -1,0 +1,89 @@
+---
+title: app Mutation
+description: 앱 기본적인 설정정보와 배너를 관리하는 서비스를 제공합니다. 
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `createAppBanner`
+> 배너 등록
+
+
+`Input fields`
+* input : <Link to="/input/app/#CreateAppBannerInput">CreateAppBannerInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation createAppBanner( $input:CreateAppBannerInput! ){
+    createAppBanner( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      title: "강의계획",
+      subTitle: "강의계획 서브", 
+      type: "MAIN",
+      openType: "OPEN",
+      idx: 1,
+      image: {
+          rawFile: ""
+      }
+    }
+  }}
+/>
+
+
+### `deleteAppBanner`
+> 배너 삭제
+
+
+`Input fields`
+* input : <Link to="/input/app/#DeleteAppBannerInput">DeleteAppBannerInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation deleteAppBanner( $input:DeleteAppBannerInput! ){
+    deleteAppBanner( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: 1
+    }
+  }}
+/>
+
+### `updateAppBanner`
+> 배너 수정
+
+
+`Input fields`
+* input : <Link to="/input/app/#UpdateAppBannerInput">UpdateAppBannerInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation updateAppBanner( $input:UpdateAppBannerInput! ){
+    updateAppBanner( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: 1,
+      title: "강의계획",
+      subTitle: "강의계획 서브", 
+      type: "MAIN",
+      openType: "OPEN",
+      idx: 1,
+      image: {
+          rawFile: ""
+      }
+    }
+  }}
+/>

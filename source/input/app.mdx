@@ -19,3 +19,35 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | os (<Link to="/enum/app/#AppOsType">AppOsType</Link>) | 앱 OS 타입
 | version (String!) | 앱 버전 정보
+
+### `CreateAppBannerInput`
+> 앱 배너 등록
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!) | 배너 제목
+| type (<Link to="/enum/app/#AppBannerType">AppBannerType!</Link>) | 배너 타입 
+| openType (<Link to="/enum/app/#AppBannerOpenType">AppBannerOpenType!</Link>) | 오픈여부
+| idx (Int!) | 배너 순서 
+| subTitle (String) | 배너 설명
+| image  (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배너 이미지
+
+### `UpdateAppBannerInput`
+> 앱 배너 수정
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | 배너 ID
+| title (String) | 배너 제목
+| type (<Link to="/enum/app/#AppBannerType">AppBannerType</Link>) | 배너 타입 
+| openType (<Link to="/enum/app/#AppBannerOpenType">AppBannerOpenType</Link>) | 오픈여부
+| idx (Int) | 배너 순서 
+| subTitle (String) | 배너 설명
+| image  (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배너 이미지
+
+### `DeleteAppBannerInput`
+> 앱 배너 삭제
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | 배너 ID

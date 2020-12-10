@@ -111,6 +111,7 @@ module.exports = {
           ],
           'Mutations': [
             'mutation/account',
+            'mutation/app',
             'mutation/board',
             'mutation/category',
             'mutation/classroom',
