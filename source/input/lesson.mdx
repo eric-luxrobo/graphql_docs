@@ -94,7 +94,19 @@ import { Link } from 'gatsby'
 | filter (String) | 검색 
 | lang (<Link to="/enum/lesson/#LessonLanguageType">LessonLanguageType</Link>) | 언어 정보 타입 
 | level (<Link to="/enum/lesson/#LessonLevelType">LessonLevelType</Link>) | 강의 레벨 타입
+| serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType</Link>) | 전체 서비스 타입 
+| lessonIds ([String!]) | 강의 Ids
+| user (String) | 유저정보
 
+
+### `LessonCurriculumWhere`
+> 커리큘럼 조건 
+
+| Name | Description |
+| -------- | -------- | 
+| id  (ID!)  | 강의ID  | 
+| lang (<Link to="/enum/lesson/#LessonLanguageType">LessonLanguageType</Link>) | 언어 정보 타입 
+| user (String) | 유저정보
 
 ### `LessonCurriculumConnectionOrder`
 > 커리큘럼 리스트 Order 정보
@@ -123,6 +135,16 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | content (String!)  | 내용  | 
 | idx (Int!) | 순서
+
+
+### `LessonWhere`
+> 강의 조건
+
+| Name | Description |
+| -------- | -------- | 
+| id  (ID!)  | 강의ID  | 
+| lang (<Link to="/enum/lesson/#LessonLanguageType">LessonLanguageType</Link>) | 언어 정보 타입 
+| user (String) | 유저정보
 
 
 ### `UpdateLessonInput`
