@@ -5,10 +5,26 @@ title: app Input Object
 import { Link } from 'gatsby'
 
 ### `AppBannersWhere`
+> 배너 상세 ID
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!) | 배너 ID
+
+### `AppBannersConnectionOrder`
+> 배너 Order 정보
+
+| Name | Description |
+| -------- | -------- | 
+| field (<Link to="/enum/app/#AppBannerConnectionField">AppBannerConnectionField</Link>!)  | 필드 정보 | 
+
+
+### `AppBannersConnectionWhere`
 > 배너 메인, 하단 타입별 조건
 
 | Name | Description |
 | -------- | -------- | 
+| filter (String) | 필터링 조건
 | type (<Link to="/enum/app/#AppBannerType">AppBannerType</Link>) | 배너 타입 
 
 

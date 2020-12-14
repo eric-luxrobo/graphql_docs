@@ -7,23 +7,24 @@ import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
 
 
-### `appBanners`
+### `appBanner`
 `Type` : <Link to="/object/app/#AppBanner/">AppBanner</Link>
 
-> 배너 리스트 (메인, 하단 Ads광고등의 정보를 제공한다.)
+> 배너 상세
 
 **Arguments**
 
 | Name | Description |
 | -------- | -------- | 
-| where  (<Link to="/input/app/#AppBannersWhere">AppBannersWhere</Link>)  | 배너 Where  | 
+| where  (<Link to="/input/app/#AppBannerWhere">AppBannerWhere</Link>)  | 배너 Where  | 
 
 <GraphiQL
   query="
-  query appBanners(
-    $where: AppBannersWhere!
+  query appBanner(
+    $where: AppBannerWhere!
   ){
-    appBanners(where: $where) {
+    appBanner(where: $where) {
+      id
       title
       subTitle
       image {
@@ -37,10 +38,65 @@ import { Link } from 'gatsby'
   "
   variables={{
     where: {
+      id: "2"
+    }
+  }}
+/>
+
+
+### `appBannerConnection`
+`Type` : <Link to="/object/app/#AppBannerConnection/">AppBannerConnection</Link>
+
+> 강의 리스트 (검색을 통해 제공)
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/input/app/#AppBannerConnectionOrder">AppBannerConnectionOrder</Link>)  | 커리큘럼 Orderby  | 
+| where  (<Link to="/input/app/#AppBannerConnectionWhere">AppBannerConnectionWhere</Link>)  | 커리큘럼 Where  | 
+
+<GraphiQL
+  query="
+    query appBannerConnection($first: Int!, $after: String, $offset: Int, $orderBy: AppBannerConnectionOrder, $where: AppBannerConnectionWhere) {
+      appBannerConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+          id
+          title
+          subTitle
+          image {
+            url
+          }
+          type 
+          idx 
+          openType
+        }
+      }
+    }
+  "
+  variables={{
+    first: 10,
+    after: "",
+    offset: 0,
+    orderBy: {
+      field: "ID"
+    },
+    where: {
+      filter: "",
       type: "MAIN"
     }
   }}
 />
+
 
 ### `appInit`
 `Type` : <Link to="/object/app/#AppInit/">AppInit</Link>
