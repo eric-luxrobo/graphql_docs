@@ -57,8 +57,8 @@ import { Link } from 'gatsby'
 
 <GraphiQL
     query="
-        query reviewConnection($first: Int!) {
-            reviewConnection(first: $first) {
+        query reviewConnection($first: Int!, $after: String, $offset: Int, $orderBy: ReviewConnectionOrder, $where: ReviewConnectionWhere) {
+            reviewConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
                 totalCount
                 nodes {
                     id
@@ -77,7 +77,15 @@ import { Link } from 'gatsby'
         }
     "
     variables={{
-        first: 1,
+      first: 10,
+      after: "",
+      offset: 0,
+      orderBy: {
+        field: "ID"
+      },
+      where: {
+        keyword: ""
+      }
     }}
 />
 
