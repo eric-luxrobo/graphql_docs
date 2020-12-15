@@ -1,0 +1,32 @@
+---
+title: 검색 QUERY
+description: 검색 서비스 Query
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `searchTags`
+`Type` : <Link to="/object/search/#SearchTag/">SearchTag</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/search/#SearchTagsWhere">SearchTagsWhere</Link>)  | 태그 검색할 인덱싱 조건 Where  | 
+
+<GraphiQL
+  query="
+    query searchTags($where: SearchTagsWhere!) {
+      searchTags(where: $where) {
+        name
+        count
+      }
+    }
+  "
+  variables={{
+    where: {
+      IndexTypes: ["LESSON","LESSON_CURRICULUM"]
+    }
+  }}
+/>
