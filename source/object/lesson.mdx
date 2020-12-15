@@ -32,9 +32,9 @@ import { Link } from 'gatsby'
 | lessonPlans ([<Link to="/object/lesson/#LessonPlan">LessonPlan!</Link>]!)  | 강의 계획 리스트
 | idx (Int!) | 순서 idx
 | tags ([String!]!) | 태그 리스트
-| userId (String!) 강의 등록 사용자 ID
-| createdAt (String!) 등록 날짜
-| updatedAt (String!) 수정 날짜
+| userId (String!) | 강의 등록 사용자 ID
+| createdAt (String!) | 등록 날짜
+| updatedAt (String!) | 수정 날짜
 
 ### `LessonEdge`
 > 강의 정보
@@ -90,7 +90,7 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| edges ([<Link to="/object/lesson/#LessonBookEdge">LessonBookEdge</Link>
+| edges ([<Link to="/object/lesson/#LessonBookEdge">LessonBookEdge</Link> | 연결 정보
 | nodes ([<Link to="/object/lesson/#LessonBook">LessonBook</Link>])  | 책 정보 Array  |
 | totalCount (Int) | 총 수 
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
@@ -136,7 +136,7 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| edges ([<Link to="/object/lesson/#LessonCurriculumEdge">LessonCurriculumEdge</Link>
+| edges ([<Link to="/object/lesson/#LessonCurriculumEdge">LessonCurriculumEdge</Link> | 연결 정보
 | nodes ([<Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>])  | 커리큘럼 정보 Array  |
 | totalCount (Int) | 총 수 
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
@@ -194,5 +194,5 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | videoURL (String!) | 비디오 경로
 | videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType</Link>!) | 비디오 타입
-| thumbImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!)
+| thumbImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 썸네일 이미지 정보
 | idx (Int!) | 순서 
