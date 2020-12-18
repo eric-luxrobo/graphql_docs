@@ -33,10 +33,12 @@ enum LessonLanguageType {
 enum LessonPlanContentType {
   # 없음
   NONE
-  # 기본 컨텐츠
+  # 기본 컨텐츠(이미지 또는 Html TEXT)
   BASE
   # 비디오 컨텐츠 
   VIDEO
+  # 멀티 컨텐츠 (기본, 비디오 컨텐츠)
+  MULTI
 }
 ```
 
@@ -47,10 +49,12 @@ enum LessonPlanContentType {
 enum LessonPlanContentViewType {
   # 없음
   NONE
-  # 비디오 화면
+  # 비디오 화면(앱이나 웹에서 화면을 비디오 화면으로 보여줌)
   VIDEO
-  # 코딩 화면
+  # 코딩 화면(앱이나 웹에서 코딩화면을 보여준다.)
   CODING
+  # Layout 타입 화면(다양한 레이아웃 형태타입)
+  LAYOUT
 }
 ```
 
