@@ -120,14 +120,14 @@ enum LessonVideoType {
 
 ```js:title=LessonLevelType
 enum LessonLevelType {
-  # 초등 초급
-  ELEMENT_BEGINNING
-  # 초등 중급
-  ELEMENT_INTERMEDIATE
-  # 초등 고급 
-  ELEMENT_HIGH
-  # 없음 
-  NONE
+  # 레벨 없음
+  NONE_LEVEL
+  # 초급
+  BEGINNING_LEVEL
+  # 중급
+  INTERMEDIATE_LEVEL
+  # 고급
+  HIGH_LEVEL
 }
 ```
 
@@ -136,14 +136,17 @@ enum LessonLevelType {
 
 ```js:title=LessonGroupType
 enum LessonGroupType {
-  # 그룹없음 
-  NONE
-  # 그룹 x 2
-  GROUP2
-  # 그룹 x 3
-  GROUP3
-  # 그룹 x 4
-  GROUP4
+  # 없음
+  NONE_GROUP
+  # 미취학 유아
+  PRE_SCHOOLER_GROUP
+  # 초등 저
+  ELEMENT_BEGINNING_GROUP
+  # 초등 고급
+  ELEMENT_HIGH_GROUP
+  # 중등
+  MIDDLE_SCHOOLER_GROUP
+  
 }
 ```
 
