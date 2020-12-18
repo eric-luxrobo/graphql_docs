@@ -189,28 +189,36 @@ import { Link } from 'gatsby'
     createLessonPlan( input: $input ) {
       id
       title
-      subTitle
+      
     }
   }
   "
   variables={{
-    input: {
-      lessonId: "1011721328",
-      contents: [{
-        base: {
-          type: "BASE",
-          img: {
-            rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+    "input": {
+      "lessonId": "1",
+      "title": "강의시작하기",
+      "contents": [
+        {
+          "title": "강의 계획상세",
+          "type": "VIDEO_CONTENT",
+          "viewType": "VIDEO_VIEW",
+          "base": {
+            "img": {
+              "rawFile": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+            },
+            "content": "",
+            "idx": 1
           },
-          content: '',
-          idx: 1
-        },
-        video: {
-          type: "VIDEO",
-          videoType: "HLS",
-          videoURL: ""
+          "video": {
+            "idx": 1,
+            "videoType": "HLS",
+            "videoURL": "",
+            "thumbImg": {
+              "rawFile": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+            }
+          }
         }
-      }]
+      ]
     }
   }}
 />
@@ -483,7 +491,6 @@ import { Link } from 'gatsby'
     updateLessonPlan( input: $input ) {
       id
       title
-      subTitle
     }
   }
   "
@@ -491,11 +498,13 @@ import { Link } from 'gatsby'
     input: {
       id: "1111",
       title: "강의계획", 
-      subTitle: "강의계획 서브",
+      idx: 1,
       lessonId: "1011721328",
       contents: [{
+        title: "강의 계획 상세",
+        type: "VIDEO_CONTENT",
+        viewType: "VIDEO_VIEW",
         base: {
-          type: "BASE",
           img: {
             rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
           },

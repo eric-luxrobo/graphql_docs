@@ -50,6 +50,7 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | title (String!)  | 강의 제목  | 
 | lessonId (String!) | 강의 ID
+| idx (Int!) | 강의 순서
 | templateId (String!) | 강의계획 템플릿 ID
 | groups ([<Link to="/input/lesson/#LessonPlanGroupInput">LessonPlanGroupInput</Link>]) | 강의계획 그룹정보 Array
 
@@ -96,6 +97,7 @@ import { Link } from 'gatsby'
 | level (<Link to="/enum/lesson/#LessonLevelType">LessonLevelType</Link>) | 강의 레벨 타입
 | serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType</Link>) | 전체 서비스 타입 
 | lessonIds ([String!]) | 강의 Ids
+| tags ([String!]) | 태그 리스트
 | user (String) | 유저정보
 
 
@@ -124,6 +126,7 @@ import { Link } from 'gatsby'
 | serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType</Link>) | 전체 서비스 타입 
 | filter (String) | 조건 필터링 정보  | 
 | curriculumIds ([String!]) | 커리큘럼 ID 조건
+| tags ([String!]) | 태그 리스트
 | lang (<Link to="/enum/lesson/#LessonLanguageType">LessonLanguageType</Link>) | 언어 정보 타입 
 | level (<Link to="/enum/lesson/#LessonLevelType">LessonLevelType</Link>) | 강의 레벨 타입
 | user (String) | 유저 UUID
@@ -192,6 +195,8 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | id (ID!) | 강의계획 ID 
 | lessonId (String) | 강의 ID
+| title (String) | 강의 계획 제목
+| idx (Int) | 강의 계획 순서
 | contents ([<Link to="/input/lesson/#LessonPlanGroupInput">LessonPlanGroupInput</Link>]) | 강의계획 그룹정보 Array
 
 
