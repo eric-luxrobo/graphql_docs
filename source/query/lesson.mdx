@@ -566,3 +566,28 @@ import { Link } from 'gatsby'
     }
   "
 />
+
+
+### `lessonPlanLayouts`
+`Type` : <Link to="/object/lesson/#LessonPlanLayout/">LessonPlanLayout</Link>
+
+> 강의계획 레이아웃 리스트 정보
+
+**Arguments**
+없음 
+
+<GraphiQL
+  query="
+    query lessonPlanLayouts {
+      lessonPlanLayouts {
+        id
+        idx
+        title
+        type
+        image {
+          url
+        }
+      }
+    }
+  "
+/>

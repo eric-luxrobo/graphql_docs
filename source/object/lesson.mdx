@@ -162,6 +162,8 @@ import { Link } from 'gatsby'
 | createdAt (String!) | 생성날짜
 | updatedAt (String!) | 업데이트 날짜
 
+
+
 ### `LessonPlanContent`
 > 강의 계획 컨텐츠 
 
@@ -207,3 +209,15 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | base (<Link to="/object/lesson/#LessonPlanContentBase">LessonPlanContentBase</Link>!)  | 기본 컨텐츠  | 
 | video (<Link to="/object/lesson/#LessonPlanContentVideo">LessonPlanContentVideo</Link>!)  | 비디오 컨텐츠
+
+
+### `LessonPlanLayout`
+> 강의 계획 레이아웃 이미지 타입 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!)  | 강의계획 레이아웃 ID  |
+| title (String!) | 레이아웃 설명 제목
+| idx (Int!) | 순서 
+| type |  ([<Link to="/enum/lesson/#LessonPlanLayoutType">LessonPlanLayoutType</Link>!]) | 레이아웃 타입 정의
+| image (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 썸네일 이미지

@@ -165,20 +165,30 @@ enum LessonConnectionField {
 }
 ```
 
-### `LessonPlanTemplateType`
-> 강의계획 템플릿 타입
+### `LessonPlanLayoutType`
+> 강의계획 레이아웃 타입
 
-```js:title=LessonPlanTemplateType
-enum LessonPlanTemplateType {
-  # 기본형
-  NORMAL  
+```js:title=LessonPlanLayoutType
+enum LessonPlanLayoutType {
+  # 기본형 전체화면
+  NORMAL
+  # 가로줄 1 세로줄 아래 반 
+  HORIZON_FULL_VERTICAL_DOWN_HALF
+  # 세로줄 1 가로줄 오른쪽 반
+  VERTICAL_FULL_HORIZON_RIGHT_HALF
+  # 세로줄 1
+  VERTICAL_FULL
+  # 세로줄 2
+  VERTICAL_TWO_FULL
+  # 가로줄 1 세로줄 1 
+  HORIZON_FULL_VERTICAL_FULL
 }
 ```
 
 ### `LessonOrderDirectionType`
 > Order 방향 타입
 
-```js:title=LessonPlanTemplateType
+```js:title=LessonOrderDirectionType
 enum LessonOrderDirectionType {
   DESC
   ASC
