@@ -221,3 +221,31 @@ import { Link } from 'gatsby'
 | idx (Int!) | 순서 
 | type |  ([<Link to="/enum/lesson/#LessonPlanLayoutType">LessonPlanLayoutType</Link>!]) | 레이아웃 타입 정의
 | image (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 썸네일 이미지
+
+### `LessonImage`
+> 강의 이미지 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!)  | 강의 이미지  ID  |
+| imageKey (String!) | 이미지 키
+| idx (Int!) | 순서 
+| serviceType |  ([<Link to="/enum/lesson/#ServiceType">ServiceType</Link>!]) | 서비스  타입 정의
+| serviceId (String!) | 서비스 타입에 대한 ID
+| image (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 썸네일 이미지
+| createdAt (String!) | 생성날짜
+| updatedAt (String!) | 업데이트 날짜
+
+
+### `LessonVideo`
+> 강의 비디오 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!)  | 비디오 ID  |
+| idx (Int!) | 순서 
+| serviceType |  ([<Link to="/enum/lesson/#ServiceType">ServiceType</Link>!]) | 서비스  타입 정의
+| serviceId (String!) | 서비스 타입에 대한 ID
+| video (<Link to="/object/videoInfo/#VideoInfo">VideoInfo</Link>!) | 비디오 정보
+| createdAt (String!) | 생성날짜
+| updatedAt (String!) | 업데이트 날짜

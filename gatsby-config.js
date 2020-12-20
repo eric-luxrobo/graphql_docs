@@ -138,6 +138,7 @@ module.exports = {
             'object/review',
             'object/search',
             'object/stat',
+            'object/video',
           ],
           'Input Objects': [
             'input/account',

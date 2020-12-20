@@ -131,6 +131,41 @@ import { Link } from 'gatsby'
 | level (<Link to="/enum/lesson/#LessonLevelType">LessonLevelType</Link>) | 강의 레벨 타입
 | user (String) | 유저 UUID
  
+### `LessonImageConnectionOrder`
+> 이미지 리스트 Order 정보
+
+| Name | Description |
+| -------- | -------- | 
+| field (<Link to="/enum/lesson/#LessonConnectionField">LessonConnectionField</Link>!)  | 필드 정보 | 
+| direction (<Link to="/enum/lesson/#LessonOrderDirectionType">LessonOrderDirectionType</Link>)  방향 |
+
+
+### `LessonImageConnectionWhere`
+> 이미지 리스트 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType</Link>) | 전체 서비스 타입 
+| serviceIds ([String!]) | 서비스 타입 ID 조건
+
+### `LessonVideoConnectionOrder`
+> 비디오 리스트 Order 정보
+
+| Name | Description |
+| -------- | -------- | 
+| field (<Link to="/enum/lesson/#LessonConnectionField">LessonConnectionField</Link>!)  | 필드 정보 | 
+| direction (<Link to="/enum/lesson/#LessonOrderDirectionType">LessonOrderDirectionType</Link>)  방향 |
+
+
+### `LessonVideoConnectionWhere`
+> 비디오 리스트 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType</Link>) | 전체 서비스 타입 
+| serviceIds ([String!]) | 서비스 타입 ID 조건
+ 
+
 ### `LessonPlanGroupInput`
 > 강의 계획 그룹 입력 
 

@@ -591,3 +591,108 @@ import { Link } from 'gatsby'
     }
   "
 />
+
+### `lessonImageConnection`
+`Type` : <Link to="/object/lesson/#LessonImageConnection/">LessonImageConnection</Link>
+
+> 강의 이미지 리스트
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/input/lesson/#LessonImageConnectionOrder">LessonImageConnectionOrder</Link>)  |  Orderby  | 
+| where  (<Link to="/input/lesson/#LessonImageConnectionWhere">LessonImageConnectionWhere!</Link>)  |  Where  | 
+
+<GraphiQL
+  query="
+    query lessonImageConnection($first: Int!, $after: String, $offset: Int, $orderBy: LessonImageConnectionOrder, $where: LessonImageConnectionWhere!) {
+      lessonImageConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+          id
+          imageKey
+          image {
+            url
+          }
+          idx
+          serviceId
+          serviceType
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  "
+  variables={{
+    first: 10,
+    after: "",
+    offset: 0,
+    where: {}
+  }}
+/>
+
+### `lessonVideoConnection`
+`Type` : <Link to="/object/lesson/#LessonVideoConnection/">LessonVideoConnection</Link>
+
+> 강의 비디오 리스트
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/input/lesson/#LessonVideoConnectionOrder">LessonVideoConnectionOrder</Link>)  |  Orderby  | 
+| where  (<Link to="/input/lesson/#LessonVideoConnectionWhere">LessonVideoConnectionWhere!</Link>)  |  Where  | 
+
+<GraphiQL
+  query="
+    query lessonVideoConnection($first: Int!, $after: String, $offset: Int, $orderBy: LessonVideoConnectionOrder, $where: LessonVideoConnectionWhere!) {
+      lessonVideoConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+          id
+          serviceId
+          serviceType
+          video {
+            status
+            thubmails {
+              url
+            }
+            videoDetails {
+              widthInPx
+              heightInPx
+              url
+              durationInMs
+              vidioType
+            }
+          }
+          idx
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  "
+  variables={{
+    first: 10,
+    after: "",
+    offset: 0,
+    where: {}
+  }}
+/>
