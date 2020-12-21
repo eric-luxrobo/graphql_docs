@@ -52,17 +52,6 @@ import { Link } from 'gatsby'
 | lessonId (String!) | 강의 ID
 | contents ([<Link to="/input/lesson/#LessonPlanContentInput">LessonPlanContentInput!</Link>]) | 강의계획 컨텐츠 정보
 
-### `UpdateLessonPlanInput`
-> 강의 계획 등록 
-
-| Name | Description |
-| -------- | -------- | 
-| id  (ID!)  | 강의 계획 ID  | 
-| title (String)  | 강의 제목  | 
-| lessonId (String) | 강의 ID 
-| idx (Int!) | 강의 순서
-| contents ([<Link to="/input/lesson/#LessonPlanContentInput">LessonPlanContentInput!</Link>]) | 강의계획 컨텐츠 정보
-
 
 ### `LessonPlanContentInput`
 > 강의계획 컨텐츠 정보
@@ -271,15 +260,12 @@ import { Link } from 'gatsby'
 
 
 ### `UpdateLessonPlanInput`
-> 강의 계획 수정 
+> 강의 계획 등록 
 
 | Name | Description |
 | -------- | -------- | 
-| id (ID!) | 강의계획 ID 
-| lessonId (String) | 강의 ID
-| title (String) | 강의 계획 제목
-| idx (Int) | 강의 계획 순서
-| contents ([<Link to="/input/lesson/#LessonPlanGroupInput">LessonPlanGroupInput</Link>]) | 강의계획 그룹정보 Array
-
-
-
+| id  (ID!)  | 강의 계획 ID  | 
+| title (String)  | 강의 제목  | 
+| lessonId (String) | 강의 ID 
+| idx (Int!) | 강의 순서
+| contents ([<Link to="/input/lesson/#LessonPlanContentInput">LessonPlanContentInput!</Link>]) | 강의계획 컨텐츠 정보
