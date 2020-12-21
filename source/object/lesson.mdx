@@ -56,48 +56,6 @@ import { Link } from 'gatsby'
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  
 
 
-### `LessonBook`
-> 강의 책 정보
-
-| Name | Description |
-| -------- | -------- | 
-| id (String!)  | 커리큘럼 ID  | 
-| title (String!)  | 커리큘럼 제목  | 
-| subTitle (String!) | 커리큘럼 서브제목 
-| color (String!) | Hex 색상
-| textColor (String!) | 텍스트 색상 
-| bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지
-| serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType!</Link>) | 서비스 타입
-| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!]!) | 커리큘럼 메인 이미지 리스트
-| tags ([String!]!) | 태그 리스트
-| lessonCurriculums ([<Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>!]!)  | 강의 커리큘럼 리스트
-| idx (Int!) | 순서 
-| createdAt (String!) | 등록 날짜
-| updatedAt (String!) | 수정 날짜
-
-
-### `LessonBookEdge`
-> 커리큘럼 Edge 정보
-
-| Name | Description |
-| -------- | -------- | 
-| cursor (String!)  | 페이지 커서 ID  | 
-| node (<Link to="/object/lesson/#LessonBook">LessonBook</Link>)  | 책 정보  |
-
-
-### `LessonBookConnection`
-> 커리큘럼 리스트 정보
-
-| Name | Description |
-| -------- | -------- | 
-| edges ([<Link to="/object/lesson/#LessonBookEdge">LessonBookEdge</Link> | 연결 정보
-| nodes ([<Link to="/object/lesson/#LessonBook">LessonBook</Link>])  | 책 정보 Array  |
-| totalCount (Int) | 총 수 
-| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
-
-
-
-
 ### `LessonCurriculum`
 > 커리큘럼 정보
 

@@ -66,46 +66,6 @@ import { Link } from 'gatsby'
 />
 
 
-### `createLessonBook`
-> 강의책 등록
-
-
-`Input fields`
-* input : <Link to="/input/lesson/#CreateLessonBookInput">CreateLessonBookInput</Link>
-
-`Return Type`: <Link to="/object/lesson/#LessonBook">LessonBook</Link>
-
-<GraphiQL
-  query="
-  mutation createLessonBook( $input:CreateLessonBookInput! ){
-    createLessonBook( input: $input ) {
-      id
-      title
-      subTitle
-      color
-      mainImgs {
-        domain
-        url
-      }
-      tags 
-    }
-  }
-  "
-  variables={{
-    input: {
-      title: "333", 
-      subTitle: "ggg11111111111", 
-      lessonCurriculumIds: [],
-      serviceType: "CENGAGE",
-      mainImgs: [{
-        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
-      }],
-      tags: ["강의"],
-      idx: 1,
-    }
-  }}
-/>
-
 
 
 ### `createLessonCurriculum`
@@ -248,28 +208,6 @@ import { Link } from 'gatsby'
 />
 
 
-### `deleteLessonBook`
-> 책 삭제
-
-
-`Input fields`
-* input : <Link to="/input/lesson/#DeleteLessonBookInput">DeleteLessonBookInput</Link>
-
-`Return Type`: Boolean
-
-<GraphiQL
-  query="
-  mutation deleteLessonBook( $input:DeleteLessonBookInput! ){
-    deleteLessonBook( input: $input )
-  }
-  "
-  variables={{
-    input: {
-      id: "333", 
-    }
-  }}
-/>
-
 
 ### `deleteLessonCurriculum`
 > 커리큘럼 삭제
@@ -375,43 +313,6 @@ import { Link } from 'gatsby'
   }}
 />
 
-### `updateLessonBook`
-> 책 수정
-
-
-`Input fields`
-* input : <Link to="/input/lesson/#UpdateLessonBookInput">UpdateLessonBookInput</Link>
-
-`Return Type`: <Link to="/object/lesson/#LessonBook">LessonBook</Link>
-
-<GraphiQL
-  query="
-  mutation updateLessonBook( $input:UpdateLessonBookInput! ){
-    updateLessonBook( input: $input ) {
-      id
-      title
-      subTitle
-      mainImgs {
-        domain
-        url
-      }
-      tags 
-    }
-  }
-  "
-  variables={{
-    input: {
-      id: "1111",
-      title: "333", 
-      subTitle: "ggg11111111111", 
-      lessonCurriculumIds: [],
-      mainImgs: [{
-        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
-      }],
-      tags: ["강의"]
-    }
-  }}
-/>
 
 
 ### `updateLessonCurriculum`
