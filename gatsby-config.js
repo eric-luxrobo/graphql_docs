@@ -146,6 +146,7 @@ module.exports = {
             'input/board',
             'input/category',
             'input/classroom',
+            'input/imageInfo',
             'input/lesson',
             'input/product',
             'input/project',

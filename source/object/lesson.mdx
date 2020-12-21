@@ -169,10 +169,13 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
+| id (ID!)  | 강의계획 컨텐트 ID  |
 | title (String!) | 강의 계획 컨텐츠 제목
 | type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>!) | 컨텐츠 타입
 | viewType (<Link to="/enum/lesson/#LessonPlanContentViewType">LessonPlanContentViewType</Link>!) | 뷰 타입
-| template | (<Link to="/object/lesson/#LessonPlanContentTemplate">LessonPlanContentTemplate</Link>!) | Union 템플릿 정보
+| template | (<Link to="/object/lesson/#LessonPlanContentTemplate">LessonPlanContentTemplate</Link>!) | To be Deplicate - Union 템플릿 정보
+| templates | [(<Link to="/object/lesson/#LessonPlanContentTemplate">LessonPlanContentTemplate</Link>!)] | Union 템플릿 리스트 정보
+
 
 ### `LessonPlanContentTemplate`
 > 강의 계획 컨텐츠 Union타입
@@ -181,7 +184,6 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | base (<Link to="/object/lesson/#LessonPlanContentBase">LessonPlanContentBase</Link>!)  | 기본 컨텐츠  | 
 | video (<Link to="/object/lesson/#LessonPlanContentVideo">LessonPlanContentVideo</Link>!)  | 비디오 컨텐츠
-| multi [(<Link to="/object/lesson/#LessonPlanContentMulti">LessonPlanContentMulti</Link>!)]  | 다양한 멀티 컨텐츠
 
 ### `LessonPlanContentTemplateBase`
 > 기본 컨텐츠 

@@ -15,14 +15,14 @@ import { Link } from 'gatsby'
 | openType (<Link to="/enum/lesson/#LessonOpenType">LessonOpenType!</Link>) | 사용여부
 | subTitle (String) | 강의 서브제목 
 | color (String) | 색상값
-| bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지
+| bgImg (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo</Link>) | 배경 이미지
 | describe (String) | 강의 설명
 | classTime (Int) | 수업시간 (분기준)
 | levelType (<Link to="/enum/lesson/#LessonLevelType">LevelType</Link>) | 강의 레벨
 | groupType (<Link to="/enum/lesson/#LessonGroupType">GroupType</Link>) | 강의 그룹
 | lockType (<Link to="/enum/lesson/#LessonLockType">LockType</Link>) | 잠금 타입
 | creationType (<Link to="/enum/lesson/#LessonCreationType">CreationType</Link>) | 코딩 생성 타입
-| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
+| mainImgs ([<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo</Link>]) | 강의 메인 이미지 리스트
 | tags ([String!]) | 태그 리스트
 | elementJSON (String) | 강의 속성정보 JSON
 
@@ -37,9 +37,9 @@ import { Link } from 'gatsby'
 | openType (<Link to="/enum/lesson/#LessonOpenType">LessonOpenType!</Link>) | 사용여부
 | subTitle (String) | 강의 서브제목 
 | color (String) | 색상값
-| bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지
+| bgImg (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo</Link>) | 배경 이미지
 | describe (String) | 강의 설명
-| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
+| mainImgs ([<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo</Link>]) | 강의 메인 이미지 리스트
 | tags ([String!]) | 태그 리스트
 
 
@@ -50,9 +50,58 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | title (String!)  | 강의 제목  | 
 | lessonId (String!) | 강의 ID
+| contents ([<Link to="/input/lesson/#LessonPlanContentInput">LessonPlanContentInput!</Link>]) | 강의계획 컨텐츠 정보
+
+### `UpdateLessonPlanInput`
+> 강의 계획 등록 
+
+| Name | Description |
+| -------- | -------- | 
+| id  (ID!)  | 강의 계획 ID  | 
+| title (String)  | 강의 제목  | 
+| lessonId (String) | 강의 ID 
 | idx (Int!) | 강의 순서
-| templateId (String!) | 강의계획 템플릿 ID
-| groups ([<Link to="/input/lesson/#LessonPlanGroupInput">LessonPlanGroupInput</Link>]) | 강의계획 그룹정보 Array
+| contents ([<Link to="/input/lesson/#LessonPlanContentInput">LessonPlanContentInput!</Link>]) | 강의계획 컨텐츠 정보
+
+
+### `LessonPlanContentInput`
+> 강의계획 컨텐츠 정보
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!)  | 강의 하위 컨텐츠 제목  | 
+| type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType!</Link>) | 컨텐츠 타입
+| viewType (<Link to="/enum/lesson/#LessonPlanContentViewType">LessonPlanContentViewType!</Link>) | 화면 뷰 타입
+| tempaltes ([<Link to="/input/lesson/#LessonPlanContentTemplateInput">LessonPlanContentTemplateInput!</Link>]) |  템플릿
+
+
+### `LessonPlanContentTemplateInput`
+> 강의 계획 템플릿
+
+| Name | Description |
+| -------- | -------- | 
+| base (<Link to="/input/lesson/#LessonPlanContentTemplateBaseInput">LessonPlanContentTemplateBaseInput</Link>) | BASE 템플릿
+| video (<Link to="/input/lesson/#LessonPlanContentTemplateVideoInput">LessonPlanContentTemplateVideoInput</Link>) | 비디오 템플릿
+
+
+### `LessonPlanContentTemplateBaseInput`
+> 강의 계획 레이아웃 Base 템플릿 - 이미지 & 컨텐츠로 이루어진 템플릿 정보
+
+| Name | Description |
+| -------- | -------- | 
+| content (String!) | 컨텐츠 정보
+| img (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 이미지 정보
+| idx (Int!) | 순서
+
+### `LessonPlanContentTemplateVideoInput`
+> 강의 계획 레이아웃 Video 템플릿 - 비디오 전체를 제공하는 템플릿
+
+| Name | Description |
+| -------- | -------- | 
+| videoURL (String!) | 비디오 URL 
+| videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType!</Link>) | 비디오 타입
+| thumbImg (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 이미지 정보
+| idx (Int!) | 순서
 
 
 ### `DeleteLessonInput`
@@ -194,14 +243,14 @@ import { Link } from 'gatsby'
 | title (String)  | 강의 제목  | 
 | subTitle (String) | 강의 서브제목 
 | color (String) | 색상값
-| bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지
+| bgImg (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo</Link>) | 배경 이미지
 | describe (String) | 강의 설명
 | classTime (Int) | 수업시간 (분기준)
 | levelType (<Link to="/enum/lesson/#LessonLevelType">LevelType</Link>) | 강의 레벨
 | groupType (<Link to="/enum/lesson/#LessonGroupType">GroupType</Link>) | 강의 그룹
 | serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType</Link>) | 서비스 타입
 | openType (<Link to="/enum/lesson/#LessonOpenType">LessonOpenType</Link>) | 사용여부
-| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
+| mainImgs ([<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo</Link>]) | 강의 메인 이미지 리스트
 | tags ([String!]) | 태그 리스트
 | elementJSON (String) | 강의 속성정보 JSON
 
@@ -219,7 +268,7 @@ import { Link } from 'gatsby'
 | describe (String) | 강의 설명
 | openType (<Link to="/enum/lesson/#LessonOpenType">LessonOpenType</Link>) | 사용여부
 | serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType</Link>) | 서비스 타입
-| mainImgs ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>]) | 강의 메인 이미지 리스트
+| mainImgs ([<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo</Link>]) | 강의 메인 이미지 리스트
 | tags ([String!]) | 태그 리스트
 
 
