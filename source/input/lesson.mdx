@@ -70,6 +70,8 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | base (<Link to="/input/lesson/#LessonPlanContentTemplateBaseInput">LessonPlanContentTemplateBaseInput</Link>) | BASE 템플릿
+| text (<Link to="/input/lesson/#LessonPlanContentTemplateTextInput">LessonPlanContentTemplateTextInput</Link>) | 텍스트  템플릿
+| image (<Link to="/input/lesson/#LessonPlanContentTemplateImageInput">LessonPlanContentTemplateImageInput</Link>) | 이미지 템플릿
 | video (<Link to="/input/lesson/#LessonPlanContentTemplateVideoInput">LessonPlanContentTemplateVideoInput</Link>) | 비디오 템플릿
 
 
@@ -80,6 +82,21 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | content (String!) | 컨텐츠 정보
 | img (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 이미지 정보
+
+### `LessonPlanContentTemplateTextInput`
+> 강의 계획 텍스트 템플릿
+
+| Name | Description |
+| -------- | -------- | 
+| content (String!) | 컨텐츠 정보
+
+### `LessonPlanContentTemplateImageInput`
+> 강의 계획 이미지 템플릿
+
+| Name | Description |
+| -------- | -------- | 
+| img (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 이미지 정보
+
 
 ### `LessonPlanContentTemplateVideoInput`
 > 강의 계획 레이아웃 Video 템플릿 - 비디오 전체를 제공하는 템플릿
