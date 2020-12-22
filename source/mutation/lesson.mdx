@@ -160,15 +160,9 @@ import { Link } from 'gatsby'
       "contents": [
         {
           "title": "강의 계획상세",
-          "type": "VIDEO_CONTENT",
-          "viewType": "VIDEO_VIEW",
+          "type": "MULTI_CONTENT",
+          "viewType": "HORIZON_FULL_VERTICAL_FULL_VIEW",
           "templates": [{
-            "base": {
-              "img": {
-                "rawFile": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
-              },
-              "content": "",
-            },
             "video": {
               "videoType": "HLS",
               "videoURL": "",
@@ -403,21 +397,21 @@ import { Link } from 'gatsby'
       lessonId: "1011721328",
       contents: [{
         title: "강의 계획 상세",
-        type: "VIDEO_CONTENT",
-        viewType: "VIDEO_VIEW",
-        base: {
-          img: {
-            rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+        type: "MULTI_CONTENT",
+        viewType: "HORIZON_FULL_VERTICAL_FULL_VIEW",
+        templates: [{
+          text: {
+            content: '하하하하'
           },
-          content: ''
-        },
-        video: {
-          videoType: "HLS",
-          videoURL: "",
-          thumbImg: {
-              rawFile: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+          text: {
+            content: '하하하하2'
+          },
+          text: {
+            content: '하하하하3'
+          },text: {
+            content: '하하하하4'
           }
-        }
+        }]
       }]
     }
   }}

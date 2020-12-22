@@ -141,6 +141,8 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | base (<Link to="/object/lesson/#LessonPlanContentBase">LessonPlanContentBase</Link>!)  | 기본 컨텐츠  | 
+| text (<Link to="/object/lesson/#LessonPlanContentText">LessonPlanContenText</Link>!)  | 텍스트 컨텐츠  | 
+| image (<Link to="/object/lesson/#LessonPlanContentImage">LessonPlanContentImage</Link>!)  | 이미지 컨텐츠  | 
 | video (<Link to="/object/lesson/#LessonPlanContentVideo">LessonPlanContentVideo</Link>!)  | 비디오 컨텐츠
 | idx (Int!) | 순서 
 
@@ -151,15 +153,36 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | img (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) |메인 이미지
 | content (String!) | 컨텐츠 내용
+| idx (Int!) | 순서
+
+### `LessonPlanContentTemplateText`
+> 기본 컨텐츠 
+
+| Name | Description |
+| -------- | -------- | 
+| type (String!) | 데이타 타입
+| content (String!) | 컨텐츠 내용
+| idx (Int!) | 순서
+
+### `LessonPlanContentTemplateImage`
+> 기본 컨텐츠 
+
+| Name | Description |
+| -------- | -------- | 
+| type (String!) | 데이타 타입
+| img (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) |메인 이미지
+| idx (Int!) | 순서
 
 ### `LessonPlanContentTemplateVideo`
 > 비디오 컨텐츠 
 
 | Name | Description |
 | -------- | -------- | 
+| type (String!) | 데이타 타입
 | videoURL (String!) | 비디오 경로
 | videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType</Link>!) | 비디오 타입
 | thumbImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 썸네일 이미지 정보
+| idx (Int!) | 순서
 
 ### `LessonPlanLayout`
 > 강의 계획 레이아웃 이미지 타입 정보

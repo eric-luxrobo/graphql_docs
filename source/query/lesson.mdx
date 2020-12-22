@@ -54,13 +54,27 @@ import { Link } from 'gatsby'
             viewType
             templates {
               ... on LessonPlanContentTemplateBase  {
+                type
                 img {
                   url
                 }
                 content
                 idx
               }
+              ... on LessonPlanContentTemplateText {
+                type
+                content
+                idx
+              }
+              ... on LessonPlanContentTemplateImage {
+                type
+                img {
+                  url
+                }
+                idx
+              }
               ... on LessonPlanContentTemplateVideo  {
+                type
                 videoURL
                 videoType
                 idx
@@ -73,7 +87,7 @@ import { Link } from 'gatsby'
   "
   variables={{
     where: {
-      id: "1011721328"
+      id: "2308439434"
     }
   }}
 />
@@ -139,13 +153,27 @@ import { Link } from 'gatsby'
               viewType
               templates {
                 ... on LessonPlanContentTemplateBase  {
+                  type
                   img {
                     url
                   }
                   content
                   idx
                 }
+                ... on LessonPlanContentTemplateText {
+                  type
+                  content
+                  idx
+                }
+                ... on LessonPlanContentTemplateImage {
+                  type
+                  img {
+                    url
+                  }
+                  idx
+                }
                 ... on LessonPlanContentTemplateVideo  {
+                  type
                   videoURL
                   videoType
                   idx
@@ -235,13 +263,27 @@ import { Link } from 'gatsby'
               viewType
               templates {
                 ... on LessonPlanContentTemplateBase  {
+                  type
                   img {
                     url
                   }
                   content
                   idx
                 }
+                ... on LessonPlanContentTemplateText {
+                  type
+                  content
+                  idx
+                }
+                ... on LessonPlanContentTemplateImage {
+                  type
+                  img {
+                    url
+                  }
+                  idx
+                }
                 ... on LessonPlanContentTemplateVideo  {
+                  type
                   videoURL
                   videoType
                   idx
@@ -329,13 +371,27 @@ import { Link } from 'gatsby'
                 viewType
                 templates {
                   ... on LessonPlanContentTemplateBase  {
+                    type
                     img {
                       url
                     }
                     content
                     idx
                   }
+                  ... on LessonPlanContentTemplateText {
+                    type
+                    content
+                    idx
+                  }
+                  ... on LessonPlanContentTemplateImage {
+                    type
+                    img {
+                      url
+                    }
+                    idx
+                  }
                   ... on LessonPlanContentTemplateVideo  {
+                    type
                     videoURL
                     videoType
                     idx
