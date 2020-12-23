@@ -21,11 +21,17 @@ import { Link } from 'gatsby'
       statUserSummary(where: $where) {
         userId
         studyTime {
+          normal
           days
           coding
           game
           english
-          normal
+        }
+        lessonCount {
+          lessonOwnerCount
+          lessonOwnerStudentCount
+          lessonOwnerStudentMeanCount
+          lessonRegisterCount
         }
         rate {
           success

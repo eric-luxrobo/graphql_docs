@@ -10,10 +10,21 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | userId (String!)  | userId  | 
-| rate (StatRate!) | 비율 정보
-| studyTime (StatUserStudyTime!) | 공부시간 정보
-| capacityMean (StatUserCapacityMean!) | 평균 능려기
-| capacityWeekly (StatUserCapacityWeekly!) | 주간 능력치
+| rate (<Link to="/object/stat/#StatRate">StatRate!</Link>) | 비율 정보
+| studyTime (<Link to="/object/stat/#StatUserStudyTime">StatUserStudyTime!</Link>) | 공부시간 정보
+| capacityMean (<Link to="/object/stat/#StatUserCapacityMean">StatUserCapacityMean!</Link>) | 평균 능려기
+| capacityWeekly (<Link to="/object/stat/#StatUserCapacityWeekly">StatUserCapacityWeekly!</Link>) | 주간 능력치
+| lessonCount (<Link to="/object/stat/#StatUserLessonCount">StatUserLessonCount!</Link>) | 강의 숫자 정보
+
+### `StatUserLessonCount`
+> 강의 숫자 정보 
+
+| Name | Description |
+| -------- | -------- | 
+| lessonRegisterCount  (Int!)  | 수업 수강 숫자  | 
+| lessonOwnerCount: (Int!) | 내가 생성한 수업
+| lessonOwnerStudentCount (Int!) | 내가 생성한 수업의 수강생
+| lessonOwnerStudentMeanCount (Int!) | 내가 생성한 수업의 평균 수강생
 
 
 ### `StatUserStudyTime`
@@ -21,10 +32,10 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
+| normal (String!) | 일반형 공부
 | coding (String!)  | 코딩영역  | 
 | game (String!) | 게임
 | english (String!) | 영어
-| normal (String!) | 일반
 | days (String!) | 학습일
 
 
@@ -33,11 +44,11 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| memory (StatUserCapacityInfo!)  | 기억력  | 
-| concentration (StatUserCapacityInfo!) | 집중력
-| changingSituation (StatUserCapacityInfo!) | 순발력
-| thinkingSkill (StatUserCapacityInfo!) | 사고력
-| language (StatUserCapacityInfo!) | 언어능력
+| memory (<Link to="/object/stat/#StatUserCapacityInfo">StatUserCapacityInfo!</Link>)  | 기억력  | 
+| concentration (<Link to="/object/stat/#StatUserCapacityInfo">StatUserCapacityInfo!</Link>) | 집중력
+| changingSituation (<Link to="/object/stat/#StatUserCapacityInfo">StatUserCapacityInfo!</Link>) | 순발력
+| thinkingSkill (<Link to="/object/stat/#StatUserCapacityInfo">StatUserCapacityInfo!</Link>) | 사고력
+| language (<Link to="/object/stat/#StatUserCapacityInfo">StatUserCapacityInfo!</Link>) | 언어능력
 
 
 ### `StatUserCapacityWeeky`
@@ -45,11 +56,11 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| memories ([StatUserCapacity!]!)  | 기억력  | 
-| concentrations ([StatUserCapacity!]!)  | 집중력
-| changingSituations ([StatUserCapacity!]!) | 순발력
-| thinkingSkills ([StatUserCapacity!]!)  | 사고력
-| languages ([StatUserCapacity!]!)  | 언어능력
+| memories ([<Link to="/object/stat/#StatUserCapacity">StatUserCapacity!</Link>]!)  | 기억력  | 
+| concentrations ([<Link to="/object/stat/#StatUserCapacity">StatUserCapacity!</Link>]!)  | 집중력
+| changingSituations ([<Link to="/object/stat/#StatUserCapacity">StatUserCapacity!</Link>]!) | 순발력
+| thinkingSkills ([<Link to="/object/stat/#StatUserCapacity">StatUserCapacity!</Link>]!)  | 사고력
+| languages ([<Link to="/object/stat/#StatUserCapacity">StatUserCapacity!</Link>]!)  | 언어능력
 
 ### `StatRate`
 > 통계 비율 정보
