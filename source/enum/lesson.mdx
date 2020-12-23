@@ -281,3 +281,33 @@ enum LessonSummaryElementType {
   PARALLELISM_ELEMENT
 }
 ````
+
+### `LessonUserActionType`
+> 강의 사용자 행동 타입
+
+```js:title=LessonUserActionType
+enum LessonUserActionType {
+  # 수강 등록 (요청중,완료...등등)
+  LESSON_REGISTER_ACTION
+  # 수강 완료 (수강 모든 컨텐츠 시청 완료)
+  LESSON_DONE_ACTION
+  # 수강 생성자 (수강을 생성한 강의 리스트)
+  LESSON_OWNER_ACTION
+  # 수강 관심 (수강 관심등록)
+  LESSON_FAVORITE_ACTION
+  # 수강 좋아요
+  LESSON_LIKE_ACTION
+}
+````
+
+### `LessonRecommendType`
+> 강의 추천 타입
+
+```js:title=LessonRecommendType
+enum LessonRecommendType {
+  # 사용자 추천
+  LESSON_USER_RECOMMEND
+  # 유사도 추천 수업
+  LESSON_SIMIARLITY_RECOMMEND
+}
+````
