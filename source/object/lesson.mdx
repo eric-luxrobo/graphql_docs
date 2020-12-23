@@ -28,6 +28,7 @@ import { Link } from 'gatsby'
 | openType (<Link to="/enum/lesson/#LessonOpenType">LessonOpenType!</Link>) | 오픈 여부
 | serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType!</Link>) | 서비스 타입
 | elementJSON (String!) | 강의 속성정보 JSON
+| summary (<Link to="/object/lesson/#LessonSummary">LessonSummary!</Link>) | 강의 설명 & 정보
 | answerCode (String!) | 코딩 정답 코드
 | lessonPlans ([<Link to="/object/lesson/#LessonPlan">LessonPlan!</Link>]!)  | 강의 계획 리스트
 | idx (Int!) | 순서 idx
@@ -223,3 +224,15 @@ import { Link } from 'gatsby'
 | video (<Link to="/object/videoInfo/#VideoInfo">VideoInfo</Link>!) | 비디오 정보
 | createdAt (String!) | 생성날짜
 | updatedAt (String!) | 업데이트 날짜
+
+### `LessonSummary`
+> 강의 설명 & 목표정보 
+
+| Name | Description |
+| -------- | -------- | 
+| intro (String!) | 강의 소개
+| goals ([String!]!) | 학습목표
+| outputs ([String!]!) | 교과성취기준
+| hardwareTypes ([<Link to="/enum/lesson/#LessonHardwareType">LessonHardwareType</Link>!]!) |  하드웨어 타입
+| codingTypes ([<Link to="/enum/lesson/#LessonCodingType">LessonCodingType</Link>!]!) | 코딩툴 타입
+| elements ([<Link to="/enum/lesson/#LessonSummaryElementType">LessonSummaryElementType</Link>!]!) |  강의 설명에서 element 타입 정의
