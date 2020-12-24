@@ -17,7 +17,7 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query statUserSummary($where: StatUserSummaryWhere!) {
+    query statUserSummary($where: StatUserSummaryWhere) {
       statUserSummary(where: $where) {
         userId
         studyTime {
@@ -85,9 +85,7 @@ import { Link } from 'gatsby'
       }
     }
   "
-  variables={{
-    where: {
-      userId: "2"
-    }
+  authButtons={{
+    login: ['kaye', 'qwer1234'],
   }}
 />
