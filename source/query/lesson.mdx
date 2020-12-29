@@ -444,6 +444,65 @@ import { Link } from 'gatsby'
 />
 
 
+### `lessonPlanContentConnection`
+`Type` : <Link to="/object/lesson/#LessonPlanContentConnection/">LessonPlanContentConnection</Link>
+
+> 강의 컨텐츠 데이타
+
+**Arguments**
+없음 
+
+<GraphiQL
+  query="
+    query lessonPlanContentConnection($where: LessonPlanContentConnectionWhere!) {
+      lessonPlanContentConnection(where: $where) {
+        totalCount
+        pageInfo {
+          endCursor
+          hasNextPage
+          startCursor
+        }
+        edge {
+          afterCursor
+          beforeCursor
+          node {
+            id
+            type
+            title
+            template {
+              __typename
+            }
+            templates {
+              ... on LessonPlanContentTemplateText {
+                idx
+                type
+                content
+              }
+              ... on LessonPlanContentTemplateVideo {
+                idx
+                videoURL
+              }
+              ... on LessonPlanContentTemplateImage {
+                idx
+                img {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  "
+  variables={{
+    where: {
+       id: "2797348062",
+       lessonId: "2308439434",
+    }
+  }}
+/>
+
+
 
 ### `lessonLevelTypes`
 `Type` : <Link to="/object/lesson/#LessonLevel/">LessonLevel</Link>

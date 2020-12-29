@@ -61,3 +61,27 @@ import { Link } from 'gatsby'
     }
   }}
 />
+
+
+### `toggleStatLessonBookmark`
+> 관심 강의/커리큘럼 등록
+
+
+`Input fields`
+* input : <Link to="/input/stat/#ToggleStatLessonBookmarkInput">ToggleStatLessonBookmarkInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation toggleStatLessonBookmark( $input:ToggleStatLessonBookmarkInput! ){
+    toggleStatLessonBookmark( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      serviceId: "1",
+      serviceType: "LESSON",
+    }
+  }}
+/>

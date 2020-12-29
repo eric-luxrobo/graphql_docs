@@ -122,6 +122,24 @@ import { Link } from 'gatsby'
 | updatedAt (String!) | 업데이트 날짜
 
 
+### `LessonPlanContentConnection`
+> 강의 계획 컨텐츠 연결정보 
+
+| Name | Description |
+| -------- | -------- | 
+| edge (<Link to="/object/lesson/#LessonPlanContentEdge">LessonPlanContentEdge</Link>!) | 연결 정보
+| totalCount (Int) | 총 수 
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
+
+### `LessonPlanContentEdge`
+> 강의 계획 컨텐츠 연결엣지 
+
+| Name | Description |
+| -------- | -------- | 
+| afterCursor (String!)  | 페이지 커서 ID  | 
+| beforeCursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/object/lesson/#LessonPlanContent">LessonPlanContent</Link>)  | 강의 계획 컨텐츠 정보  |
+
 
 ### `LessonPlanContent`
 > 강의 계획 컨텐츠 
