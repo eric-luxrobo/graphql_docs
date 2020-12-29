@@ -157,6 +157,25 @@ import { Link } from 'gatsby'
 | userActionTypes ([<Link to="/enum/lesson/#LessonUserActionType">LessonUserActionType!</Link>]) | 사용자 행동 타입
 | recommendType (<Link to="/enum/lesson/#LessonRecommendType">LessonRecommendType</Link>) | 추천 타입
 
+### `LessonPlanContentConnectionWhere`
+> 강의 계획 컨텐츠 조건 
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!) | 컨텐트 ID
+| lessonId (String!) | 강의 ID
+
+### `LessonPlanContentConnectionInput`
+> 강의 계획 입력 통계정보
+
+| Name | Description |
+| -------- | -------- | 
+| ownerUserId (String) | Owner User ID
+| lessonId (String!) | 강의 ID 
+| lessonContentId (String!) | 컨텐트 ID
+| sTime (String!) | 시작 시간  format 2006-01-02 15:04:05
+| eTime (String!) | 종료 시간  format 2006-01-02 15:04:05
+
 
 ### `LessonCurriculumWhere`
 > 커리큘럼 조건 
