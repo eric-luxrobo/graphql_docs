@@ -88,3 +88,29 @@ import { Link } from 'gatsby'
     }
   }}
 />
+
+### `toggleStatLessonLike`
+> 좋아요 강의/커리큘럼 등록
+
+
+`Input fields`
+* input : <Link to="/input/stat/#ToggleStatLessonLikeInput">ToggleStatLessonLikeInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation toggleStatLessonLike( $input:ToggleStatLessonLikeInput! ){
+    toggleStatLessonLike( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      serviceId: "1",
+      serviceType: "LESSON",
+    }
+  }}
+/>
