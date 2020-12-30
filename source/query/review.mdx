@@ -20,6 +20,7 @@ import { Link } from 'gatsby'
     query review($where: ReviewWhere!) {
       review(where: $where) {
         id
+        ownerName
         title
         comment
         serviceId
@@ -62,6 +63,7 @@ import { Link } from 'gatsby'
                 totalCount
                 nodes {
                     id
+                    ownerName
                     title
                     comment
                     serviceId

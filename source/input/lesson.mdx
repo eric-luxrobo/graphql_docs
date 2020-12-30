@@ -132,6 +132,15 @@ import { Link } from 'gatsby'
 | id (ID!) | 강의계획 ID 
 
 
+### `LessonConnectionExclude`
+> 강의 리스트 제외 정보 
+
+| Name | Description |
+| -------- | -------- | 
+| lessonId  (String!)  | 강의 ID 
+| ownerId (String!) | 만든사람 ID 
+
+
 ### `LessonConnectionOrder`
 > 강의 리스트 Order 정보
 
@@ -154,7 +163,7 @@ import { Link } from 'gatsby'
 | lessonIds ([String!]) | 강의 Ids
 | tags ([String!]) | 태그 리스트
 | user (String) | 유저정보
-| userActionTypes ([<Link to="/enum/lesson/#LessonUserActionType">LessonUserActionType!</Link>]) | 사용자 행동 타입
+| userActionType (<Link to="/enum/lesson/#LessonUserActionType">LessonUserActionType!</Link>) | 사용자 행동 타입
 | recommendType (<Link to="/enum/lesson/#LessonRecommendType">LessonRecommendType</Link>) | 추천 타입
 
 ### `LessonPlanContentConnectionWhere`
@@ -170,7 +179,7 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| ownerUserId (String) | Owner User ID
+| ownerId (String!) | Owner User ID
 | lessonId (String!) | 강의 ID 
 | lessonContentId (String!) | 컨텐트 ID
 | sTime (String!) | 시작 시간  format 2006-01-02 15:04:05

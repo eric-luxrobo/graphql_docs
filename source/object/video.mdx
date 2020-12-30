@@ -11,7 +11,7 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | status  (<Link to="/enum/video/#MediaProgressStatus">MediaProgressStatus!</Link>) | 비디오 상태
 | thumbnails  ([<Link to="/object/imageInfo/#ImageInfo">ImageInfo!</Link>]!) | 이미지 리스트
-| videoDetails ([<Link to="/object/video/#VideoDetail">VideoDetail!</Link>]!) | 비디오 리스트
+| videoDetail (<Link to="/object/video/#VideoDetail">VideoDetail!</Link>!) | 비디오 리스트
 
 ### `VideoDetail`
 > 비디오 상세 정보
@@ -21,5 +21,5 @@ import { Link } from 'gatsby'
 | widthInPx (Int!) | 해상도 
 | heightInPx (Int!) | 해상도
 | url (String!) | 경로 
-| videoType (String!) | 비디오 타입
+| videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType!</Link>) | 비디오 타입
 | durationInMs (Int!) | 비디오 시간

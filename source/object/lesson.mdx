@@ -33,7 +33,11 @@ import { Link } from 'gatsby'
 | lessonPlans ([<Link to="/object/lesson/#LessonPlan">LessonPlan!</Link>]!)  | 강의 계획 리스트
 | idx (Int!) | 순서 idx
 | tags ([String!]!) | 태그 리스트
-| userId (String!) | 강의 등록 사용자 ID
+| userId (String!) | Deplicated ... 강의 등록 사용자 ID
+| ownerId (String!) | 강의 등록 사용자 ID
+| ownerName (String!) | 강의 등록 사용자 이름
+| isEdit (Boolean!) | 수정 가능 여부
+| progressRate (Int!) | 진도율
 | createdAt (String!) | 등록 날짜
 | updatedAt (String!) | 수정 날짜
 

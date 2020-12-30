@@ -113,14 +113,14 @@ import { Link } from 'gatsby'
 | first (Int!)  | 요청개수   | 
 | after (String) | Cursor다음 페이지 String | 
 | offset (Int) | 다음페이지 offset limit정보 |
-| excludeId (String) | 요청 제외 강의 ID
+| exclude (<Link to="/input/lesson/#LessonConnectionExclude">LessonConnectionExclude</Link>)  | 요청 제외 정보
 | orderBy (<Link to="/input/lesson/#LessonConnectionOrder">LessonConnectionOrder</Link>)  | 커리큘럼 Orderby  | 
 | where  (<Link to="/input/lesson/#LessonConnectionWhere">LessonConnectionWhere</Link>)  | 커리큘럼 Where  | 
 
 <GraphiQL
   query="
-    query lessonConnection($first: Int!, $after: String, $offset: Int, $excludeId: String, $orderBy: LessonConnectionOrder, $where: LessonConnectionWhere) {
-      lessonConnection(first: $first, after: $after, offset: $offset, excludeId: $excludeId, orderBy: $orderBy, where: $where) {
+    query lessonConnection($first: Int!, $after: String, $offset: Int, $exclude: LessonConnectionExclude, $orderBy: LessonConnectionOrder, $where: LessonConnectionWhere) {
+      lessonConnection(first: $first, after: $after, offset: $offset, exclude: $exclude, orderBy: $orderBy, where: $where) {
         totalCount
         pageInfo {
             endCursor
@@ -451,6 +451,7 @@ import { Link } from 'gatsby'
 > 강의 컨텐츠 데이타
 
 **Arguments**
+
 | Name | Description |
 | -------- | -------- | 
 | input (<Link to="/input/lesson/#LessonPlanContentConnectionInput">LessonPlanContentConnectionInput</Link>)  | 통계 정보 입력  | 
@@ -503,6 +504,7 @@ import { Link } from 'gatsby'
   }}
   variables={{
     input: {
+      ownerUserId: "58",
       lessonId: "2308439434",
       lessonContentId: "2797348062",
       sTime: "2020-12-23 12:05:30",
@@ -643,7 +645,7 @@ import { Link } from 'gatsby'
             thumbnails {
               url
             }
-            videoDetails {
+            videoDetail {
               widthInPx
               heightInPx
               url
