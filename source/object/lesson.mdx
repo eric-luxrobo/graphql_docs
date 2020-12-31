@@ -113,6 +113,16 @@ import { Link } from 'gatsby'
 | label (String!)  | 레벨 표기   |
 | type (<Link to="/enum/lesson/#LessonLevelType">LevelType!</Link>) | 강의 레벨
 
+### `LessonProgress`
+> 강의 진도율 정보
+
+| Name | Description |
+| -------- | -------- | 
+| progress (Int!)  | 컨텐츠 진도수
+| progressRate (Int!)  | 전텐츠 진도율
+| total (Int!) | 전체 컨텐츠 수
+
+
 ### `LessonPlan`
 > 강의 계획
 
@@ -134,6 +144,7 @@ import { Link } from 'gatsby'
 | edge (<Link to="/object/lesson/#LessonPlanContentEdge">LessonPlanContentEdge</Link>!) | 연결 정보
 | totalCount (Int) | 총 수 
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
+| progress (<Link to="/object/lesson/#LessonProgress">LessonProgress</Link>)  | 강의 진도율 정보
 
 ### `LessonPlanContentEdge`
 > 강의 계획 컨텐츠 연결엣지 
@@ -157,6 +168,7 @@ import { Link } from 'gatsby'
 | template (<Link to="/object/lesson/#LessonPlanContentTemplate">LessonPlanContentTemplate</Link>!) | To be Deplicate - Union 템플릿 정보
 | templates [(<Link to="/object/lesson/#LessonPlanContentTemplate">LessonPlanContentTemplate</Link>!)] | Union 템플릿 리스트 정보
 | idx (Int!) | 순서 
+| isDone (Boolean!) | 컨텐츠 수업 완료 여부
 
 ### `LessonPlanContentTemplate`
 > 강의 계획 컨텐츠 Union타입

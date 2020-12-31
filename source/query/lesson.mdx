@@ -25,6 +25,8 @@ import { Link } from 'gatsby'
         title
         subTitle
         describe
+        progressRate
+        isEdit
         color
         bgImg {
           url
@@ -92,6 +94,9 @@ import { Link } from 'gatsby'
       }
     }
   "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
   variables={{
     where: {
       id: "2308439434"
@@ -132,6 +137,8 @@ import { Link } from 'gatsby'
           title
           subTitle
           describe
+          progressRate
+          isEdit
           color
           bgImg {
             url
@@ -145,6 +152,10 @@ import { Link } from 'gatsby'
             cLike
             cBookmark
             cView
+            cReview
+            cLessonMember
+            isLike
+            isBookmark
           }
           levelType
           groupType
@@ -200,6 +211,9 @@ import { Link } from 'gatsby'
       }
     }
   "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
   variables={{
     first: 10,
     after: "",
@@ -264,6 +278,10 @@ import { Link } from 'gatsby'
             cLike
             cBookmark
             cView
+            cReview
+            cLessonMember
+            isLike
+            isBookmark
           }
           levelType
           groupType
@@ -381,6 +399,10 @@ import { Link } from 'gatsby'
               cLike
               cBookmark
               cView
+              cReview
+              cLessonMember
+              isLike
+              isBookmark
             }
             levelType
             groupType
@@ -467,11 +489,17 @@ import { Link } from 'gatsby'
           hasNextPage
           startCursor
         }
+        progress {
+          progressRate
+          progress
+          total
+        }
         edge {
           afterCursor
           beforeCursor
           node {
             id
+            isDone
             type
             title
             template {
@@ -504,7 +532,7 @@ import { Link } from 'gatsby'
   }}
   variables={{
     input: {
-      ownerUserId: "58",
+      ownerId: "58",
       lessonId: "2308439434",
       lessonContentId: "2797348062",
       sTime: "2020-12-23 12:05:30",

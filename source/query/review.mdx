@@ -21,6 +21,7 @@ import { Link } from 'gatsby'
       review(where: $where) {
         id
         ownerName
+        ownerId
         title
         comment
         serviceId
@@ -64,6 +65,7 @@ import { Link } from 'gatsby'
                 nodes {
                     id
                     ownerName
+                    ownerId
                     title
                     comment
                     serviceId
