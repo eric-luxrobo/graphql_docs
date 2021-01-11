@@ -5,3 +5,145 @@ description: 학급 서비스
 
 import GraphiQL from '../../src/components/GraphiQL'
 import { Link } from 'gatsby'
+
+
+### `addClassroomLessons`
+> 학급 강의 추가
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#AddClassroomLessonInput">AddClassroomLessonInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation addClassroomLessons( $input:[AddClassroomLessonInput!]! ){
+    addClassroomLessons( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: [{
+      id: "1946889872",
+      lessonId: "12"
+    }]
+  }}
+/>
+
+### `delClassroomLessons`
+> 학급 강의 삭제
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DelClassroomLessonInput">DelClassroomLessonInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation delClassroomLessons( $input:[DelClassroomLessonInput!]! ){
+    delClassroomLessons( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: [{
+      id: "1946889872",
+      lessonId: "12"
+    }]
+  }}
+/>
+
+
+
+### `createClassroom`
+> 학급 등록
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#CreateClassroomInput">CreateClassroomInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation createClassroom( $input:CreateClassroomInput! ){
+    createClassroom( input: $input ) 
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      title: "333", 
+      summary: "1",
+      openType: "OPEN",
+      mainImg: {
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      },
+    }
+  }}
+/>
+
+
+### `updateClassroom`
+> 학급 수정
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#UpdateClassroomInput">UpdateClassroomInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation updateClassroom( $input:UpdateClassroomInput! ){
+    updateClassroom( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "1",
+      title: "333", 
+      summary: "1",
+      openType: "OPEN",
+      mainImg: {
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      },
+    }
+  }}
+/>
+
+### `deleteClassroom`
+> 학급 삭제
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DeleteClassroomInput">DeleteClassroomInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation deleteClassroom( $input:DeleteClassroomInput! ){
+    deleteClassroom( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "1"
+    }
+  }}
+/>

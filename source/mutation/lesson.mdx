@@ -203,6 +203,73 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `createLessonPlanPDF`
+> 강의계획 등록
+
+
+`Input fields`
+* input : <Link to="/input/lesson/#CreateLessonPlanPDFInput">CreateLessonPlanPDFInput</Link>
+
+`Return Type`: <Link to="/object/lesson/#LessonPlan">LessonPlan</Link>
+
+<GraphiQL
+  query="
+  mutation createLessonPlanPDF( $input:CreateLessonPlanPDFInput! ){
+    createLessonPlanPDF( input: $input ) {
+      id
+      title
+    }
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    "input": {
+      "lessonId": "1",
+      "title": "계획1",
+      "pdfBase64": ""
+    }
+  }}
+/>
+
+### `createLessonPlanContent`
+> 강의계획 컨테츠 등록
+
+`Input fields`
+* input : <Link to="/input/lesson/#CreateLessonPlanContentInput">CreateLessonPlanContentInput</Link>
+
+`Return Type`: <Link to="/object/lesson/#LessonPlanContent">LessonPlanContent</Link>
+
+<GraphiQL
+  query="
+  mutation createLessonPlanContent( $input:CreateLessonPlanContentInput! ){
+    createLessonPlanContent( input: $input ) {
+      id
+      title
+    }
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      lessonId: "192344681",
+      lessonPlanId: "85",
+      title: "강의시작하기",
+      type: "MULTI_CONTENT",
+      viewType: "HORIZON_FULL_VERTICAL_FULL_VIEW",
+      title: "이거 테스트",
+      templates:[{
+        text: {
+          content: "e3333"
+        }
+      }]
+    }
+  }}
+  
+/> 
 
 
 ### `deleteLesson`
@@ -276,6 +343,34 @@ import { Link } from 'gatsby'
   variables={{
     input: {
       id: "333", 
+    }
+  }}
+/>
+
+### `deleteLessonPlanContent`
+> 강의 계획 컨텐츠 삭제
+
+
+`Input fields`
+* input : <Link to="/input/lesson/#DeleteLessonPlanContentInput">DeleteLessonPlanContentInput</Link>
+
+`Return Type`: Boolean
+
+
+<GraphiQL
+  query="
+  mutation deleteLessonPlanContent( $input:DeleteLessonPlanContentInput! ){
+    deleteLessonPlanContent( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "333", 
+      lessonId: "1",
+      lessonPlanId: "1"
     }
   }}
 />
@@ -468,3 +563,43 @@ import { Link } from 'gatsby'
     }
   }}
 />
+
+### `updateLessonPlanContent`
+> 강의계획 컨테츠 수정
+
+`Input fields`
+* input : <Link to="/input/lesson/#UpdateLessonPlanContentInput">UpdateLessonPlanContentInput</Link>
+
+`Return Type`: <Link to="/object/lesson/#LessonPlanContent">LessonPlanContent</Link>
+
+
+<GraphiQL
+  query="
+  mutation updateLessonPlanContent( $input:UpdateLessonPlanContentInput! ){
+    updateLessonPlanContent( input: $input ) {
+      id
+      title
+    }
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id:"3387746883",
+      lessonId: "192344681",
+      lessonPlanId: "85",
+      title: "강의시작하기",
+      type: "MULTI_CONTENT",
+      viewType: "HORIZON_FULL_VERTICAL_FULL_VIEW",
+      title: "이거 테스트",
+      templates:[{
+        text: {
+          content: "e3333"
+        }
+      }]
+    }
+  }}
+  
+/> 

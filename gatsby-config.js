@@ -160,6 +160,7 @@ module.exports = {
             'enum/app',
             'enum/board',
             'enum/lesson',
+            'enum/classroom',
             'enum/review',
             'enum/search',
             'enum/stat',

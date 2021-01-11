@@ -129,6 +129,7 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (ID!)  | 강의계획 ID  |
+| lessonId (String!) | 강의 ID
 | title (String!) | 강의 계획 제목
 | idx (Int!) | 순서 
 | contents  ([<Link to="/object/lesson/#LessonPlanContent">LessonPlanContent</Link>!]) | 수업계획 컨텐츠
@@ -162,6 +163,8 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (ID!)  | 강의계획 컨텐트 ID  |
+| lessonId (String!) | 강의 ID
+| lessonPlanId (String!) | 강의 계획 ID
 | title (String!) | 강의 계획 컨텐츠 제목
 | type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>!) | 컨텐츠 타입
 | viewType (<Link to="/enum/lesson/#LessonPlanContentViewType">LessonPlanContentViewType</Link>!) | 뷰 타입

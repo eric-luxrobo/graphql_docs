@@ -52,6 +52,28 @@ import { Link } from 'gatsby'
 | lessonId (String!) | 강의 ID
 | contents ([<Link to="/input/lesson/#LessonPlanContentInput">LessonPlanContentInput!</Link>]) | 강의계획 컨텐츠 정보
 
+### `CreateLessonPlanPDFInput`
+> 강의 계획 등록 PDF to Image 등록 
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!)  | 강의 제목  | 
+| lessonId (String!) | 강의 ID
+| pdfBase64 (String!) | PDF file to base64 encoding
+
+
+### `CreateLessonPlanContentInput`
+> 강의 계획 컨텐츠 등록 
+
+| Name | Description |
+| -------- | -------- | 
+| lessonId (String!) | 강의 ID
+| lessonPlanId (String!) | 강의 계획 ID
+| title (String!)  | 강의 제목  | 
+| type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType!</Link>) | 컨텐츠 타입
+| viewType (<Link to="/enum/lesson/#LessonPlanContentViewType">LessonPlanContentViewType!</Link>) | 화면 뷰 타입
+| tempaltes ([<Link to="/input/lesson/#LessonPlanContentTemplateInput">LessonPlanContentTemplateInput!</Link>]) |  템플릿
+
 
 ### `LessonPlanContentInput`
 > 강의계획 컨텐츠 정보
@@ -332,3 +354,16 @@ import { Link } from 'gatsby'
 | lessonId (String) | 강의 ID 
 | idx (Int!) | 강의 순서
 | contents ([<Link to="/input/lesson/#LessonPlanContentInput">LessonPlanContentInput!</Link>]) | 강의계획 컨텐츠 정보
+
+### `UpdateLessonPlanContentInput`
+> 강의 계획 컨텐츠 수정
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | 강의 컨테츠 ID
+| lessonId (String!) | 강의 ID
+| lessonPlanId (String!) | 강의 계획 ID
+| title (String)  | 강의 제목  | 
+| type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>) | 컨텐츠 타입
+| viewType (<Link to="/enum/lesson/#LessonPlanContentViewType">LessonPlanContentViewType</Link>) | 화면 뷰 타입
+| tempaltes ([<Link to="/input/lesson/#LessonPlanContentTemplateInput">LessonPlanContentTemplateInput</Link>]) |  템플릿

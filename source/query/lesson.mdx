@@ -61,6 +61,7 @@ import { Link } from 'gatsby'
             id
             type
             viewType
+            isDone
             templates {
               ... on LessonPlanContentTemplateBase  {
                 type
@@ -173,10 +174,14 @@ import { Link } from 'gatsby'
           userId
           lessonPlans {
             id
+            lessonId
             contents {
               id
+              lessonId
+              lessonPlanId
               type
               viewType
+              isDone
               templates {
                 ... on LessonPlanContentTemplateBase  {
                   type
@@ -297,10 +302,14 @@ import { Link } from 'gatsby'
           }
           lessonPlans {
             id
+            lessonId
             contents {
               id
+              lessonId
+              lessonPlanId
               type
               viewType
+              isDone
               templates {
                 ... on LessonPlanContentTemplateBase  {
                   type
@@ -416,10 +425,14 @@ import { Link } from 'gatsby'
             }
             lessonPlans {
               id
+              lessonId
               contents {
                 id
+                lessonId
+                lessonPlanId
                 type
                 viewType
+                isDone
                 templates {
                   ... on LessonPlanContentTemplateBase  {
                     type

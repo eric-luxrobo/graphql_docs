@@ -3,3 +3,50 @@ title: 학급 Input Object
 ---
 
 import { Link } from 'gatsby'
+
+### `AddClassroomLessonInput`
+> 학급 강의 추가 
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 학급 ID  | 
+| lessonId (String!) | 강의 ID
+
+
+### `DelClassroomLessonInput`
+> 학급 강의 삭제
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 학급 ID  | 
+| lessonId (String!) | 강의 ID
+
+
+### `CreateClassroomInput`
+> 학급 등록 
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!)  | 강의 제목  | 
+| summary (String!) | 설명
+| openType (<Link to="/enum/classroom/#ClassroomOpenType">ClassroomOpenType!</Link>) | 사용여부
+| mainImg (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 배경 이미지
+
+
+### `UpdateClassroomInput`
+> 학급 수정
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | 학급 ID
+| title (String)  | 제목  | 
+| summary (String) | 설명
+| openType (<Link to="/enum/classroom/#ClassroomOpenType">ClassroomOpenType</Link>) | 사용여부
+| mainImg (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo</Link>) | 배경 이미지
+
+### `DeleteClassroomInput`
+> 학급 삭제
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | 학급 ID
