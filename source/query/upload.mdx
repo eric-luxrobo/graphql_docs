@@ -1,0 +1,54 @@
+---
+title: 이미지 업로드 QUERY
+description: 이미지 업로드 서비스 Query
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `uploadImageConnection`
+`Type` : <Link to="/object/upload/#UploadImageConnection/">UploadImageConnection</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/input/upload/#UploadImageConnectionOrder">UploadImageConnectionOrder</Link>)  | 커리큘럼 Orderby  | 
+| where  (<Link to="/input/upload/#UploadImageConnectionWhere">UploadImageConnectionWhere</Link>)  | 커리큘럼 Where  | 
+
+<GraphiQL
+  query="
+    query uploadImageConnection($first: Int!, $after: String, $offset: Int, $orderBy: UploadImageConnectionOrder, $where: UploadImageConnectionWhere) {
+      uploadImageConnection(first: $first, after: $after, offset: $offset,orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+            id
+            imageKey
+            serviceId
+            serviceType
+            image {
+                url
+            }
+        }
+      }
+    }
+  "
+  variables={{
+    first: 10,
+    after: "",
+    offset: 0,
+    orderBy: {
+      field: "ID"
+    },
+    where: {
+    }
+  }}
+/>

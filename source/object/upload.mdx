@@ -1,0 +1,39 @@
+x---
+title: 비디오 Object
+---
+
+import { Link } from 'gatsby'
+
+
+### `UploadImage`
+> 업로드한 이미지 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!)  | 강의 이미지  ID  |
+| imageKey (String!) | 이미지 키
+| idx (Int!) | 순서 
+| serviceType  (<Link to="/enum/upload/#UploadImageServiceType">ServiceType</Link>!) | 서비스  타입 정의
+| serviceId (String!) | 서비스 타입에 대한 ID
+| image (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 썸네일 이미지
+| createdAt (String!) | 생성날짜
+| updatedAt (String!) | 업데이트 날짜
+
+### `UploadImageConnection`
+> 업로드한 이미지 리스트정보
+
+| Name | Description |
+| -------- | -------- | 
+| edge (<Link to="/object/upload/#UploadImageEdge">UploadImageEdge</Link>!) | 연결 정보
+| nodes [(<Link to="/object/upload/#UploadImage">UploadImage</Link>!]!) | 리스트 정보
+| totalCount (Int) | 총 수 
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
+
+### `UploadImageEdge`
+> 업로드한 컨텐츠 연결엣지 
+
+| Name | Description |
+| -------- | -------- | 
+| afterCursor (String!)  | 페이지 커서 ID  | 
+| beforeCursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/object/upload/#UploadImage">UploadImage</Link>)  | 이미지 정보  |

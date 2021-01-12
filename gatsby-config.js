@@ -110,6 +110,7 @@ module.exports = {
             'query/search',
             'query/review',
             'query/stat',
+            'query/upload',
           ],
           'Mutations': [
             'mutation/account',
@@ -139,6 +140,7 @@ module.exports = {
             'object/search',
             'object/stat',
             'object/video',
+            'object/upload',
           ],
           'Input Objects': [
             'input/account',
