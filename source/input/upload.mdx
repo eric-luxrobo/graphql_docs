@@ -2,6 +2,8 @@
 title: 업로드(이미지) Input Object
 ---
 
+import { Link } from 'gatsby'
+
 
 ### `CreateUploadImageInput`
 > 이미지 업로드 입력 파라미터 
@@ -11,3 +13,12 @@ title: 업로드(이미지) Input Object
 | id (String!)  | 서비스 하위 키값   | 
 | serviceName (String!)  | 서비스 이름  | 
 | imageBase64 (String!)  | 이미지로드하여 base64로 인코딩한 이미지  | 
+
+
+### `UploadImageConnectionWhere`
+> 이미지 리스트 조건 
+
+| Name | Description |
+| -------- | -------- | 
+| serviceType (<Link to="/enum/upload/#UploadImageServiceType">UploadImageServiceType!</Link>) | 업로드 타입 ex) LESSON, CLASSROOM, LESSON_PLAN 
+| serviceIds ([String!])  | 서비스 필터  | 

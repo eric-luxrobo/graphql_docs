@@ -37,6 +37,29 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `projectNameExist`
+`Type` : Boolean
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/project/#ProjectNameExistWhere">ProjectNameExistWhere</Link>)  | 프로젝트 존재여부 체크 Where  | 
+
+<GraphiQL
+  query="
+    query projectNameExist($where: ProjectNameExistWhere!) {
+      projectNameExist(where: $where) 
+    }
+  "
+  variables={{
+    where: {
+      name: "1",
+      userKey: "08C904CB-7E14-4CB8-866A-35E588C3FEE1"
+    }
+  }}
+/>
+
 
 ### `projectConnection`
 `Type` : <Link to="/object/project/#ProjectConnection/">ProjectConnection</Link>

@@ -166,6 +166,7 @@ module.exports = {
             'enum/review',
             'enum/search',
             'enum/stat',
+            'enum/upload',
           ],
         },
       },
