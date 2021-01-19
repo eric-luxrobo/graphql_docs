@@ -14,3 +14,91 @@ import { Link } from 'gatsby'
 | summary (String!) | 설명 
 | openType (<Link to="/enum/classroom/#ClassroomOpenType">ClassroomOpenType!</Link>) | 오픈 여부
 | mainImg  (<Link to="/object/imageInfo/#ImageInfo">ImageInfo!</Link>) |  메인 이미지 
+| createdAt (String!) | 등록 날짜
+| updatedAt (String!) | 수정 날짜
+
+### `ClassroomEdge`
+> 학급 연결 정보
+
+| Name | Description |
+| -------- | -------- | 
+| cursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/object/classroom/#Classroom">Classroom!</Link>)  | 학급 정보  |
+
+
+### `ClassroomConnection`
+> 학급 리스트 정보
+
+| Name | Description |
+| -------- | -------- | 
+| edges ([<Link to="/object/classroom/#ClassroomEdge">ClassroomEdge</Link>]!)  | 연결 노드 리스트  | 
+| nodes ([<Link to="/object/classroom/#Classroom">Classroom</Link>]!)  |  정보 Array  |
+| totalCount (Int!) | 총 수 
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  
+
+
+
+### `ClassroomNotice`
+> 학급 공지 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 학급 ID  | 
+| classroomId (String!) | 학급 ID 
+| title (String!)  | 제목  | 
+| content (String!) | 공지내용
+| createdAt (String!) | 등록 날짜
+| updatedAt (String!) | 수정 날짜
+
+### `ClassroomNoticeEdge`
+> 학급 공지 연결 정보
+
+| Name | Description |
+| -------- | -------- | 
+| cursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/object/classroom/#ClassroomNotice">ClassroomNotice!</Link>)  | 학급 공지사항 정보  |
+
+
+### `ClassroomNoticeConnection`
+> 학급 공지 리스트 정보
+
+| Name | Description |
+| -------- | -------- | 
+| edges ([<Link to="/object/classroom/#ClassroomNoticeEdge">ClassroomNoticeEdge</Link>]!)  | 연결 노드 리스트  | 
+| nodes ([<Link to="/object/classroom/#ClassroomNotice">ClassroomNotice</Link>]!)  |  정보 Array  |
+| totalCount (Int!) | 총 수 
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  
+
+
+### `ClassroomHomework`
+> 학급 숙제 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 학급 ID  | 
+| lessonId (String!) | 강의 ID |
+| classroomId (String!) | 학급 ID 
+| title (String!)  | 제목  | 
+| content (String!) | 내용
+| expireDate (String!) | 만료 날짜
+| createdAt (String!) | 등록 날짜
+| updatedAt (String!) | 수정 날짜
+
+### `ClassroomHomeworkEdge`
+> 학급 공지 연결 정보
+
+| Name | Description |
+| -------- | -------- | 
+| cursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/object/classroom/#ClassroomHomework">ClassroomHomework!</Link>)  | 학급 숙제 정보  |
+
+
+### `ClassroomHomeworkConnection`
+> 학급 숙제 리스트 정보
+
+| Name | Description |
+| -------- | -------- | 
+| edges ([<Link to="/object/classroom/#ClassroomHomeworkEdge">ClassroomHomeworkEdge</Link>]!)  | 연결 노드 리스트  | 
+| nodes ([<Link to="/object/classroom/#ClassroomHomework">ClassroomHomework</Link>]!)  |  정보 Array  |
+| totalCount (Int!) | 총 수 
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  

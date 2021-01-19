@@ -93,6 +93,62 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `createClassroomNotice`
+> 학급 공지사항 등록
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#CreateClassroomNoticeInput">CreateClassroomNoticeInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation createClassroomNotice( $input:CreateClassroomNoticeInput! ){
+    createClassroomNotice( input: $input ) 
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      classroomId: "1",
+      title: "333", 
+      content: "1",
+    }
+  }}
+/>
+
+### `createClassroomHomework`
+> 학급 숙제 등록
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#CreateClassroomHomeworkInput">CreateClassroomHomeworkInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation createClassroomHomework( $input:CreateClassroomHomeworkInput! ){
+    createClassroomHomework( input: $input ) 
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      classroomId: "1",
+      lessonId: "1",
+      title: "333", 
+      content: "1",
+      expireDate: "2020-01-20"
+    }
+  }}
+/>
+
 
 ### `updateClassroom`
 > 학급 수정
@@ -126,6 +182,66 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `updateClassroomNotice`
+> 학급 공지사항 수정
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#UpdateClassroomNoticeInput">UpdateClassroomNoticeInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation updateClassroomNotice( $input:UpdateClassroomNoticeInput! ){
+    updateClassroomNotice( input: $input ) 
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "1",
+      classroomId: "1",
+      title: "333", 
+      content: "1",
+    }
+  }}
+/>
+
+
+### `updateClassroomHomework`
+> 학급 숙제 수정
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#UpdateClassroomHomeworkInput">UpdateClassroomHomeworkInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation updateClassroomHomework( $input:UpdateClassroomHomeworkInput! ){
+    updateClassroomHomework( input: $input ) 
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "1",
+      classroomId: "1",
+      lessonId: "1",
+      title: "333", 
+      content: "1",
+      expireDate: "2021-01-20"
+    }
+  }}
+/>
+
+
 ### `deleteClassroom`
 > 학급 삭제
 
@@ -147,6 +263,61 @@ import { Link } from 'gatsby'
   variables={{
     input: {
       id: "1"
+    }
+  }}
+/>
+
+
+
+### `deleteClassroomNotice`
+> 학급 공지사항 삭제
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DeleteClassroomNoticeInput">DeleteClassroomNoticeInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation deleteClassroomNotice( $input:DeleteClassroomNoticeInput! ){
+    deleteClassroomNotice( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "1",
+      classroomId: "1"
+    }
+  }}
+/>
+
+
+### `deleteClassroomHomework`
+> 학급 숙제 삭제
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DeleteClassroomHomeworkInput">DeleteClassroomHomeworkInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation deleteClassroomHomework( $input:DeleteClassroomHomeworkInput! ){
+    deleteClassroomHomework( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "1",
+      classroomId: "1"
     }
   }}
 />
