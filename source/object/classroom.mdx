@@ -102,3 +102,47 @@ import { Link } from 'gatsby'
 | nodes ([<Link to="/object/classroom/#ClassroomHomework">ClassroomHomework</Link>]!)  |  정보 Array  |
 | totalCount (Int!) | 총 수 
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  
+
+### `ClassroomStudent`
+> 학급 학생 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 학생 ID  | 
+| classroomId (String!) | 학급 ID 
+| name (String!)  | 이름  | 
+| userId (String!) | 유저 ID
+| password (String!) | 비밀번호
+| createdAt (String!) | 등록 날짜
+| updatedAt (String!) | 수정 날짜
+
+### `ClassroomStudentEdge`
+> 학급 학생 연결 정보
+
+| Name | Description |
+| -------- | -------- | 
+| cursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/object/classroom/#ClassroomStudent">ClassroomStudent!</Link>)  | 학급 학생 정보  |
+
+
+### `ClassroomStudentConnection`
+> 학급 학생 리스트 정보
+
+| Name | Description |
+| -------- | -------- | 
+| edges ([<Link to="/object/classroom/#ClassroomStudentEdge">ClassroomStudentEdge</Link>]!)  | 연결 노드 리스트  | 
+| nodes ([<Link to="/object/classroom/#ClassroomStudent">ClassroomStudent</Link>]!)  |  정보 Array  |
+| totalCount (Int!) | 총 수 
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  
+
+
+
+### `ClassroomLogin`
+> 학급 로그인 정보
+
+| Name | Description |
+| -------- | -------- | 
+| token (String!) | JWT 토큰정보
+| expireTime (String!) | 만료시간 timestamp
+| classroomId (String!) | 학급 ID
+

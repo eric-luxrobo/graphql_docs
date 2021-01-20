@@ -277,3 +277,94 @@ import { Link } from 'gatsby'
     }
   }}
 />
+
+
+
+### `classroomStudent`
+`Type` : <Link to="/object/classroom/#ClassroomStudent/">ClassroomStudent</Link>
+
+> 학급 학생 상세정보
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/classroom/#ClassroomStudentWhere">ClassroomStudentWhere</Link>)  | 학급학생 Where  | 
+
+<GraphiQL
+  query="
+    query classroomStudent($where: ClassroomStudentWhere!) {
+      classroomStudent(where: $where) {
+        id
+        classroomId
+        name
+        userId
+        password
+        createdAt
+        updatedAt
+      }
+    }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    where: {
+      id: "11",
+      classroomId: "3728614780"
+    }
+  }}
+/>
+
+### `classroomStudentConnection`
+`Type` : <Link to="/object/classroom/#ClassroomStudentConnection/">ClassroomStudentConnection</Link>
+
+> 학급 학생 리스트
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/input/classroom/#ClassroomStudentConnectionOrder">ClassroomStudentConnectionOrder</Link>)  |  Orderby  | 
+| where  (<Link to="/input/classroom/#ClassroomStudentConnectionWhere">ClassroomStudentConnectionWhere!</Link>)  |  Where  | 
+
+<GraphiQL
+  query="
+    query classroomStudentConnection($first: Int!, $after: String, $offset: Int, $orderBy: ClassroomStudentConnectionOrder, $where: ClassroomStudentConnectionWhere!) {
+      classroomStudentConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+          id
+          classroomId
+          userId
+          name
+          password
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    first: 10,
+    after: "",
+    offset: 0,
+    orderBy: {
+      field: "ID"
+    },
+    where: {
+      classroomId: "1946889872"
+    }
+  }}
+/>

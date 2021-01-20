@@ -12,6 +12,14 @@ import { Link } from 'gatsby'
 | id (String!)  | 학급 ID  | 
 | lessonId (String!) | 강의 ID
 
+### `AddClassroomStudentInput`
+> 학급 학생 추가 
+
+| Name | Description |
+| -------- | -------- | 
+| classroomId (String!)  | 학급 ID  | 
+| name (String!) | 학생이름
+
 
 ### `DelClassroomLessonInput`
 > 학급 강의 삭제
@@ -20,6 +28,39 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | id (String!)  | 학급 ID  | 
 | lessonId (String!) | 강의 ID
+
+
+### `DelClassroomStudentInput`
+> 학급 학생 삭제
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 학생 ID  | 
+
+### `ClassroomStudentWhere`
+> 학급 학생 조건 
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 학생 ID  | 
+| classroomId (String!) | 학급 ID
+
+
+### `ClassroomStudentConnectionOrder`
+> 학생 리스트 Order 정보
+
+| Name | Description |
+| -------- | -------- | 
+| field (<Link to="/enum/classroom/#ClassroomStudentConnectionField">ClassroomStudentConnectionField</Link>!)  | 필드 정보 | 
+| direction | 방향 | 
+
+### `ClassroomStudentConnectionWhere`
+> 학생 리스트 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| classroomId (String!) | 학급 ID
+
 
 
 ### `CreateClassroomInput`
@@ -113,3 +154,11 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | id (ID!) | 학급 ID
 | classroomId (String!) | 학급 ID
+
+### `LoginClassroomInput`
+> 학급 로그인
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!) | 학급 사용자 ID
+| password (String!) | 비밀번호
