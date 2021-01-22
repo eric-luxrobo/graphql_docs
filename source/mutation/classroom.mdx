@@ -386,13 +386,97 @@ import { Link } from 'gatsby'
 <GraphiQL
   query="
   mutation loginClassroom( $input:LoginClassroomInput! ){
-    loginClassroom( input: $input )
+    loginClassroom( input: $input ) {
+      token
+      expireTime
+      classroomId
+      isUpdatePassword
+      userId
+      name
+    }
   }
   "
   variables={{
     input: {
-      userId: "정성균_174855",
-      password: "174855"
+      userId: "정성균_FFMVB",
+      password: "BKQ87"
     }
   }}
+/>
+
+
+### `updateClassroomStudentPassword`
+> 학생 초기 비밀번호
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#UpdateClassroomStudentPasswordInput">UpdateClassroomStudentPasswordInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation updateClassroomStudentPassword( $input:UpdateClassroomStudentPasswordInput! ){
+    updateClassroomStudentPassword( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['정성균_FFMVB', 'PQVHZ'],
+  }}
+  variables={{
+    input: {
+      newPassword: "1111"
+    }
+  }}
+/>
+
+### `resetClassroomStudentTempPassword`
+> 선생님이 학생들 임시 비밀번호 세팅 강제 처리
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#ResetClassroomStudentTempPasswordInput">ResetClassroomStudentTempPasswordInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation resetClassroomStudentTempPassword( $input:ResetClassroomStudentTempPasswordInput! ){
+    resetClassroomStudentTempPassword( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      userId: "정성균_FFMVB",
+    }
+  }}
+/>
+
+
+
+### `refreshClassroomToken`
+> 학생 인증 토큰 갱신
+
+`Input fields`
+* input : 인증 토큰정보 HEADER
+
+`Return Type`: <Link to="/object/classroom/#ClassroomLogin/">ClassroomLogin!</Link>
+
+
+<GraphiQL
+  query="
+    mutation refreshClassroomToken {
+      refreshClassroomToken {
+        token
+        expireTime
+        classroomId
+        isUpdatePassword
+        userId
+        name
+      }
+    }
+  "
 />

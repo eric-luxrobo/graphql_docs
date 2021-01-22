@@ -20,10 +20,16 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query classroom($where: ClassroomWhere!) {
+    query classroom($where: ClassroomWhere) {
       classroom(where: $where) {
         id
         title
+        ownerId
+        ownerName
+        cLesson
+        cLessonDoing
+        openType
+        gradeType
         createdAt
         updatedAt
         mainImg {
@@ -37,7 +43,7 @@ import { Link } from 'gatsby'
   }}
   variables={{
     where: {
-      id: "2308439434"
+      id: "1946889872"
     }
   }}
 />
@@ -71,12 +77,18 @@ import { Link } from 'gatsby'
         }
         nodes {
           id
-            title
-            createdAt
-            updatedAt
-            mainImg {
-                url
-            }
+          title
+          ownerId
+          ownerName
+          cLesson
+          cLessonDoing
+          openType
+          gradeType
+          createdAt
+          updatedAt
+          mainImg {
+              url
+          }
         }
       }
     }
@@ -127,7 +139,7 @@ import { Link } from 'gatsby'
   variables={{
     where: {
       id: "1",
-      classroomId: "3728614780"
+      classroomId: "1946889872"
     }
   }}
 />
@@ -178,7 +190,7 @@ import { Link } from 'gatsby'
       field: "ID"
     },
     where: {
-      classroomId: "3728614780"
+      classroomId: "1946889872"
     }
   }}
 />
@@ -219,7 +231,7 @@ import { Link } from 'gatsby'
   variables={{
     where: {
       id: "1",
-      classroomId: "3728614780"
+      classroomId: "1946889872"
     }
   }}
 />
@@ -273,7 +285,7 @@ import { Link } from 'gatsby'
       field: "ID"
     },
     where: {
-      classroomId: "3728614780"
+      classroomId: "1946889872"
     }
   }}
 />
@@ -300,6 +312,9 @@ import { Link } from 'gatsby'
         name
         userId
         password
+        cAttendance
+        shortWord
+        lastAccessTime
         createdAt
         updatedAt
       }
@@ -310,8 +325,8 @@ import { Link } from 'gatsby'
   }}
   variables={{
     where: {
-      id: "11",
-      classroomId: "3728614780"
+      userId: "11",
+      classroomId: "1946889872"
     }
   }}
 />
@@ -347,6 +362,9 @@ import { Link } from 'gatsby'
           userId
           name
           password
+          cAttendance
+          shortWord
+          lastAccessTime
           createdAt
           updatedAt
         }
