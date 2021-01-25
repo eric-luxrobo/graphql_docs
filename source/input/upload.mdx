@@ -11,8 +11,8 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (String!)  | 서비스 하위 키값   | 
-| serviceName (String!)  | 서비스 이름  | 
-| imageBase64 (String!)  | 이미지로드하여 base64로 인코딩한 이미지  | 
+| serviceType (<Link to="/enum/upload/#UploadImageServiceType">UploadImageServiceType</Link>)  | 업로드 이미지 서비스 타입  | 
+| image (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfoInput!</Link>)  | 이미지로드하여 base64로 인코딩한 이미지  | 
 
 
 ### `UploadImageConnectionWhere`
