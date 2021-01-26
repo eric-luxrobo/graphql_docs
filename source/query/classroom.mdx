@@ -216,7 +216,16 @@ import { Link } from 'gatsby'
       classroomHomework(where: $where) {
         id
         lessonId
+        lessonName
         classroomId
+        isSubmission
+        userId
+        userName
+        progress {
+          total
+          progress
+          progressRate
+        }
         title
         content
         expireDate
@@ -264,7 +273,16 @@ import { Link } from 'gatsby'
         nodes {
           id
           lessonId
+          lessonName
           classroomId
+          isSubmission
+          userId
+          userName
+          progress {
+            total
+            progress
+            progressRate
+          }
           title
           content
           expireDate
@@ -275,7 +293,7 @@ import { Link } from 'gatsby'
     }
   "
   authButtons={{
-    login: ['csk6124', 'qwer1234'],
+    classroom_login: ['정성균_AABM4', '1111'],
   }}
   variables={{
     first: 10,
@@ -285,7 +303,63 @@ import { Link } from 'gatsby'
       field: "ID"
     },
     where: {
-      classroomId: "1946889872"
+      classroomId: "2854540399"
+    }
+  }}
+/>
+
+### `classroomHomeworkGroup`
+`Type` : [<Link to="/object/classroom/#ClassroomHomeworkGroup/">ClassroomHomeworkGroup</Link>]!
+
+> 학급 숙제 그룹
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | 다음날짜 | 
+| orderBy (<Link to="/input/classroom/#ClassroomHomeworkGroupOrder">ClassroomHomeworkGroupOrder</Link>)  |  Orderby  | 
+| where  (<Link to="/input/classroom/#ClassroomHomeworkGroupWhere">ClassroomHomeworkGroupWhere!</Link>)  |  Where  | 
+
+<GraphiQL
+  query="
+    query classroomHomeworkGroup($first: Int!, $after: Strin$orderBy: ClassroomHomeworkGroupOrder, $where: ClassroomHomeworkGroupWhere!) {
+      classroomHomeworkGroup(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+        date
+        nodes {
+          id
+          lessonId
+          lessonName
+          classroomId
+          isSubmission
+          userId
+          userName
+          progress {
+            total
+            progress
+            progressRate
+          }
+          title
+          content
+          expireDate
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  "
+  authButtons={{
+    classroom_login: ['정성균_AABM4', '1111'],
+  }}
+  variables={{
+    first: 3,
+    after: "",
+    orderBy: {
+      direction: "DESC"
+    },
+    where: {
+      classroomId: "2854540399"
     }
   }}
 />
@@ -321,12 +395,12 @@ import { Link } from 'gatsby'
     }
   "
   authButtons={{
-    login: ['csk6124', 'qwer1234'],
+    classroom_login: ['정성균_AABM4', '1111'],
   }}
   variables={{
     where: {
-      userId: "11",
-      classroomId: "1946889872"
+      userId: "20",
+      classroomId: "2854540399"
     }
   }}
 />

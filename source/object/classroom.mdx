@@ -10,7 +10,7 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (ID!)  | 학급 ID  | 
-| ownerId (ID!) | 학급 생성자 ID
+| ownerId (String!) | 학급 생성자 ID
 | ownerName (String!) | 학급 생성자 이름 
 | title (String!)  | 제목  | 
 | summary (String!) | 설명 
@@ -50,7 +50,7 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (ID!)  | 학급 ID  | 
-| classroomId (ID!) | 학급 ID 
+| classroomId (String!) | 학급 ID 
 | title (String!)  | 제목  | 
 | content (String!) | 공지내용
 | createdAt (String!) | 등록 날짜
@@ -82,10 +82,15 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (ID!)  | 학급 ID  | 
-| lessonId (ID!) | 강의 ID |
-| classroomId (ID!) | 학급 ID 
+| lessonId (String!) | 강의 ID |
+| lessonName (String!) | 강의 이름 |
+| classroomId (String!) | 학급 ID 
 | title (String!)  | 제목  | 
 | content (String!) | 내용
+| userId (String!) | 유저 ID
+| userName (String!) | 유저 이름
+| isSubmission (Boolean!) | 숙제 제출 여부
+| progress (<Link to="/object/lesson/#LessonProgress">LessonProgress</Link>)  | 강의 진도율 정보
 | expireDate (String!) | 만료 날짜
 | createdAt (String!) | 등록 날짜
 | updatedAt (String!) | 수정 날짜
@@ -109,13 +114,22 @@ import { Link } from 'gatsby'
 | totalCount (Int!) | 총 수 
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  
 
+### `ClassroomHomeworkGroup`
+> 학급 숙제 날짜별 그룹
+
+| Name | Description |
+| -------- | -------- | 
+| nodes ([<Link to="/object/classroom/#ClassroomHomework">ClassroomHomework</Link>]!)  |  정보 Array  |
+| date (String!) | 날짜 ex) 2021-01-20
+
+
 ### `ClassroomStudent`
 > 학급 학생 정보
 
 | Name | Description |
 | -------- | -------- | 
 | id (ID!)  | 학생 ID  | 
-| classroomId (ID!) | 학급 ID 
+| classroomId (String!) | 학급 ID 
 | name (String!)  | 이름  | 
 | userId (String!) | 유저 ID
 | cAttendance (Int!) | 출석수 
@@ -153,7 +167,7 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | token (String!) | JWT 토큰정보
 | expireTime (String!) | 만료시간 timestamp
-| classroomId (ID!) | 학급 ID
+| classroomId (String!) | 학급 ID
 | isUpdatePassword (Boolean!) | 비밀번호 변경 여부
 | userId (String!) | 학생 ID 
 | name (String!) | 학생 이름

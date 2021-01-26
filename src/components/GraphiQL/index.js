@@ -127,20 +127,37 @@ class GraphiQLComponent extends Component {
 
   setAuthHeader = (auth, key) => {
     const { endpoint } = this.props
-    fetch(endpoint ? endpoint : 'https://dev-apiv1.luxrobo.com/gateway/graphql', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: `
+    let q = ""
+    switch (key) {
+      case "classroom_login":
+        q = `
+          mutation ($user: String!, $pass: String!) {
+            loginClassroom (input: {
+                userId: $user
+                password: $pass
+            }) {
+              token
+            }
+          }
+        `
+        break
+      default:
+        q = `
           mutation ($user: String!, $pass: String!) {
             loginAccount (input: {
                 userId: $user
                 password: $pass
             }) 
           }
-        `,
+        `
+    }
+    fetch(endpoint ? endpoint : 'https://dev-apiv1.luxrobo.com/gateway/graphql', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: q,
         variables: {
           user: auth[0],
           pass: auth[1],
@@ -149,13 +166,26 @@ class GraphiQLComponent extends Component {
     })
       .then(response => response.json())
       .then(res => {
-        const token = get(res, 'data.loginAccount')
-        console.log('token', token);
-        if (token) {
-          this.setState({
-            headers: { Authorization: `${token}` },
-            selected: { [key]: 'green' },
-          })
+        switch (key) {
+          case "classroom_login":
+            const classroom_token = get(res, 'data.loginClassroom.token')
+            console.log('classroom_token', classroom_token, res);
+            if (classroom_token) {
+              this.setState({
+                headers: { Authorization: `${classroom_token}` },
+                selected: { [key]: 'green' },
+              })
+            }
+            break
+          default:
+            const token = get(res, 'data.loginAccount')
+            console.log('token', token);
+            if (token) {
+              this.setState({
+                headers: { Authorization: `${token}` },
+                selected: { [key]: 'green' },
+              })
+            }
         }
       })
       .catch(err => {
