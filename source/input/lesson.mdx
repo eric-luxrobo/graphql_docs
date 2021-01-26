@@ -171,6 +171,8 @@ import { Link } from 'gatsby'
 | field (<Link to="/enum/lesson/#LessonConnectionField">LessonConnectionField</Link>!)  | 필드 정보 | 
 
 
+
+
 ### `LessonConnectionWhere`
 > 강의 리스트 조건 정보
 
@@ -188,6 +190,21 @@ import { Link } from 'gatsby'
 | user (String) | 유저정보
 | userActionType (<Link to="/enum/lesson/#LessonUserActionType">LessonUserActionType!</Link>) | 사용자 행동 타입
 | recommendType (<Link to="/enum/lesson/#LessonRecommendType">LessonRecommendType</Link>) | 추천 타입
+
+### `LessonGroupConnectionOrder`
+> 강의 날짜별 그룹핑 리스트 Order 정보
+
+| Name | Description |
+| -------- | -------- | 
+| direction | 방향 정보 | 
+
+### `LessonGroupConnectionWhere`
+> 강의 날짜별 그룹핑 리스트 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| classroomId (String!) | 학급 ID로 검색 - 학급서비스 연동하여 데이타를 가져옴.
+
 
 ### `LessonPlanContentConnectionWhere`
 > 강의 계획 컨텐츠 조건 

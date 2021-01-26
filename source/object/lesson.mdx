@@ -63,6 +63,22 @@ import { Link } from 'gatsby'
 | totalCount (Int!) | 총 수 
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  
 
+### `LessonGroupConnection`
+> 강의 날짜별 그룹 리스트 정보
+
+| Name | Description |
+| -------- | -------- | 
+| groups ([<Link to="/object/lesson/#LessonGroup">LessonGroup</Link>]!)  | 강의 그룹  |
+
+### `LessonGroup`
+> 강의 날짜별 그룹핑 정보
+
+| Name | Description |
+| -------- | -------- | 
+| date (String!)  | 날짜정보 | 
+| nodes (<Link to="/object/lesson/#Lesson">[Lesson]!</Link>)  | 강의 리스트 정보  |
+
+
 
 ### `LessonCurriculum`
 > 커리큘럼 정보
@@ -108,13 +124,23 @@ import { Link } from 'gatsby'
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo</Link>)  | 페이지 정보  
 
 
-### `LessonLevel`
-> 강의 레벨 
+### `LessonLevelLabel`
+> 강의 레벨 라벨 정보
 
 | Name | Description |
 | -------- | -------- | 
 | label (String!)  | 레벨 표기   |
-| type (<Link to="/enum/lesson/#LessonLevelType">LevelType!</Link>) | 강의 레벨
+| type (<Link to="/enum/lesson/#LessonLevelType">LessonLevelType!</Link>) | 강의 레벨 타입
+
+
+### `LessonGroupLabel`
+> 강의 그룹 라벨 정보 
+
+| Name | Description |
+| -------- | -------- | 
+| label (String!)  | 레벨 표기   |
+| type (<Link to="/enum/lesson/#LessonGroupType">LessonGroupType!</Link>) | 강의 그룹 타입
+
 
 ### `LessonProgress`
 > 강의 진도율 정보

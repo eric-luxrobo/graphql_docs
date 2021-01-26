@@ -308,8 +308,8 @@ import { Link } from 'gatsby'
   }}
 />
 
-### `classroomHomeworkGroup`
-`Type` : [<Link to="/object/classroom/#ClassroomHomeworkGroup/">ClassroomHomeworkGroup</Link>]!
+### `classroomHomeworkGroupConnection`
+`Type` : <Link to="/object/classroom/#ClassroomHomeworkGroupConnection">ClassroomHomeworkGroupConnection</Link>
 
 > 학급 숙제 그룹
 
@@ -319,32 +319,34 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | first (Int!)  | 요청개수   | 
 | after (String) | 다음날짜 | 
-| orderBy (<Link to="/input/classroom/#ClassroomHomeworkGroupOrder">ClassroomHomeworkGroupOrder</Link>)  |  Orderby  | 
-| where  (<Link to="/input/classroom/#ClassroomHomeworkGroupWhere">ClassroomHomeworkGroupWhere!</Link>)  |  Where  | 
+| orderBy (<Link to="/input/classroom/#ClassroomHomeworkGroupConnectionOrder">ClassroomHomeworkGroupConnectionOrder</Link>)  |  Orderby  | 
+| where  (<Link to="/input/classroom/#ClassroomHomeworkGroupConnectionWhere">ClassroomHomeworkGroupConnectionWhere!</Link>)  |  Where  | 
 
 <GraphiQL
   query="
-    query classroomHomeworkGroup($first: Int!, $after: Strin$orderBy: ClassroomHomeworkGroupOrder, $where: ClassroomHomeworkGroupWhere!) {
-      classroomHomeworkGroup(first: $first, after: $after, orderBy: $orderBy, where: $where) {
-        date
-        nodes {
-          id
-          lessonId
-          lessonName
-          classroomId
-          isSubmission
-          userId
-          userName
-          progress {
-            total
-            progress
-            progressRate
+    query classroomHomeworkGroupConnection($first: Int!, $after: String, $orderBy: ClassroomHomeworkGroupConnectionOrder, $where: ClassroomHomeworkGroupConnectionWhere!) {
+      classroomHomeworkGroupConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+        groups {
+          date
+          nodes {
+            id
+            lessonId
+            lessonName
+            classroomId
+            isSubmission
+            userId
+            userName
+            progress {
+              total
+              progress
+              progressRate
+            }
+            title
+            content
+            expireDate
+            createdAt
+            updatedAt
           }
-          title
-          content
-          expireDate
-          createdAt
-          updatedAt
         }
       }
     }

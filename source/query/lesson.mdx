@@ -234,6 +234,124 @@ import { Link } from 'gatsby'
 
 
 
+### `lessonGroupConnection`
+`Type` : <Link to="/object/lesson/#LessonGroupConnection/">LessonGroupConnection</Link>
+
+> 학생 강의 그룹핑 리스트
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| orderBy (<Link to="/input/lesson/#LessonGroupConnectionOrder">LessonGroupConnectionOrder</Link>)  | 커리큘럼 Orderby  | 
+| where  (<Link to="/input/lesson/#LessonGroupConnectionWhere">LessonGroupConnectionWhere!</Link>)  | 커리큘럼 Where  | 
+
+<GraphiQL
+  query="
+    query lessonGroupConnection($first: Int!, $after: String, $orderBy: LessonGroupConnectionOrder, $where: LessonGroupConnectionWhere!) {
+      lessonGroupConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
+        groups {
+          date
+          nodes {
+            id
+            title
+            subTitle
+            describe
+            progressRate
+            isEdit
+            color
+            bgImg {
+              url
+            }
+            mainImgs {
+              domain
+              url
+            }
+            classTime
+            userActivity {
+              cLike
+              cBookmark
+              cView
+              cReview
+              cLessonMember
+              isLike
+              isBookmark
+            }
+            levelType
+            groupType
+            lockType
+            creationType
+            elementJson
+            summary {
+              intro
+              goals
+              hardwareTypes
+              elements
+              codingTypes
+            }
+            tags 
+            userId
+            lessonPlans {
+              id
+              lessonId
+              contents {
+                id
+                lessonId
+                lessonPlanId
+                type
+                viewType
+                isDone
+                templates {
+                  ... on LessonPlanContentTemplateBase  {
+                    type
+                    img {
+                      url
+                    }
+                    content
+                    idx
+                  }
+                  ... on LessonPlanContentTemplateText {
+                    type
+                    content
+                    idx
+                  }
+                  ... on LessonPlanContentTemplateImage {
+                    type
+                    img {
+                      url
+                    }
+                    idx
+                  }
+                  ... on LessonPlanContentTemplateVideo  {
+                    type
+                    videoURL
+                    videoType
+                    idx
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  "
+  authButtons={{
+    classroom_login: ['정성균_AABM4', '1111'],
+  }}
+  variables={{
+    first: 10,
+    after: "",
+    where: {
+      classroomId: "2854540399"
+    }
+  }}
+/>
+
+
+
 
 
 
@@ -560,8 +678,8 @@ import { Link } from 'gatsby'
 
 
 
-### `lessonLevelTypes`
-`Type` : <Link to="/object/lesson/#LessonLevel/">LessonLevel</Link>
+### `lessonLevelLabels`
+`Type` : <Link to="/object/lesson/#LessonLevelLabel/">LessonLevelLabel</Link>
 
 > 강의 레벨 타입 리스트 정보
 
@@ -570,8 +688,27 @@ import { Link } from 'gatsby'
 
 <GraphiQL
   query="
-    query lessonLevelTypes {
-      lessonLevelTypes {
+    query lessonLevelLabels {
+      lessonLevelLabels {
+        label
+        type
+      }
+    }
+  "
+/>
+
+### `lessonGroupLabels`
+`Type` : <Link to="/object/lesson/#LessonGroupLabel/">LessonGroupLabel</Link>
+
+> 강의 그룹 타입 리스트 정보
+
+**Arguments**
+없음 
+
+<GraphiQL
+  query="
+    query lessonGroupLabels {
+      lessonGroupLabels {
         label
         type
       }

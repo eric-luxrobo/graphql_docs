@@ -37,3 +37,33 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `createUploadImages`
+> 멀티 이미지 업로드
+
+
+`Input fields`
+* input : <Link to="/input/upload/#CreateUploadImageInput">[CreateUploadImageInput]!</Link>
+
+`Return Type`: <Link to="/object/imageInfo/#ImageInfo">[ImageInfo!]!</Link>
+
+<GraphiQL
+  query="
+  mutation createUploadImages( $input:[CreateUploadImageInput]! ){
+    createUploadImages( input: $input ) {
+      domain
+      url
+      width
+      height
+    }
+  }
+  "
+  variables={{
+    input: {
+      id: "1",
+      serviceType:"LESSON",
+      image: {
+        rawFile: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD"
+      }
+    },
+  }}
+/>
