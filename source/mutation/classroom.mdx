@@ -61,59 +61,6 @@ import { Link } from 'gatsby'
   }}
 />
 
-### `delClassroomLessons`
-> 학급 강의 삭제
-
-
-`Input fields`
-* input : <Link to="/input/classroom/#DelClassroomLessonInput">DelClassroomLessonInput</Link>
-
-`Return Type`: Boolean!
-
-<GraphiQL
-  query="
-  mutation delClassroomLessons( $input:[DelClassroomLessonInput!]! ){
-    delClassroomLessons( input: $input )
-  }
-  "
-  authButtons={{
-    login: ['csk6124', 'qwer1234'],
-  }}
-  variables={{
-    input: [{
-      id: "1946889872",
-      lessonId: "12"
-    }]
-  }}
-/>
-
-
-### `delClassroomStudents`
-> 학급 학생 삭제
-
-
-`Input fields`
-* input : <Link to="/input/classroom/#DelClassroomStudentInput">DelClassroomStudentInput</Link>
-
-`Return Type`: Boolean!
-
-<GraphiQL
-  query="
-  mutation delClassroomStudents( $input:[DelClassroomStudentInput!]! ){
-    delClassroomStudents( input: $input )
-  }
-  "
-  authButtons={{
-    login: ['csk6124', 'qwer1234'],
-  }}
-  variables={{
-    input: [{
-      id: "1",
-    }]
-  }}
-/>
-
-
 
 ### `createClassroom`
 > 학급 등록
@@ -199,6 +146,194 @@ import { Link } from 'gatsby'
       title: "333", 
       content: "1",
       expireDate: "2020-01-20"
+    }
+  }}
+/>
+
+### `createClassroomStudentHomework`
+> 학급 학생 숙제 등록
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#CreateClassroomStudentHomeworkInput">CreateClassroomStudentHomeworkInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation createClassroomStudentHomework( $input:CreateClassroomStudentHomeworkInput! ){
+    createClassroomStudentHomework( input: $input ) 
+  }
+  "
+  authButtons={{
+    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+  }}
+  variables={{
+    input: {
+      classroomId: "2854540399",
+      homeworkId: "8",
+      content: "1",
+      fileBase64: ""
+    }
+  }}
+/>
+
+
+### `deleteClassroom`
+> 학급 삭제
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DeleteClassroomInput">DeleteClassroomInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation deleteClassroom( $input:DeleteClassroomInput! ){
+    deleteClassroom( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "1"
+    }
+  }}
+/>
+
+
+
+### `deleteClassroomNotice`
+> 학급 공지사항 삭제
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DeleteClassroomNoticeInput">DeleteClassroomNoticeInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation deleteClassroomNotice( $input:DeleteClassroomNoticeInput! ){
+    deleteClassroomNotice( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "1",
+      classroomId: "1"
+    }
+  }}
+/>
+
+
+### `deleteClassroomHomework`
+> 학급 숙제 삭제
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DeleteClassroomHomeworkInput">DeleteClassroomHomeworkInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation deleteClassroomHomework( $input:DeleteClassroomHomeworkInput! ){
+    deleteClassroomHomework( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: {
+      id: "1",
+      classroomId: "1"
+    }
+  }}
+/>
+
+### `delClassroomLessons`
+> 학급 강의 삭제
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DelClassroomLessonInput">DelClassroomLessonInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation delClassroomLessons( $input:[DelClassroomLessonInput!]! ){
+    delClassroomLessons( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: [{
+      id: "1946889872",
+      lessonId: "12"
+    }]
+  }}
+/>
+
+
+### `delClassroomStudents`
+> 학급 학생 삭제
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DelClassroomStudentInput">DelClassroomStudentInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation delClassroomStudents( $input:[DelClassroomStudentInput!]! ){
+    delClassroomStudents( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    input: [{
+      id: "1",
+    }]
+  }}
+/>
+
+
+
+### `deleteClassroomStudentHomework`
+> 학급 학생 숙제 수정
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#DeleteClassroomStudentHomeworkInput">DeleteClassroomStudentHomeworkInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation deleteClassroomStudentHomework( $input:DeleteClassroomStudentHomeworkInput! ){
+    deleteClassroomStudentHomework( input: $input ) 
+  }
+  "
+  authButtons={{
+    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+  }}
+  variables={{
+    input: {
+      id: "1"
     }
   }}
 />
@@ -295,113 +430,29 @@ import { Link } from 'gatsby'
   }}
 />
 
-
-### `deleteClassroom`
-> 학급 삭제
+### `updateClassroomStudentHomework`
+> 학급 학생 숙제 수정
 
 
 `Input fields`
-* input : <Link to="/input/classroom/#DeleteClassroomInput">DeleteClassroomInput</Link>
+* input : <Link to="/input/classroom/#UpdateClassroomStudentHomeworkInput">UpdateClassroomStudentHomeworkInput</Link>
 
 `Return Type`: Boolean!
 
 <GraphiQL
   query="
-  mutation deleteClassroom( $input:DeleteClassroomInput! ){
-    deleteClassroom( input: $input )
+  mutation updateClassroomStudentHomework( $input:UpdateClassroomStudentHomeworkInput! ){
+    updateClassroomStudentHomework( input: $input ) 
   }
   "
   authButtons={{
-    login: ['csk6124', 'qwer1234'],
-  }}
-  variables={{
-    input: {
-      id: "1"
-    }
-  }}
-/>
-
-
-
-### `deleteClassroomNotice`
-> 학급 공지사항 삭제
-
-
-`Input fields`
-* input : <Link to="/input/classroom/#DeleteClassroomNoticeInput">DeleteClassroomNoticeInput</Link>
-
-`Return Type`: Boolean!
-
-<GraphiQL
-  query="
-  mutation deleteClassroomNotice( $input:DeleteClassroomNoticeInput! ){
-    deleteClassroomNotice( input: $input )
-  }
-  "
-  authButtons={{
-    login: ['csk6124', 'qwer1234'],
+    classroom_login: ['김두영_G4EXA', 'J5V9J'],
   }}
   variables={{
     input: {
       id: "1",
-      classroomId: "1"
-    }
-  }}
-/>
-
-
-### `deleteClassroomHomework`
-> 학급 숙제 삭제
-
-
-`Input fields`
-* input : <Link to="/input/classroom/#DeleteClassroomHomeworkInput">DeleteClassroomHomeworkInput</Link>
-
-`Return Type`: Boolean!
-
-<GraphiQL
-  query="
-  mutation deleteClassroomHomework( $input:DeleteClassroomHomeworkInput! ){
-    deleteClassroomHomework( input: $input )
-  }
-  "
-  authButtons={{
-    login: ['csk6124', 'qwer1234'],
-  }}
-  variables={{
-    input: {
-      id: "1",
-      classroomId: "1"
-    }
-  }}
-/>
-
-### `loginClassroom`
-> 학급 로그인
-
-
-`Input fields`
-* input : <Link to="/input/classroom/#LoginClassroomInput">LoginClassroomInput</Link>
-
-`Return Type`: <Link to="/object/classroom/#ClassroomLogin/">ClassroomLogin!</Link>
-
-<GraphiQL
-  query="
-  mutation loginClassroom( $input:LoginClassroomInput! ){
-    loginClassroom( input: $input ) {
-      token
-      expireTime
-      classroomId
-      isUpdatePassword
-      userId
-      name
-    }
-  }
-  "
-  variables={{
-    input: {
-      userId: "정성균_AABM4",
-      password: "1111"
+      content: "1",
+      file: ""
     }
   }}
 />
@@ -423,7 +474,7 @@ import { Link } from 'gatsby'
   }
   "
   authButtons={{
-    classroom_login: ['정성균_AABM4', '1111'],
+    classroom_login: ['김두영_G4EXA', 'J5V9J'],
   }}
   variables={{
     input: {
@@ -481,4 +532,34 @@ import { Link } from 'gatsby'
       }
     }
   "
+/>
+
+### `loginClassroom`
+> 학급 로그인
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#LoginClassroomInput">LoginClassroomInput</Link>
+
+`Return Type`: <Link to="/object/classroom/#ClassroomLogin/">ClassroomLogin!</Link>
+
+<GraphiQL
+  query="
+  mutation loginClassroom( $input:LoginClassroomInput! ){
+    loginClassroom( input: $input ) {
+      token
+      expireTime
+      classroomId
+      isUpdatePassword
+      userId
+      name
+    }
+  }
+  "
+  variables={{
+    input: {
+      userId: "정성균_AABM4",
+      password: "1111"
+    }
+  }}
 />
