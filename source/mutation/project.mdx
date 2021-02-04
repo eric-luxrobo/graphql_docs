@@ -36,6 +36,41 @@ import { Link } from 'gatsby'
 />
 
 
+### `createProjectWork`
+> 작품 등록
+
+
+`Input fields`
+* input : <Link to="/input/project/#CreateProjectWorkInput">CreateProjectWorkInput</Link>
+
+`Return Type`: <Link to="/object/project/#ProjectWork">ProjectWork</Link>
+
+<GraphiQL
+  query="
+  mutation createProjectWork( $input:CreateProjectWorkInput! ){
+    createProjectWork( input: $input ) {
+      id
+      title
+      userKey
+      codeType
+    }
+  }
+  "
+  authButtons={{
+    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+  }}
+  variables={{
+    input: {
+      lessonId: "1",
+      lessonContentId: "1",
+      title: "1",
+      codeType: "SCRATCH",
+      jsonData: ""
+    },
+  }}
+/>
+
+
 ### `updateProject`
 > 프로젝트 수정
 

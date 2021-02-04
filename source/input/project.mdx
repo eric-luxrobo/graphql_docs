@@ -11,9 +11,23 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | title (String!)  | 프로젝트 제목  | 
 | userKey (String!) | 유저 UUID
-| codeType (ProjectCodeType!) | 프로젝트 타입 (SCRATCH,ENTRY)
-| jsonData (String) | 프로젝트 코딩 데이타 정보
+| codeType (ProjectCodeType!) | 코딩 타입 (SCRATCH,ENTRY)
+| jsonData (String) | 코딩 데이타 정보
 | thumb (ImageInfoInput) | 이미지 정보
+
+
+### `CreateProjectWorkInput`
+> 작품 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!)  | 작품 제목  | 
+| lessonId (String!) | 강의 ID
+| lessonContentId (String!) | 강의 컨텐츠 ID
+| codeType (ProjectCodeType!) | 코딩 타입 (SCRATCH,ENTRY)
+| jsonData (String!) | 코딩 데이타 정보
+| thumb (ImageInfoInput) | 이미지 정보
+
 
 ### `UpdateProjectInput`
 > 프로젝트 입력 정보

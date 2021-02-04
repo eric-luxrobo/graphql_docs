@@ -34,3 +34,38 @@ import { Link } from 'gatsby'
 | nodes [(<Link to="/object/project/#Project">Project</Link>)]! | 프로젝트 리스트 
 | totalCount (Int!) | 총 수 
 | pageInfo  (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>) | 페이지 정보
+
+### `ProjectWork`
+> 프로젝트 작품 정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (String!)  | 프로젝트 ID  | 
+| title (String!) | 타이틀
+| lessonId (String!) | 강의 ID 
+| lessonContentId (String!) | 강의 컨텐츠 ID
+| userId (String!) |  사용자 Id
+| userName (String!) | 사용자 이름 
+| provider (String!) | 로그인 제공자 (학생, 선생님...)
+| codeType (String!) | 프로젝트 코딩 타입
+| jsonData (String!) | 코딩 JSON 데이타
+| thumb(<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 작품 썸네일 이미지
+
+
+### `ProjectWorkEdge`
+> 프로젝트 작품 엣지
+
+| Name | Description |
+| -------- | -------- | 
+| cursor (String!)  | 프로젝트 다음 페이지 커서  | 
+| node (<Link to="/object/project/#ProjectWork">ProjectWork</Link>)! | 작품  정보
+
+### `ProjectWorkConnection`
+> 작품 리스트
+
+| Name | Description |
+| -------- | -------- | 
+| edges [(<Link to="/object/project/#ProjectWorkEdge">ProjectWorkEdge</Link>)]!  | 작품 다음 페이지 커서  | 
+| nodes [(<Link to="/object/project/#ProjectWork">ProjectWork</Link>)]! | 작품 리스트 
+| totalCount (Int!) | 총 수 
+| pageInfo  (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>) | 페이지 정보
