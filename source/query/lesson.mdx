@@ -89,6 +89,15 @@ import { Link } from 'gatsby'
                 videoType
                 idx
               }
+              ... on LessonPlanContentTemplateCoding {
+                idx
+                codingType
+                initCode
+                questions
+                hardwareType
+                answerCode
+                type
+              }
             }
           }
         }
@@ -208,6 +217,15 @@ import { Link } from 'gatsby'
                   videoURL
                   videoType
                   idx
+                }
+                ... on LessonPlanContentTemplateCoding {
+                  idx
+                  codingType
+                  initCode
+                  questions
+                  hardwareType
+                  answerCode
+                  type
                 }
               }
             }
@@ -330,6 +348,15 @@ import { Link } from 'gatsby'
                     videoType
                     idx
                   }
+                  ... on LessonPlanContentTemplateCoding {
+                    idx
+                    codingType
+                    initCode
+                    questions
+                    hardwareType
+                    answerCode
+                    type
+                  }
                 }
               }
             }
@@ -372,6 +399,7 @@ import { Link } from 'gatsby'
       lessonCurriculum(where: $where) {
         id
         title
+        label
         subTitle
         color
         bgImg {
@@ -455,6 +483,15 @@ import { Link } from 'gatsby'
                   videoType
                   idx
                 }
+                ... on LessonPlanContentTemplateCoding {
+                  idx
+                  codingType
+                  initCode
+                  questions
+                  hardwareType
+                  answerCode
+                  type
+                }
               }
             }
           }
@@ -497,6 +534,7 @@ import { Link } from 'gatsby'
         nodes {
           id
           title
+          label
           subTitle
           color
           bgImg {
@@ -578,6 +616,15 @@ import { Link } from 'gatsby'
                     videoType
                     idx
                   }
+                  ... on LessonPlanContentTemplateCoding {
+                    idx
+                    codingType
+                    initCode
+                    questions
+                    hardwareType
+                    answerCode
+                    type
+                  }
                 }
               }
             }
@@ -651,6 +698,15 @@ import { Link } from 'gatsby'
                 img {
                   url
                 }
+              }
+              ... on LessonPlanContentTemplateCoding {
+                idx
+                codingType
+                initCode
+                questions
+                hardwareType
+                answerCode
+                type
               }
             }
           }

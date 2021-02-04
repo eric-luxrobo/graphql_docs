@@ -32,7 +32,8 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| title (String!)  | 강의 제목  | 
+| title (String!)  | 강의 제목  |
+| label (String!) | 라벨 정보 
 | serviceType (<Link to="/enum/lesson/#LessonServiceType">LessonServiceType!</Link>) | 서비스 타입
 | openType (<Link to="/enum/lesson/#LessonOpenType">LessonOpenType!</Link>) | 사용여부
 | subTitle (String) | 강의 서브제목 
@@ -95,6 +96,7 @@ import { Link } from 'gatsby'
 | text (<Link to="/input/lesson/#LessonPlanContentTemplateTextInput">LessonPlanContentTemplateTextInput</Link>) | 텍스트  템플릿
 | image (<Link to="/input/lesson/#LessonPlanContentTemplateImageInput">LessonPlanContentTemplateImageInput</Link>) | 이미지 템플릿
 | video (<Link to="/input/lesson/#LessonPlanContentTemplateVideoInput">LessonPlanContentTemplateVideoInput</Link>) | 비디오 템플릿
+| coding (<Link to="/input/lesson/#LessonPlanContentTemplateCodingInput">LessonPlanContentTemplateCodingInput</Link>) | 코딩 템플릿
 
 
 ### `LessonPlanContentTemplateBaseInput`
@@ -129,6 +131,17 @@ import { Link } from 'gatsby'
 | videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType!</Link>) | 비디오 타입
 | thumbImg (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 이미지 정보
 
+### `LessonPlanContentTemplateCodingInput`
+> 강의 계획 레이아웃 코딩 템플릿
+
+| Name | Description |
+| -------- | -------- | 
+| answerCode (String!) | 정답코드
+| initCode (String!) | 초기코드 
+| questions ([String!]!) | 코딩 문제들
+| codingType (<Link to="/enum/lesson/#LessonCodingType">LessonCodingType!</Link>) | 코딩 타입
+| hardwareType (<Link to="/enum/lesson/#LessonHardwareType">LessonHardwareType!</Link>) | 하드웨어 타입
+| creationType (<Link to="/enum/lesson/#LessonCreationType">CreationType</Link>) | 코딩 생성 타입
 
 ### `DeleteLessonInput`
 > 강의 삭제
@@ -351,7 +364,8 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | id (ID!) | 커리큘럼 ID 
-| title (String)  | 강의 제목  | 
+| title (String)  | 강의 제목  |
+| label (String) | 라벨 정보  
 | subTitle (String) | 강의 서브제목 
 | color (String) | 색상값
 | bgImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>) | 배경 이미지

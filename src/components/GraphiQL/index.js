@@ -232,6 +232,7 @@ class GraphiQLComponent extends Component {
             {showJoyride ? this.showJoyRide(uniqid) : null}
             <GraphiQL
               fetcher={this.fetcher}
+              editorTheme="blackboard"
               query={formattedQuery}
               variables={variables ? JSON.stringify(variables, null, 2) : null}
               extensions={{

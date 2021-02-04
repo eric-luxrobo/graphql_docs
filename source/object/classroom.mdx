@@ -142,6 +142,7 @@ import { Link } from 'gatsby'
 | shortWord (String!) | 나도 한마디 
 | password (String!) | 비밀번호
 | lastAccessTime (String!) | 마지막 접속 시간
+| lessonDashboard (<Link to="/object/classroom/#ClassroomStudentLessonDashboard">ClassroomStudentLessonDashboard!</Link>) | 강의 대쉬보드정보
 | createdAt (String!) | 등록 날짜
 | updatedAt (String!) | 수정 날짜
 
@@ -165,6 +166,33 @@ import { Link } from 'gatsby'
 | pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  
 
 
+### `ClassroomStudentLessonDashboard`
+> 학급 학생 강의 대쉬보드 정보
+
+| Name | Description |
+| -------- | -------- | 
+| lessonId (String!) | 강의 ID
+| lessonName (String!) | 강의 이름
+| progress (<Link to="/object/lesson/#LessonProgress">LessonProgress</Link>)  | 강의 진도율 정보
+| learningTime (String!) | 학습시간
+| status (<Link to="/enum/lesson/#ClassroomLessonStatus">ClassroomLessonStatus</Link>)  | 현재 상태
+| works ([<Link to="/object/lesson/#ClassroomWork">ClassroomWork!!</Link>]!)  | 학급 작품 리스트
+
+
+### `ClassroomWork`
+> 학급 작품
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | 작품 ID
+| classroomId (String!) | 학급 ID
+| lessonId (String!) | 강의 ID
+| contentId (String!) | 강의 컨텐츠 ID
+| userId (String!) | 학생 ID 
+| name (String!) | 학생 이름
+| code (String!) | 코딩 내용
+| createdAt (String!) | 등록 날짜
+| updatedAt (String!) | 수정 날짜
 
 ### `ClassroomLogin`
 > 학급 로그인 정보

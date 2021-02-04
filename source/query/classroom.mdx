@@ -391,6 +391,28 @@ import { Link } from 'gatsby'
         cAttendance
         shortWord
         lastAccessTime
+        lessonDashboard {
+          lessonId
+          lessonName
+          progress { 
+            progressRate
+            progress
+            total
+          }
+          learningTime
+          status 
+          works {
+            id 
+            classroomId
+            lessonId
+            contentId
+            name
+            userId
+            code
+            createdAt
+            updatedAt
+          }
+        }
         createdAt
         updatedAt
       }
@@ -441,6 +463,28 @@ import { Link } from 'gatsby'
           cAttendance
           shortWord
           lastAccessTime
+          lessonDashboard {
+            lessonId
+            lessonName
+            progress { 
+              progressRate
+              progress
+              total
+            }
+            learningTime
+            status 
+            works {
+              id 
+              classroomId
+              lessonId
+              contentId
+              name
+              userId
+              code
+              createdAt
+              updatedAt
+            }
+          }
           createdAt
           updatedAt
         }
