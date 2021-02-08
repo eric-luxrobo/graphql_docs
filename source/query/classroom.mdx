@@ -293,7 +293,7 @@ import { Link } from 'gatsby'
     }
   "
   authButtons={{
-    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+    classroom_login: ['정성균', '1111'],
   }}
   variables={{
     first: 10,
@@ -326,7 +326,7 @@ import { Link } from 'gatsby'
   query="
     query classroomHomeworkGroupConnection($first: Int!, $after: String, $orderBy: ClassroomHomeworkGroupConnectionOrder, $where: ClassroomHomeworkGroupConnectionWhere!) {
       classroomHomeworkGroupConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
-        groups {
+        group {
           date
           nodes {
             id
@@ -352,7 +352,7 @@ import { Link } from 'gatsby'
     }
   "
   authButtons={{
-    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+    classroom_login: ['정성균', '1111'],
   }}
   variables={{
     first: 3,
@@ -391,35 +391,13 @@ import { Link } from 'gatsby'
         cAttendance
         shortWord
         lastAccessTime
-        lessonDashboard {
-          lessonId
-          lessonName
-          progress { 
-            progressRate
-            progress
-            total
-          }
-          learningTime
-          status 
-          works {
-            id 
-            classroomId
-            lessonId
-            contentId
-            name
-            userId
-            code
-            createdAt
-            updatedAt
-          }
-        }
         createdAt
         updatedAt
       }
     }
   "
   authButtons={{
-    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+    classroom_login: ['정성균', '1111'],
   }}
   variables={{
     where: {
@@ -463,28 +441,6 @@ import { Link } from 'gatsby'
           cAttendance
           shortWord
           lastAccessTime
-          lessonDashboard {
-            lessonId
-            lessonName
-            progress { 
-              progressRate
-              progress
-              total
-            }
-            learningTime
-            status 
-            works {
-              id 
-              classroomId
-              lessonId
-              contentId
-              name
-              userId
-              code
-              createdAt
-              updatedAt
-            }
-          }
           createdAt
           updatedAt
         }
@@ -502,6 +458,80 @@ import { Link } from 'gatsby'
       field: "ID"
     },
     where: {
+      classroomId: "1946889872"
+    }
+  }}
+/>
+
+
+
+### `classroomStudentLessonDashboardConnection`
+`Type` : <Link to="/object/classroom/#ClassroomStudentLessonDashboard/">ClassroomStudentLessonDashboard</Link>
+
+> 학급 학생 Dashboard 리스트
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+| orderBy (<Link to="/input/classroom/#ClassroomStudentLessonDashboardConnectionOrder">ClassroomStudentLessonDashboardConnectionOrder</Link>)  |  Orderby  | 
+| where  (<Link to="/input/classroom/#ClassroomStudentLessonDashboardConnectionWhere">ClassroomStudentLessonDashboardConnectionWhere!</Link>)  |  Where  | 
+
+<GraphiQL
+  query="
+    query classroomStudentLessonDashboardConnection($first: Int!, $after: String, $offset: Int, $orderBy: ClassroomStudentLessonDashboardConnectionOrder, $where: ClassroomStudentLessonDashboardConnectionWhere!) {
+      classroomStudentLessonDashboardConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
+        totalCount
+        pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+        }
+        nodes {
+          id
+          classroomId
+          lessonId
+          lessonName
+          userId
+          userName
+          progress {
+            total
+            progress
+            progressRate
+          }
+          works {
+            id
+            name
+            userId
+            code
+            contentId
+            lessonId
+            createdAt
+            updatedAt
+          }
+          status
+          learningTime
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  "
+  authButtons={{
+    classroom_login: ['정성균', '1111'],
+  }}
+  variables={{
+    first: 10,
+    after: "",
+    offset: 0,
+    orderBy: {
+      field: "ID"
+    },
+    where: {
+      lessonId: "82835450",
       classroomId: "1946889872"
     }
   }}

@@ -51,13 +51,16 @@ import { Link } from 'gatsby'
     createProjectWork( input: $input ) {
       id
       title
-      userKey
+      userId
+      userName
+      lessonId
+      lessonContentId
       codeType
     }
   }
   "
   authButtons={{
-    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+    classroom_login: ['정성균', '1111'],
   }}
   variables={{
     input: {

@@ -270,7 +270,7 @@ import { Link } from 'gatsby'
   query="
     query lessonGroupConnection($first: Int!, $after: String, $orderBy: LessonGroupConnectionOrder, $where: LessonGroupConnectionWhere!) {
       lessonGroupConnection(first: $first, after: $after, orderBy: $orderBy, where: $where) {
-        groups {
+        group {
           date
           nodes {
             id
@@ -366,7 +366,7 @@ import { Link } from 'gatsby'
     }
   "
   authButtons={{
-    classroom_login: ['정성균_AABM4', '1111'],
+    classroom_login: ['정성균', '1111'],
   }}
   variables={{
     first: 10,
@@ -707,6 +707,7 @@ import { Link } from 'gatsby'
                 questions
                 hardwareType
                 answerCode
+                purpose
                 type
               }
             }

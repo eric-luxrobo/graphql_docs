@@ -35,6 +35,33 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `startClassroomLessonStudent`
+> 학급 강의 학생 시작
+
+
+`Input fields`
+* input : <Link to="/input/classroom/#StartClassroomLessonStudentInput">StartClassroomLessonStudentInput</Link>
+
+`Return Type`: Boolean!
+
+<GraphiQL
+  query="
+  mutation startClassroomLessonStudent( $input:StartClassroomLessonStudentInput! ){
+    startClassroomLessonStudent( input: $input )
+  }
+  "
+  authButtons={{
+    classroom_login: ['정성균', '1111'],
+  }}
+  variables={{
+    input: {
+      classroomId: "1946889872",
+      lessonId: "82835450",
+    }
+  }}
+/>
+
+
 ### `addClassroomStudents`
 > 학급 학생 등록추가
 
@@ -166,7 +193,7 @@ import { Link } from 'gatsby'
   }
   "
   authButtons={{
-    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+    classroom_login: ['정성균', '1111'],
   }}
   variables={{
     input: {
@@ -329,7 +356,7 @@ import { Link } from 'gatsby'
   }
   "
   authButtons={{
-    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+    classroom_login: ['정성균', '1111'],
   }}
   variables={{
     input: {
@@ -446,7 +473,7 @@ import { Link } from 'gatsby'
   }
   "
   authButtons={{
-    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+    classroom_login: ['정성균', '1111'],
   }}
   variables={{
     input: {
@@ -474,7 +501,7 @@ import { Link } from 'gatsby'
   }
   "
   authButtons={{
-    classroom_login: ['김두영_G4EXA', 'J5V9J'],
+    classroom_login: ['정성균', '1111'],
   }}
   variables={{
     input: {

@@ -119,7 +119,7 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| groups ([<Link to="/object/classroom/#ClassroomHomeworkGroup">ClassroomHomeworkGroup</Link>]!)  |  정보 Array  |
+| group ([<Link to="/object/classroom/#ClassroomHomeworkGroup">ClassroomHomeworkGroup</Link>]!)  |  정보 Array  |
 
 ### `ClassroomHomeworkGroup`
 > 학급 숙제 날짜별 그룹 연결 리스트
@@ -142,7 +142,6 @@ import { Link } from 'gatsby'
 | shortWord (String!) | 나도 한마디 
 | password (String!) | 비밀번호
 | lastAccessTime (String!) | 마지막 접속 시간
-| lessonDashboard (<Link to="/object/classroom/#ClassroomStudentLessonDashboard">ClassroomStudentLessonDashboard!</Link>) | 강의 대쉬보드정보
 | createdAt (String!) | 등록 날짜
 | updatedAt (String!) | 수정 날짜
 
@@ -171,12 +170,34 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
+| id (ID!) | dashboard ID
+| userId (String!) | 학생 ID
+| userName (String!) | 학생 이름
 | lessonId (String!) | 강의 ID
 | lessonName (String!) | 강의 이름
 | progress (<Link to="/object/lesson/#LessonProgress">LessonProgress</Link>)  | 강의 진도율 정보
 | learningTime (String!) | 학습시간
 | status (<Link to="/enum/lesson/#ClassroomLessonStatus">ClassroomLessonStatus</Link>)  | 현재 상태
 | works ([<Link to="/object/lesson/#ClassroomWork">ClassroomWork!!</Link>]!)  | 학급 작품 리스트
+
+### `ClassroomStudentLessonDashboardConnection`
+> 학급 학생 강의 대쉬보드 리스트
+
+| Name | Description |
+| -------- | -------- | 
+| edges ([<Link to="/object/classroom/#ClassroomStudentLessonDashboardEdge">ClassroomStudentLessonDashboardEdge</Link>]!)  | 연결 노드 리스트  | 
+| nodes ([<Link to="/object/classroom/#ClassroomStudentLessonDashboard">ClassroomStudentLessonDashboard</Link>]!)  |  정보 Array  |
+| totalCount (Int!) | 총 수 
+| pageInfo (<Link to="/object/pageInfo/#PageInfo">PageInfo!</Link>)  | 페이지 정보  
+
+### `ClassroomStudentLessonDashboardEdge`
+> 학급 학생 강의 대쉬보드 Edge 정보
+
+| Name | Description |
+| -------- | -------- | 
+| cursor (String!)  | 페이지 커서 ID  | 
+| node (<Link to="/object/classroom/#ClassroomStudentLessonDashboard">ClassroomStudentLessonDashboard</Link>!)  |   학급 학생 강의 대쉬보드 정보
+
 
 
 ### `ClassroomWork`
