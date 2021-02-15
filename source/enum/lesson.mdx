@@ -26,6 +26,24 @@ enum LessonLanguageType {
 }
 ```
 
+### `LessonServiceType`
+> 강의 서비스 타입 
+
+```js:title=LessonServiceType
+enum LessonServiceType {
+  # LMS용
+  LMS
+  # 매이킹팩
+  MAKING_PACK
+  # 센게이지
+  CENGAGE
+  # 브릭팩
+  BRICK_PACK
+  # 없음
+  NONE_TYPE
+}
+```
+
 ### `LessonPlanContentType`
 > 강의계획 컨텐츠 타입 
 
@@ -251,12 +269,16 @@ enum LessonCodingType {
 
 ```js:title=LessonHardwareType
 enum LessonHardwareType {
+  # 없음 
+  NONE_HARDWARE
   # 모디
   MODI_HARDWARE
   # 라즈베리 파이
   RASPBERRY_HARDWARE
   # 마이크로빗
   MICROBIT_HARDWARE
+  # Hello AI
+  HELLO_AI_HARDWARE
 }
 ````
 

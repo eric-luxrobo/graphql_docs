@@ -551,6 +551,7 @@ import { Link } from 'gatsby'
     mutation refreshClassroomToken {
       refreshClassroomToken {
         token
+        refreshToken
         expireTime
         classroomId
         isUpdatePassword
@@ -575,6 +576,7 @@ import { Link } from 'gatsby'
   mutation loginClassroom( $input:LoginClassroomInput! ){
     loginClassroom( input: $input ) {
       token
+      refreshToken
       expireTime
       classroomId
       isUpdatePassword
@@ -587,6 +589,35 @@ import { Link } from 'gatsby'
     input: {
       userId: "정성균_AABM4",
       password: "1111"
+    }
+  }}
+/>
+
+### `updateClassroomToken`
+> 로그인 토큰 인증 연장 
+
+`Input fields`
+* input : <Link to="/input/classroom/#UpdateClassroomTokenInput">UpdateClassroomTokenInput</Link>
+
+`Return Type`: <Link to="/object/classroom/#ClassroomLogin/">ClassroomLogin!</Link>
+
+<GraphiQL
+  query="
+  mutation updateClassroomToken( $input:UpdateClassroomTokenInput! ){
+    updateClassroomToken( input: $input ) {
+      token
+      refreshToken
+      expireTime
+      classroomId
+      isUpdatePassword
+      userId
+      name
+    }
+  }
+  "
+  variables={{
+    input: {
+      refreshToken: "11111111",
     }
   }}
 />
