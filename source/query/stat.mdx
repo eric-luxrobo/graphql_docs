@@ -93,3 +93,95 @@ import { Link } from 'gatsby'
     }
   }}
 />
+
+### `statUserSummaryConnection`
+`Type` : <Link to="/object/stat/#StatUserSummaryConnection/">StatUserSummaryConnection</Link>
+
+**Arguments**
+
+
+| Name | Description |
+| -------- | -------- | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| offset (Int) | 다음페이지 offset limit정보 |
+
+<GraphiQL
+  query="
+    query statUserSummaryConnection($first: Int!, $after: String, $offset: Int) {
+      statUserSummaryConnection(first: $first, after: $after, offset: $offset) {
+        nodes {
+          userId
+          studyTime {
+            normal
+            days
+            coding
+            game
+            english
+          }
+          lessonCount {
+            lessonOwnerCount
+            lessonDoneCount
+            lessonOwnerStudentCount
+            lessonOwnerStudentMeanCount
+            lessonRegisterCount
+          }
+          rate {
+            success
+            accuracy
+            progress
+          }
+          capacityMean {
+            memory {
+              mean
+              describe
+            }
+            concentration {
+              mean
+              describe
+            }
+            language {
+              mean
+              describe
+            }
+            changingSituation {
+              mean
+              describe
+            }
+            thinkingSkill {
+              mean
+              describe
+            }
+          }
+          capacityWeekly {
+            memories {
+              value
+              date
+            }
+            concentrations {
+              value
+              date
+            }
+            languages {
+              value
+              date
+            }
+            changingSituations {
+              value
+              date
+            }
+            thinkingSkills {
+              value
+              date
+            }
+          }
+        }
+      }
+    }
+  "
+  variables={{
+    first: 10,
+    after: "",
+    offset: 0
+  }}
+/>
