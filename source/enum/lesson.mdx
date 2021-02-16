@@ -42,7 +42,22 @@ enum LessonServiceType {
   # 없음
   NONE_TYPE
 }
+
 ```
+
+
+### `LessonPlanViewType`
+> Plan 화면 타입
+
+```js:title=LessonPlanViewType
+enum LessonPlanViewType {
+  # 없음
+  LESSON_PLAN_NONE_VIEW
+  # 슬라이드 화면 뷰
+  LESSON_PLAN_SLIDE_VIEW
+}
+```
+
 
 ### `LessonPlanContentType`
 > 강의계획 컨텐츠 타입 
@@ -331,5 +346,7 @@ enum LessonRecommendType {
   LESSON_USER_RECOMMEND
   # 유사도 추천 수업
   LESSON_SIMIARLITY_RECOMMEND
+  # 다른선생님이 추천하는 수업
+  LESSON_OTHER_TEACHER_RECOMMEND
 }
 ````

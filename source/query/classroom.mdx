@@ -507,6 +507,18 @@ import { Link } from 'gatsby'
             name
             userId
             code
+            codingTemplate {
+              idx
+              codingType
+              initCode
+              questions
+              hardwareType
+              answerCode
+              answerImgs {
+                url
+              }
+              type
+            }
             contentId
             lessonId
             createdAt
@@ -521,7 +533,7 @@ import { Link } from 'gatsby'
     }
   "
   authButtons={{
-    classroom_login: ['정성균', '1111'],
+    login: ['kaye', 'qwer1234'],
   }}
   variables={{
     first: 10,

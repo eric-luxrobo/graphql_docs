@@ -101,6 +101,43 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `projectWork`
+`Type` : <Link to="/object/project/#ProjectWork/">ProjectWork</Link>
+
+> 강의 컨텐츠의 작품 조회 
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/project/#ProjectWorkWhere">ProjectWorkWhere</Link>)  | 작품 조회 Where  | 
+
+<GraphiQL
+  query="
+    query projectWork($where: ProjectWorkWhere!) {
+      projectWork(where: $where) {
+        id
+        title
+        codeType
+        provider
+        lessonId
+        lessonContentId
+        codeType
+        thumb {
+          url
+        }
+      }
+    }
+  "
+  variables={{
+    where: {
+      id: "1"
+    }
+  }}
+/>
+
+
+
 
 ### `projectWorkConnection`
 `Type` : <Link to="/object/project/#ProjectWorkConnection/">ProjectWorkConnection</Link>

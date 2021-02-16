@@ -29,7 +29,7 @@ import { Link } from 'gatsby'
         }
         lessonCount {
           lessonOwnerCount
-          lessonDownCount
+          lessonDoneCount
           lessonOwnerStudentCount
           lessonOwnerStudentMeanCount
           lessonRegisterCount
@@ -86,7 +86,10 @@ import { Link } from 'gatsby'
       }
     }
   "
-  authButtons={{
-    login: ['csk6124', 'qwer1234'],
+   variables={{
+    where: {
+      userId: "59",
+      userProviderType: "TEACHER"
+    }
   }}
 />
