@@ -126,6 +126,7 @@ module.exports = {
             'mutation/upload',
           ],
           'Objects': [
+            'object/base',
             'object/account',
             'object/app',
             'object/board',

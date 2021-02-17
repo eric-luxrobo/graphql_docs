@@ -106,6 +106,7 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | content (String!) | 컨텐츠 정보
 | img (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 이미지 정보
+| coordinate (<Link to="/input/base/#CoordinateInput">CoordinateInput</Link>) | 좌표정보
 
 ### `LessonPlanContentTemplateTextInput`
 > 강의 계획 텍스트 템플릿
@@ -113,6 +114,7 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | content (String!) | 컨텐츠 정보
+| coordinate (<Link to="/input/base/#CoordinateInput">CoordinateInput</Link>) | 좌표정보
 
 ### `LessonPlanContentTemplateImageInput`
 > 강의 계획 이미지 템플릿
@@ -120,7 +122,7 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | img (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 이미지 정보
-
+| coordinate (<Link to="/input/base/#CoordinateInput">CoordinateInput</Link>) | 좌표정보
 
 ### `LessonPlanContentTemplateVideoInput`
 > 강의 계획 레이아웃 Video 템플릿 - 비디오 전체를 제공하는 템플릿
@@ -130,6 +132,7 @@ import { Link } from 'gatsby'
 | videoURL (String!) | 비디오 URL 
 | videoType (<Link to="/enum/lesson/#LessonVideoType">LessonVideoType!</Link>) | 비디오 타입
 | thumbImg (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 이미지 정보
+| coordinate (<Link to="/input/base/#CoordinateInput">CoordinateInput</Link>) | 좌표정보
 
 ### `LessonPlanContentTemplateCodingInput`
 > 강의 계획 레이아웃 코딩 템플릿
@@ -143,6 +146,7 @@ import { Link } from 'gatsby'
 | codingType (<Link to="/enum/lesson/#LessonCodingType">LessonCodingType!</Link>) | 코딩 타입
 | hardwareType (<Link to="/enum/lesson/#LessonHardwareType">LessonHardwareType!</Link>) | 하드웨어 타입
 | creationType (<Link to="/enum/lesson/#LessonCreationType">CreationType</Link>) | 코딩 생성 타입
+| coordinate (<Link to="/input/base/#CoordinateInput">CoordinateInput</Link>) | 좌표정보
 
 ### `DeleteLessonInput`
 > 강의 삭제
@@ -203,8 +207,51 @@ import { Link } from 'gatsby'
 | lessonIds ([String!]) | 강의 Ids
 | tags ([String!]) | 태그 리스트
 | user (String) | 유저정보
-| userActionType (<Link to="/enum/lesson/#LessonUserActionType">LessonUserActionType!</Link>) | 사용자 행동 타입
-| recommendType (<Link to="/enum/lesson/#LessonRecommendType">LessonRecommendType</Link>) | 추천 타입
+| userActionType (<Link to="/input/lesson/#LessonUserActionType">LessonUserActionType</Link>) | 사용자 행동 타입
+| ~~recommendType~~ (<Link to="/input/lesson/#LessonRecommendType">~~LessonRecommendType~~</Link>) | ~~추천 타입 (없어질 예정)~~
+| recommendBestLesson (<Link to="/input/lesson/#LessonRecommendBestWhere">LessonRecommendBestWhere</Link>) | 추천 날짜 베스트 수업
+| recommendUserLesson (<Link to="/input/lesson/#LessonRecommendUserWhere">LessonRecommendUserWhere</Link>) | 사용자 추천 강의
+| recommendSimilarityLesson (<Link to="/input/lesson/#LessonRecommendSimilarityWhere">LessonRecommendSimilarityWhere</Link>) | 추천 유사도 수업
+| recommendOtherTeacherLesson (<Link to="/input/lesson/#LessonRecommendOtherTeacherWhere">LessonRecommendOtherTeacherWhere</Link>) | 추천 선생님
+| recommendNextLesson  (<Link to="/input/lesson/#LessonRecommendNextWhere">LessonRecommendNextWhere</Link>) | 시리즈 수업
+
+
+### `LessonRecommendBestWhere`
+> 특정날짜의 베스트 수업 조건
+
+| Name | Description |
+| -------- | -------- | 
+| year (Int!) | 년도  | 
+| month (Int!) | 달
+
+### `LessonRecommendUserWhere`
+> 사용자 추천 조건
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!) | 유저 ID  | 
+
+### `LessonRecommendSimilarityWhere`
+> 수업과 유사도 추천
+
+| Name | Description |
+| -------- | -------- | 
+| lessonId (String!) | 수업 ID  | 
+
+### `LessonRecommendOtherTeacherWhere`
+> 다른선생님이 추천하는 수업 조건
+
+| Name | Description |
+| -------- | -------- | 
+| lessonId (String!) | 수업 ID  | 
+
+### `LessonRecommendNextWhere`
+> 현재 강의 다음 시리즈의 수업조건
+
+| Name | Description |
+| -------- | -------- | 
+| lessonId (String!) | 수업 ID  | 
+
 
 ### `LessonGroupConnectionOrder`
 > 강의 날짜별 그룹핑 리스트 Order 정보
