@@ -9,7 +9,7 @@ import { transparentize } from 'polished'
 const Wrapper = styled.div({
   width: '100%',
   height: '100%',
-  backgroundColor: transparentize(0.5, colors.text2),
+  //backgroundColor: transparentize(0.5, colors.text2),
   overflow: 'auto',
   position: 'fixed',
   top: 0,

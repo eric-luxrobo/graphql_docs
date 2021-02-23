@@ -123,6 +123,7 @@ import { Link } from 'gatsby'
 | -------- | -------- | 
 | img (<Link to="/input/imageInfo/#ImageInfoInput">ImageInfo!</Link>) | 이미지 정보
 | coordinate (<Link to="/input/base/#CoordinateInput">CoordinateInput</Link>) | 좌표정보
+| isReverse (Boolean) | 반대 이미지 여부
 
 ### `LessonPlanContentTemplateVideoInput`
 > 강의 계획 레이아웃 Video 템플릿 - 비디오 전체를 제공하는 템플릿
@@ -229,7 +230,7 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| userId (String!) | 유저 ID  | 
+| userId (String) | 유저 ID (테스트용으로 조회시) | 
 
 ### `LessonRecommendSimilarityWhere`
 > 수업과 유사도 추천
@@ -449,3 +450,22 @@ import { Link } from 'gatsby'
 | type (<Link to="/enum/lesson/#LessonPlanContentType">LessonPlanContentType</Link>) | 컨텐츠 타입
 | viewType (<Link to="/enum/lesson/#LessonPlanContentViewType">LessonPlanContentViewType</Link>) | 화면 뷰 타입
 | tempaltes ([<Link to="/input/lesson/#LessonPlanContentTemplateInput">LessonPlanContentTemplateInput</Link>]) |  템플릿
+
+### `UpdateLessonPlansIndexInput`
+> 강의 계획 순서 변경 
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | 강의 Plan ID
+| lessonId (String!) | 강의 ID
+| idx (Int!) | 강의 순서 
+
+### `UpdateLessonPlanContentsIndexInput`
+> 강의 계획 컨텐츠 순서 변경 
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | 강의 Plan Content ID
+| lessonId (String!) | 강의 ID
+| lessonPlanId (String!) | 강의 Plan ID 
+| idx (Int!) | 강의 순서 

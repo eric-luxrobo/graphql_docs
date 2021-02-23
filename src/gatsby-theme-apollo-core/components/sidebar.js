@@ -14,7 +14,7 @@ const Container = styled.aside({
   //borderRight: `1px solid ${colors.divider}`,
   overflowY: 'auto',
   position: 'sticky',
-  background: '#f6f7f9d1',
+  background: '#fff',
   top: 0
 });
 

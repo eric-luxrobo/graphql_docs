@@ -607,3 +607,57 @@ import { Link } from 'gatsby'
   }}
   
 /> 
+
+
+### `updateLessonPlansIndex`
+> 강의계획 순서 변경
+
+`Input fields`
+* input : <Link to="/input/lesson/#UpdateLessonPlansIndexInput">[UpdateLessonPlansIndexInput]</Link>
+
+`Return Type`: Boolean
+
+<GraphiQL
+  query="
+  mutation updateLessonPlansIndex( $input: [UpdateLessonPlansIndexInput!]! ){
+    updateLessonPlansIndex( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    "input": [{
+      "id": "1",
+      "lessonId": "1",
+      "idx": 1,
+    }]
+  }}
+/>
+
+### `updateLessonPlanContentsIndex`
+> 강의계획 컨텐츠 순서 변경
+
+`Input fields`
+* input : <Link to="/input/lesson/#UpdateLessonPlanContentsIndexInput">[UpdateLessonPlanContentsIndexInput]</Link>
+
+`Return Type`: Boolean
+
+<GraphiQL
+  query="
+  mutation updateLessonPlanContentsIndex( $input: [UpdateLessonPlanContentsIndexInput!]! ){
+    updateLessonPlanContentsIndex( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    "input": [{
+      "id": "1",
+      "lessonId": "1",
+      "lessonPlanId": "1",
+      "idx": 1,
+    }]
+  }}
+/>

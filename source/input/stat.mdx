@@ -10,14 +10,13 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| userId (String!) | 사용자 ID
 | lessonId (String!)  | 강의 ID  | 
 | lessonContentId (String)  | 강의 컨텐츠 ID  | 
-| questionType  (<Link to="/enum/stat/#StatQuestionType">StatQuestionType!</Link>) | 통계 문제 타입
+| questionType  (<Link to="/enum/stat/#StatQuestionType">StatQuestionType</Link>) | 통계 문제 타입
 | sTime (String!) | 시작시간 format 2006-01-02 15:04:05 
 | eTime (String!) | 종료시간 format 2006-01-02 15:04:05
-| cRetry (Int!) | 시도 수
-| cSuccess (Int!) | 정답 수
+| cRetry (Int) | 시도 수
+| cSuccess (Int) | 정답 수
 
 
 ### `CreateStatViewInput`

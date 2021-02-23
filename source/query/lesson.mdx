@@ -152,14 +152,13 @@ import { Link } from 'gatsby'
 | first (Int!)  | 요청개수   | 
 | after (String) | Cursor다음 페이지 String | 
 | offset (Int) | 다음페이지 offset limit정보 |
-| exclude (<Link to="/input/lesson/#LessonConnectionExclude">LessonConnectionExclude</Link>)  | 요청 제외 정보
 | orderBy (<Link to="/input/lesson/#LessonConnectionOrder">LessonConnectionOrder</Link>)  | 커리큘럼 Orderby  | 
 | where  (<Link to="/input/lesson/#LessonConnectionWhere">LessonConnectionWhere</Link>)  | 커리큘럼 Where  | 
 
 <GraphiQL
   query="
-    query lessonConnection($first: Int!, $after: String, $offset: Int, $exclude: LessonConnectionExclude, $orderBy: LessonConnectionOrder, $where: LessonConnectionWhere) {
-      lessonConnection(first: $first, after: $after, offset: $offset, exclude: $exclude, orderBy: $orderBy, where: $where) {
+    query lessonConnection($first: Int!, $after: String, $offset: Int, $orderBy: LessonConnectionOrder, $where: LessonConnectionWhere) {
+      lessonConnection(first: $first, after: $after, offset: $offset, orderBy: $orderBy, where: $where) {
         totalCount
         pageInfo {
             endCursor
