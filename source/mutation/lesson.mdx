@@ -661,3 +661,86 @@ import { Link } from 'gatsby'
     }]
   }}
 />
+
+### `createLessonHardware`
+> 하드웨어 등록
+
+`Input fields`
+* input : <Link to="/input/lesson/#CreateLessonHardwareInput">CreateLessonHardwareInput!</Link>
+
+`Return Type`: <Link to="/object/lesson/#LessonHardware">LessonHardware</Link>
+
+<GraphiQL
+  query="
+  mutation createLessonHardware( $input: CreateLessonHardwareInput! ){
+    createLessonHardware( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    "input": [{
+      "title": "1",
+      "subTitle": "1",
+      "hardwareType": "MODI1_HARDWARE",
+      "mainImg": {
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      },
+    }]
+  }}
+/>
+
+### `updateLessonHardware`
+> 하드웨어 수정
+
+`Input fields`
+* input : <Link to="/input/lesson/#UpdateLessonHardwareInput">UpdateLessonHardwareInput!</Link>
+
+`Return Type`: <Link to="/object/lesson/#LessonHardware">LessonHardware</Link>
+
+<GraphiQL
+  query="
+  mutation updateLessonHardware( $input: UpdateLessonHardwareInput! ){
+    updateLessonHardware( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    "input": [{
+      "id": "1",
+      "title": "1",
+      "subTitle": "1",
+      "hardwareType": "MODI1_HARDWARE",
+      "mainImg": {
+        rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
+      },
+    }]
+  }}
+/>
+
+### `deleteLessonHardware`
+> 하드웨어 삭제
+
+`Input fields`
+* input : <Link to="/input/lesson/#DeleteLessonHardwareInput">DeleteLessonHardwareInput!</Link>
+
+`Return Type`: Boolean
+
+<GraphiQL
+  query="
+  mutation deleteLessonHardware( $input: DeleteLessonHardwareInput! ){
+    deleteLessonHardware( input: $input )
+  }
+  "
+  authButtons={{
+    login: ['csk6124', 'qwer1234'],
+  }}
+  variables={{
+    "input": [{
+      "id": "1"
+    }]
+  }}
+/>

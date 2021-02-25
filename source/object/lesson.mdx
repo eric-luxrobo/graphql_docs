@@ -33,11 +33,11 @@ import { Link } from 'gatsby'
 | lessonPlans ([<Link to="/object/lesson/#LessonPlan">LessonPlan!</Link>]!)  | 강의 계획 리스트
 | idx (Int!) | 순서 idx
 | tags ([String!]!) | 태그 리스트
-| userId (String!) | Deplicated ... 강의 등록 사용자 ID
+| userId (String!) | Deprecate ... 강의 등록 사용자 ID
 | ownerId (String!) | 강의 등록 사용자 ID
 | ownerName (String!) | 강의 등록 사용자 이름
 | isEdit (Boolean!) | 수정 가능 여부
-| progressRate (Int!) | 진도율
+| progressRate (Int!) | 진도율  -- To be Deprecate
 | startTime (String!) | 수업시작 시간
 | startType (<Link to="/enum/classroom/#ClassroomLessonStartType">ClassroomLessonStartType!</Link>) | 수업시작 타입
 | isStart (Bool!) | 수업 시작 여부
@@ -88,6 +88,7 @@ import { Link } from 'gatsby'
 | id (String!)  | 커리큘럼 ID  | 
 | title (String!)  | 커리큘럼 제목  | 
 | label (String!) | 커리큘럼 라벨 정보 (특정강조) |
+| labelColor (String!) | 커리큘럼 라벨 색상
 | subTitle (String!) | 커리큘럼 서브제목 
 | describe (String!) | 커리큘럼 설명
 | color (String!) | Hex 색상
@@ -205,6 +206,7 @@ import { Link } from 'gatsby'
 | templates [(<Link to="/object/lesson/#LessonPlanContentTemplate">LessonPlanContentTemplate</Link>!)] | Union 템플릿 리스트 정보
 | idx (Int!) | 순서 
 | isDone (Boolean!) | 컨텐츠 수업 완료 여부
+| doneDate (String!) | 컨텐츠 수업 완료 날짜
 
 ### `LessonPlanContentTemplate`
 > 강의 계획 컨텐츠 Union타입
@@ -328,3 +330,17 @@ import { Link } from 'gatsby'
 | hardwareTypes ([<Link to="/enum/lesson/#LessonHardwareType">LessonHardwareType</Link>!]!) |  하드웨어 타입
 | codingTypes ([<Link to="/enum/lesson/#LessonCodingType">LessonCodingType</Link>!]!) | 코딩툴 타입
 | elements ([<Link to="/enum/lesson/#LessonSummaryElementType">LessonSummaryElementType</Link>!]!) |  강의 설명에서 element 타입 정의
+
+
+### `LessonHardware`
+> 하드웨어 정보 
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!) | 하드웨어 이름
+| subTitle (String!) 서브 제목
+| mainImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 썸네일 이미지 정보
+| hardwareType (<Link to="/enum/lesson/#LessonHwardwareType">LessonHwardwareType</Link>!) | 하드웨어 타입
+| idx (Int!) | 순서
+| createdAt (String!) | 생성날짜
+| updatedAt (String!) | 업데이트 날짜
