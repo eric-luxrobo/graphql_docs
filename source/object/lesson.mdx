@@ -337,6 +337,7 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
+| id (ID!) | 하드웨어 ID
 | title (String!) | 하드웨어 이름
 | subTitle (String!) 서브 제목
 | mainImg (<Link to="/object/imageInfo/#ImageInfo">ImageInfo</Link>!) | 썸네일 이미지 정보
@@ -344,3 +345,12 @@ import { Link } from 'gatsby'
 | idx (Int!) | 순서
 | createdAt (String!) | 생성날짜
 | updatedAt (String!) | 업데이트 날짜
+
+### `LessonHardwareGroup`
+> 하드웨어 그룹 정보
+
+| Name | Description |
+| -------- | -------- | 
+| title (String!) | 하드웨어 이름
+| hardwareType (<Link to="/enum/lesson/#LessonHwardwareType">LessonHwardwareType</Link>!) | 하드웨어 타입
+| nodes (<Link to="/enum/lesson/#LessonHardware">[LessonHardware!]</Link>!) | 하드웨어 정보 리스트

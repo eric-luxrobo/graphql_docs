@@ -673,21 +673,32 @@ import { Link } from 'gatsby'
 <GraphiQL
   query="
   mutation createLessonHardware( $input: CreateLessonHardwareInput! ){
-    createLessonHardware( input: $input )
+    createLessonHardware( input: $input ) {
+      id
+      title
+      subTitle
+      idx
+      hardwareType
+      mainImg {
+        url
+      }
+      createdAt
+      updatedAt
+    }
   }
   "
   authButtons={{
     login: ['csk6124', 'qwer1234'],
   }}
   variables={{
-    "input": [{
+    "input": {
       "title": "1",
       "subTitle": "1",
       "hardwareType": "MODI1_HARDWARE",
       "mainImg": {
         rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
       },
-    }]
+    }
   }}
 />
 
@@ -702,14 +713,25 @@ import { Link } from 'gatsby'
 <GraphiQL
   query="
   mutation updateLessonHardware( $input: UpdateLessonHardwareInput! ){
-    updateLessonHardware( input: $input )
+    updateLessonHardware( input: $input ) {
+      id
+      title
+      subTitle
+      idx
+      hardwareType
+      mainImg {
+        url
+      }
+      createdAt
+      updatedAt
+    }
   }
   "
   authButtons={{
     login: ['csk6124', 'qwer1234'],
   }}
   variables={{
-    "input": [{
+    "input": {
       "id": "1",
       "title": "1",
       "subTitle": "1",
@@ -717,7 +739,7 @@ import { Link } from 'gatsby'
       "mainImg": {
         rawFile:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"
       },
-    }]
+    }
   }}
 />
 
@@ -739,8 +761,8 @@ import { Link } from 'gatsby'
     login: ['csk6124', 'qwer1234'],
   }}
   variables={{
-    "input": [{
+    "input": {
       "id": "1"
-    }]
+    }
   }}
 />

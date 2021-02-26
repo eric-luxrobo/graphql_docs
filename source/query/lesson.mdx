@@ -773,13 +773,12 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| input (<Link to="/input/lesson/#LessonPlanContentConnectionInput">LessonPlanContentConnectionInput</Link>)  | 통계 정보 입력  | 
 | where  (<Link to="/input/lesson/#LessonPlanContentConnectionWhere">LessonPlanContentConnectionWhere!</Link>)  | 조건  | 
 
 <GraphiQL
   query="
-    query lessonPlanContentConnection($input: LessonPlanContentConnectionInput, $where: LessonPlanContentConnectionWhere!) {
-      lessonPlanContentConnection(input: $input, where: $where) {
+    query lessonPlanContentConnection($where: LessonPlanContentConnectionWhere!) {
+      lessonPlanContentConnection(where: $where) {
         totalCount
         pageInfo {
           endCursor
@@ -858,13 +857,6 @@ import { Link } from 'gatsby'
     login: ['csk6124', 'qwer1234'],
   }}
   variables={{
-    input: {
-      ownerId: "58",
-      lessonId: "2308439434",
-      lessonContentId: "2797348062",
-      sTime: "2020-12-23 12:05:30",
-      eTime: "2020-12-23 12:05:45"
-    },
     where: {
        id: "2797348062",
        lessonId: "2308439434",
@@ -1040,4 +1032,33 @@ import { Link } from 'gatsby'
     offset: 0,
     where: {}
   }}
+/>
+
+
+### `lessonHardwareGroup`
+`Type` : <Link to="/object/lesson/#LessonHardwareGroup/">LessonHardwareGroup</Link>
+
+> 하드웨어 그룹 정보
+
+<GraphiQL
+  query="
+    query lessonHardwareGroup {
+      lessonHardwareGroup {
+        title
+        hardwareType
+        nodes {
+          id
+          title
+          subTitle
+          hardwareType
+          mainImg {
+            url
+          }
+          idx
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  "
 />
