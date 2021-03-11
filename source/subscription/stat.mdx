@@ -1,0 +1,34 @@
+---
+title: 통계 Subscription
+description: 통계 서비스 Subscription
+---
+
+import GraphiQL from '../../src/components/GraphiQL'
+import { Link } from 'gatsby'
+
+### `statLessnContentSubscribe`
+`Type` : <Link to="/object/stat/#StatLessonContent/">StatLessonContent</Link>
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where  (<Link to="/input/stat/#StatLessnContentSubscribeWhere">StatLessnContentSubscribeWhere</Link>)  |  사용자 컨텐츠뷰 subscribe Event   | 
+
+<GraphiQL
+  query="
+    subscription statLessnContentSubscribe($where: StatLessnContentSubscribeWhere!) {
+      statLessnContentSubscribe(where: $where) {
+        lessonId
+        lessonContentId
+        isDone
+        doneDate
+      }
+    }
+  "
+   variables={{
+    where: {
+      token: "59"
+    }
+  }}
+/>

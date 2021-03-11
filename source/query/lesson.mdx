@@ -1062,3 +1062,32 @@ import { Link } from 'gatsby'
     }
   "
 />
+
+### `lessonHardware`
+`Type` : <Link to="/object/lesson/#LessonHardwareWhere/">LessonHardwareWhere!</Link>
+
+> 하드웨어 조회 정보
+
+<GraphiQL
+  query="
+    query lessonHardware($where: LessonHardwareWhere!) {
+      lessonHardware(where: $where) {
+        id
+        title
+        subTitle
+        hardwareType
+        mainImg {
+          url
+        }
+        idx
+        createdAt
+        updatedAt
+      }
+    }
+  "
+  variables={{
+    where: {
+      id: "2"
+    }
+  }}
+/>

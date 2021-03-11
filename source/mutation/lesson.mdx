@@ -13,44 +13,12 @@ import { Link } from 'gatsby'
 `Input fields`
 * input : <Link to="/input/lesson/#CreateLessonInput">CreateLessonInput</Link>
 
-`Return Type`: <Link to="/object/lesson/#Lesson">Lesson</Link>
+`Return Type`: Boolean!
 
 <GraphiQL
   query="
   mutation createLesson( $input:CreateLessonInput! ){
-    createLesson( input: $input ) {
-      id
-      title
-      subTitle
-      describe
-      color
-      videoURL
-      videoType
-      mainImgs {
-        domain
-        url
-      }
-      classTime
-      userActivity {
-        cLike
-        cBookmark
-      }
-      levelType
-      groupType
-      lockType
-      creationType
-      elementJson
-      summary {
-        intro
-        goals
-        hardwareTypes
-        elements
-        codingTypes
-      }
-      lessonPlans {
-        id
-      }
-    }
+    createLesson( input: $input )
   }
   "
   authButtons={{
@@ -88,52 +56,12 @@ import { Link } from 'gatsby'
 `Input fields`
 * input : <Link to="/input/lesson/#CreateLessonCurriculumInput">CreateLessonCurriculumInput</Link>
 
-`Return Type`: <Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>
+`Return Type`: Boolean!
 
 <GraphiQL
   query="
   mutation createLessonCurriculum( $input:CreateLessonCurriculumInput! ){
-    createLessonCurriculum( input: $input ) {
-      id
-      title
-      subTitle
-      describe
-      mainImgs {
-        domain
-        url
-      }
-      tags 
-      lessons {
-        id
-        title
-        subTitle
-        describe
-        videoURL
-        videoType
-        mainImgs {
-          domain
-          url
-        }
-        classTime
-        userActivity {
-          cLike
-          cBookmark
-        }
-        levelType
-        groupType
-        elementJson
-        summary {
-          intro
-          goals
-          hardwareTypes
-          elements
-          codingTypes
-        }
-        lessonPlans {
-          id
-        }
-      }
-    }
+    createLessonCurriculum( input: $input ) 
   }
   "
   authButtons={{
@@ -387,41 +315,12 @@ import { Link } from 'gatsby'
 `Input fields`
 * input : <Link to="/input/lesson/#UpdateLessonInput">UpdateLessonInput</Link>
 
-`Return Type`: <Link to="/object/lesson/#Lesson">Lesson</Link>
+`Return Type`: Boolean!
 
 <GraphiQL
   query="
   mutation updateLesson( $input:UpdateLessonInput! ){
-    updateLesson( input: $input ) {
-      id
-      title
-      subTitle
-      describe
-      videoURL
-      videoType
-      mainImgs {
-        domain
-        url
-      }
-      classTime
-      userActivity {
-        cLike
-        cBookmark
-      }
-      levelType
-      groupType
-      elementJson
-      summary {
-        intro
-        goals
-        hardwareTypes
-        elements
-        codingTypes
-      }
-      lessonPlans {
-        id
-      }
-    }
+    updateLesson( input: $input ) 
   }
   "
   authButtons={{
@@ -457,52 +356,12 @@ import { Link } from 'gatsby'
 `Input fields`
 * input : <Link to="/input/lesson/#UpdateLessonCurriculumInput">UpdateLessonCurriculumInput</Link>
 
-`Return Type`: <Link to="/object/lesson/#LessonCurriculum">LessonCurriculum</Link>
+`Return Type`: Boolean!
 
 <GraphiQL
   query="
   mutation updateLessonCurriculum( $input:UpdateLessonCurriculumInput! ){
-    updateLessonCurriculum( input: $input ) {
-      id
-      title
-      subTitle
-      describe
-      mainImgs {
-        domain
-        url
-      }
-      tags 
-      lessons {
-        id
-        title
-        subTitle
-        describe
-        videoURL
-        videoType
-        mainImgs {
-          domain
-          url
-        }
-        classTime
-        userActivity {
-          cLike
-          cBookmark
-        }
-        levelType
-        groupType
-        elementJson
-        summary {
-          intro
-          goals
-          hardwareTypes
-          elements
-          codingTypes
-        }
-        lessonPlans {
-          id
-        }
-      }
-    }
+    updateLessonCurriculum( input: $input ) 
   }
   "
   authButtons={{
@@ -743,18 +602,18 @@ import { Link } from 'gatsby'
   }}
 />
 
-### `deleteLessonHardware`
-> 하드웨어 삭제
+### `createLessonEpub`
+> EPUB 파일 생성
 
 `Input fields`
-* input : <Link to="/input/lesson/#DeleteLessonHardwareInput">DeleteLessonHardwareInput!</Link>
+* input : <Link to="/input/lesson/#CreateLessonEpubInput">CreateLessonEpubInput!</Link>
 
-`Return Type`: Boolean
+`Return Type`: String!
 
 <GraphiQL
   query="
-  mutation deleteLessonHardware( $input: DeleteLessonHardwareInput! ){
-    deleteLessonHardware( input: $input )
+  mutation createLessonEpub( $input: CreateLessonEpubInput! ){
+    createLessonEpub( input: $input )
   }
   "
   authButtons={{
@@ -762,7 +621,7 @@ import { Link } from 'gatsby'
   }}
   variables={{
     "input": {
-      "id": "1"
+      "id": "2791032799"
     }
   }}
 />

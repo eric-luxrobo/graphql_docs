@@ -169,6 +169,9 @@ module.exports = {
             'enum/stat',
             'enum/upload',
           ],
+          'Subscriptions': [
+            'subscription/stat',
+          ],
         },
       },
     },

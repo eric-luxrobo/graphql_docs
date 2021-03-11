@@ -384,7 +384,7 @@ import { Link } from 'gatsby'
 | intro (String) | 강의 소개
 | goals ([String!]) | 학습목표
 | outputs ([String!]) | 교과성취기준
-| hardwareTypes ([<Link to="/enum/lesson/#LessonHardwareType">LessonHardwareType</Link>!]) |  하드웨어 타입
+| hardwareTypes ([String!]) |  선택한 하드웨어 ID 리스트
 | codingTypes ([<Link to="/enum/lesson/#LessonCodingType">LessonCodingType</Link>!]) | 코딩툴 타입
 | elements ([<Link to="/enum/lesson/#LessonSummaryElementType">LessonSummaryElementType</Link>!]) |  강의 설명에서 element 타입 정의
 
@@ -470,3 +470,10 @@ import { Link } from 'gatsby'
 | lessonId (String!) | 강의 ID
 | lessonPlanId (String!) | 강의 Plan ID 
 | idx (Int!) | 강의 순서 
+
+### `CreateLessonEpubInput`
+> 강의 EPUB 생성 입력정보
+
+| Name | Description |
+| -------- | -------- | 
+| id (ID!) | 강의  ID
