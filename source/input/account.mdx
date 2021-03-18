@@ -4,13 +4,28 @@ title: 계정관리 Input Object
 
 import { Link } from 'gatsby'
 
+### `AccountIsDuplicateUserEmailWhere`
+> 이메일 중복 확인 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| provider (<Link to="/enum/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
+| userEmail (String!) | 발송 이메일
+
+### `AccountIsDuplicateUserIdWhere`
+> 아이디 중복 확인 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!) | 로그인 아이디
+
+
 ### `AuthAccountUserEmailInput`
 > 이메일 인증 발송요청.
 
 | Name | Description |
 | -------- | -------- | 
 | userEmail (String!) | 발송 이메일
-
 
 ### `AuthCheckAccountUserEmailInput`
 > 이메일 인증 체크 입력정보
@@ -20,38 +35,20 @@ import { Link } from 'gatsby'
 | id (ID!)  |  이메일 인증발송 요청후 리턴된 고유ID | 
 | authCode (String!)  | 메일에서 확인된 인증코드 값  | 
 
-
-
-### `CreateAccountMemberInput`
-> 회원가입 입력 정보
+### `FindAccountPasswordInput`
+> 비밀번호 찾기 입력 정보
 
 | Name | Description |
 | -------- | -------- | 
-| userId (String!)  | ID  | 
-| password (String!)  | 비밀번호  | 
-| userName (String!) | 이름 |
-| userEmail (String!) | 이메일 | 
-| gender (<Link to="/enum/account/#AccountGenderEnumType">AccountGenderEnumType</Link>)  | 계정  성별 |
-| accountCode (Int!) | 계정 타입
-| memberCode (Int!) | 멤버 타입
-| provider (<Link to="/enum/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
+| userId (String!) | 로그인 아이디
 
 ### `LoginAccountInput`
-> 로그인 입력정보
+> 로그인 입력 정보
 
 | Name | Description |
 | -------- | -------- | 
 | userId (String!)  | 유저ID  | 
 | password (String!)  | 비밀번호  | 
-
-
-### `ResetAccountPasswordInput`
-> 회원 비밀번호 Reset 입력 정보
-
-| Name | Description |
-| -------- | -------- | 
-| userEmail (String!) | 이메일
-
 
 ### `OAuthLoginAccountInput`
 > 소셜 로그인 입력 정보
@@ -66,3 +63,108 @@ import { Link } from 'gatsby'
 | memberCode (Int!) | 멤버 타입
 | accessToken (String!) | 소셜 로그인 AccessToken 정보
 | refreshToken (String) | 소셜 로그인 refreshToken 연장 토큰 정보
+
+### `ResetAccountPasswordInput`
+> 회원 비밀번호 초기화 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| password (String!) | 변경할 비밀번호
+| authCode (String!) | 인증 코드
+
+### `AccountCodeConnectionWhere`
+> 회원 관리용 코드 목록 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| code (Int!) | 그룹코드
+
+### `AccountMemberConnectionOrder`
+> 회원 목록 정렬 정보
+
+| Name | Description |
+| -------- | -------- | 
+| field (<Link to="/enum/account/#AccountMemberConnctionFieldType">AccountMemberConnctionFieldType</Link>) | 정렬 항목
+| direction (<Link to="/enum/account/#AccountDirectionType">AccountDirectionType</Link>) | 정렬 방향
+
+### `AccountMemberConnectionWhere`
+> 회원 목록 검색 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| field (String) | 검색어 필드명
+| keyword (String) | 검색어
+| accountCode (Int) | 가입유형
+| memberCode (Int) | 회원유형
+| isAdmin (boolean) | 관리자 확인
+
+### `AccountMemberWhere`
+> 회원 상세 보기 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| memberId (Int!) | 회원 번호
+
+### `AccountSchoolConnectionOrder`
+> 학교 목록 정렬 정보
+
+| Name | Description |
+| -------- | -------- | 
+| field (<Link to="/enum/account/#AccountSchoolConnctionFieldType">AccountSchoolConnctionFieldType</Link>) | 정렬 항목
+| direction (<Link to="/enum/account/#AccountDirectionType">AccountDirectionType</Link>) | 정렬 방향
+
+### `AccountSchoolConnectionWhere`
+> 학교 목록 검색 조건 정보
+
+| Name | Description |
+| -------- | -------- | 
+| field (String) | 검색어 필드명
+| keyword (String) | 검색어
+| field (<Link to="/enum/account/#AccountSchoolGubunEnumType">AccountSchoolGubunEnumType</Link>) | 학교 구분
+| schoolRegion (String) | 학교 지역
+
+### `CreateAccountMemberInput`
+> 회원가입 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| userId (String!)  | ID  | 
+| password (String!)  | 비밀번호  | 
+| userName (String!) | 이름 |
+| userEmail (String!) | 이메일 | 
+| gender (<Link to="/enum/account/#AccountGenderEnumType">AccountGenderEnumType</Link>)  | 계정  성별 |
+| accountCode (Int!) | 계정 타입
+| memberCode (Int!) | 멤버 타입
+| provider (<Link to="/enum/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
+| school (<Link to="/input/account/#CreateAccountMemberSchoolInput">CreateAccountMemberSchoolInput</Link>)  | 학교 정보
+
+### `CreateAccountMemberMethodInput`
+> 멤버 등급별 권한 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| gradeCode (Int!)  | 멤버 등급 코드  | 
+| methodCode (Int!)  | 권한 코드  | 
+
+### `CreateAccountMemberSchoolInput`
+> 회원 가입 학교 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| memberId (ID)  | 멤버 등급 코드 | 
+| schoolName (String)  | 학교 이름 | 
+| schoolGubun (String)  | 학교 구분 | 
+| schoolLink (String)  | 학교 URL | 
+| className (String)  | 담당 과목명 | 
+| classCode (String)  | 담당 과목 코드 | 
+
+### `CreateAccountMethodInput`
+> 등급별 메소드 입력 정보
+
+| Name | Description |
+| -------- | -------- | 
+| groupCode (Int!)  | 멤버 등급 코드 | 
+| name (String)  | 메소드 이름 | 
+| description (String)  | 메소드 설명 | 
+| isUser (Boolean)  | 사용자 권한 확인 유무 | 
+| isAdmin (Boolean)  | 관리자 권한 확인 유무 |
