@@ -31,10 +31,19 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| id (String!)  | member ID  | 
-| userId (String!)  | 사용자 ID  | 
-| userName (String!)  | 사용자 이름  | 
-| createdAt (String!)  | 생성 날짜 | 
+| id (ID)  | member ID | 
+| userId (String) | 사용자 ID | 
+| userName (String) | 사용자 이름 | 
+| userEmail (String) | 사용자 이메일 | 
+| gender (<Link to="/enum/account/#AccountGenderEnumType">AccountGenderEnumType</Link>) | 성별 | 
+| provider (<Link to="/enum/account/#AccountProviderEnumType">AccountProviderEnumType</Link>)  | 계정 로그인 서비스 타입
+| accountCode (Int) | 계정 유형 코드 | 
+| accountCodeName (String) | 계정 유형 이름 | 
+| memberCode (Int) | 회원 유형 코드 | 
+| memberCodeName (String) | 회원 유형 이름 | 
+| adminCode (Int) | 관리자 유형 코드 | 
+| adminCodeName (String) | 관리자 유형 이름 | 
+| createdAt (String) | 생성 날짜 | 
 
 
 ### `AccountMemberConnection`
@@ -42,29 +51,46 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| totalCount (Int!)  | 총수  | 
-| pageCount (Int!)  | 페이지수  | 
-| nodes ([<Link to="/object/account/#AccountMember">AccountMember</Link>])  | 회원 데이타 Array  | 
+| totalCount (Int!)  | 총수 | 
+| pageInfo (<Link to="/object/account/#AccountPageInfo">AccountPageInfo</Link>) | 페이지 정보 | 
+| nodes ([<Link to="/object/account/#AccountMember">AccountMember</Link>]) | 회원 정보 Array | 
 
-```javascript
-{
-  "data": {
-    "members": {
-      "nodes": [
-        {
-          "createdAt": null,
-          "id": "15",
-          "userId": "",
-          "userName": null
-        }
-      ]
-    }
-  }
-}
-```
+### `AccountMethod`
+> 메소드 정보
 
+| Name | Description |
+| -------- | -------- | 
+| code (Int) | 메소드 코드
+| name (String) | 메소드 이름
+| description (String) | 설명
+| isUser  (Boolean) | 사용자 권한 확인
+| isAdmin (Boolean) | 관리자 권한 확인
 
+### `AccountMethodConnection`
+> 메소드 목록
 
+| Name | Description |
+| -------- | -------- | 
+| nodes ([<Link to="/object/account/#AccountMethodGroup">AccountMethodGroup</Link>]) | 메소드 그룹 Array | 
+
+### `AccountMethodGroup`
+> 메소드 그룹 정보
+
+| Name | Description |
+| -------- | -------- | 
+| groupCode (Int) | 그룹 메소드 코드
+| groupName (String) | 그룹 메소드 이름
+| description (String) | 설명
+| nodes ([<Link to="/object/account/#AccountMethod">AccountMethod</Link>]) | 메소드 Array | 
+
+### `AccountPageInfo`
+> 목록 페이지 정보
+
+| Name | Description |
+| -------- | -------- | 
+| startCursor (String) | 시작 커서
+| endCursor (String) | 마지막 커서
+| hasNextPage (Boolean) | 다음 페이지 유무
 
 ### `AccountSchool`
 > 학교 정보
@@ -76,7 +102,7 @@ import { Link } from 'gatsby'
 | schoolName (String) | 학교 이름
 | schoolLink  (String) | 학교 링크
 | schoolAddress (String) | 학교 주소
-
+| schoolRegion (String) | 학교 지역
 
 ### `AccountSchoolConnection`
 > 학교정보 리스트
@@ -84,7 +110,5 @@ import { Link } from 'gatsby'
 | Name | Description |
 | -------- | -------- | 
 | totalCount (Int!)  | 총수  | 
-| pageCount (Int!)  | 페이지수  | 
-| nodes ([<Link to="/object/account/#AccountSchool">AccountSchool</Link>])  | 학교 데이타 Array  | 
-
-
+| pageInfo (<Link to="/object/account/#AccountPageInfo">AccountPageInfo</Link>) | 페이지 정보 | 
+| nodes ([<Link to="/object/account/#AccountSchool">AccountSchool</Link>])  | 학교 정보 Array  | 
