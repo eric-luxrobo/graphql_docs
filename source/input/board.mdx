@@ -4,26 +4,134 @@ title: 공지사항/FAQ Input Object
 
 import { Link } from 'gatsby'
 
+### `BoardCodeConnectionWhere`
+> Board Code 검색 조건 정보 
+
+| Name | Description |
+| -------- | ------- | 
+| code (Int!) | 코드 |
+| langType (<Link to="/enum/board/#BoardLangType">BoardLangType!</Link>) | 언어 타입 |
+
+### `DeleteBoardInput`
+> Board 삭제 입력 정보
+
+| Name | Description |
+| -------- | ------- | 
+| id (ID!) | 고유번호 |
+
+### `UpdateBoardIsTopInput`
+> Board 상위 고정 입력 정보
+
+| Name | Description |
+| -------- | ------- | 
+| id (ID!) | 고유번호 |
+
+### `UpdateBoardIsViewInput`
+> Board 노출 유무 입력 정보
+
+| Name | Description |
+| -------- | ------- | 
+| id (ID!) | 고유번호 |
+
+### `BoardFaqConnectionOrder`
+> Board FAQ 목록 정렬 정보
+
+| Name | Description |
+| -------- | ------- | 
+| field (<Link to="/enum/board/#BoardFaqConnctionField">BoardFaqConnctionField</Link>) | 정렬 항목
+| direction (<Link to="/enum/board/#BoardDirection">BoardDirection</Link>) | 정렬 방향
+
+### `BoardFaqConnectionWhere`
+> Board FAQ 목록 검색 조건 정보
+
+| Name | Description |
+| -------- | ------- | 
+| faqCode (Int!) | FAQ 분류 코드 |
+| serviceType (<Link to="/enum/board/#BoardServiceType">BoardServiceType!</Link>) | 서비스 타입 |
+| field (String) | 검색 필드 |
+| keyword (String) | 검색어 |
+
+### `BoardFaqWhere`
+> Board FAQ 상세 보기 정보
+
+| Name | Description |
+| -------- | ------- | 
+| id (ID!) | 고유 번호 |
+| langType (<Link to="/enum/board/#BoardLangType">BoardLangType!</Link>) | 언어 타입 |
+
 ### `CreateBoardFaqInput`
 > Board FAQ 등록 
 
 | Name | Description |
-| -------- | -------- | 
-| title (String!)  | 강의 제목  | 
-| content (String) | 강의 서브제목 
-| faqCode (Int!) | 
-| isView (Boolean!) | 
-| serviceType (<Link to="/enum/board/#BoardServiceType">BoardServiceType</Link>) | 문의 서비스 타입
+| -------- | ------- | 
+| title (String!)  | 제목 | 
+| content (String!) | 내용 | 
+| contentId (ID) | KO 원본 고유번호 | 
+| faqCode (Int!) | FAQ 분류 코드 |
+| isView (Boolean!) | 노출 유무 |
+| serviceType (<Link to="/enum/board/#BoardServiceType">BoardServiceType!</Link>) | 서비스 타입 |
+| langType (<Link to="/enum/board/#langType">BoardLangType!</Link>) | 언어 타입 |
+
+### `UpdateBoardFaqInput`
+> Board FAQ 수정
+
+| Name | Description |
+| -------- | ------- | 
+| title (String!)  | 제목 | 
+| content (String!) | 내용 | 
+| faqCode (Int!) | FAQ 분류 코드 |
+| isView (Boolean!) | 노출 유무 |
+| id (ID!) | 고유 번호 |
+| serviceType (<Link to="/enum/board/#BoardServiceType">BoardServiceType!</Link>) | 서비스 타입 |
+| langType (<Link to="/enum/board/#BoardLangType">BoardLangType!</Link>) | 언어 타입 |
+
+### `BoardNoticeConnectionOrder`
+> Board Notice 목록 정렬 정보
+
+| Name | Description |
+| -------- | ------- | 
+| field (<Link to="/enum/board/#BoardNoticeConnctionField">BoardNoticeConnctionField</Link>) | 정렬 항목
+| direction (<Link to="/enum/board/#BoardDirection">BoardDirection</Link>) | 정렬 방향
+
+### `BoardNoticeConnectionWhere`
+> Board Notice 목록 검색 조건 정보
+
+| Name | Description |
+| -------- | ------- | 
+| field (String) | 검색 필드 |
+| keyword (String) | 검색어 |
+
+### `BoardNoticeWhere`
+> Board Notice 상세 보기 정보
+
+| Name | Description |
+| -------- | ------- | 
+| id (ID!) | 고유 번호 |
+| langType (<Link to="/enum/board/#BoardLangType">BoardLangType!</Link>) | 언어 타입 |
 
 ### `CreateBoardNoticeInput`
 > Board Notice 등록 
 
 | Name | Description |
-| -------- | -------- | 
-| title (String!)  | 강의 제목  | 
-| content (String) | 강의 서브제목 
-| isTop (Boolean!) | 
-| isView (Boolean!) | 
-| serviceType (<Link to="/enum/board/#BoardServiceType">BoardServiceType</Link>) | 문의 서비스 타입
-| images ([String]) | 
+| -------- | ------- | 
+| title (String!)  | 제목 | 
+| content (String!) | 내용 |
+| isTop (Boolean!) | 상위 고정 유무 |
+| isView (Boolean!) | 노출 유무 |
+| serviceType (<Link to="/enum/board/#BoardServiceType">BoardServiceType</Link>) | 서비스 타입 |
+| langType (<Link to="/enum/board/#BoardLangType">BoardLangType!</Link>) | 언어 타입 |
+| images ([String]) | 첨부 이미지 Array |
+| contentId (ID) | KO 원본 고유번호 | 
 
+### `UpdateBoardNoticeInput`
+> Board Notice 수정
+
+| Name | Description |
+| -------- | ------- | 
+| title (String!)  | 제목 | 
+| content (String!) | 내용 |
+| isTop (Boolean!) | 상위 고정 유무 |
+| isView (Boolean!) | 노출 유무 |
+| id (ID!) | 고유 번호 |
+| images ([String]) | 첨부 이미지 Array |
+| langType (<Link to="/enum/board/#BoardLangType">BoardLangType!</Link>) | 언어 타입 |
