@@ -92,6 +92,43 @@ import { Link } from 'gatsby'
   }}
 />
 
+### `boardFaq`
+> FAQ 보기
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where (<Link to="/input/board/#BoardFaqWhere">BoardFaqWhere</Link>)  |  Where  |
+
+`Return Type`: String
+
+
+<GraphiQL
+  query="
+  query boardFaq(
+    $where: BoardFaqWhere
+  ){
+    boardFaq(where: $where) {      
+      id
+      title
+      content
+      faqCode
+      faqCodeName
+      isView
+      serviceType
+      createdAt
+    }
+  }
+  "
+  variables={{
+    where: {
+      id: 21,
+      langType: "KO"
+    }
+  }}
+/>
+
 ### `boardNoticeConnection`
 > Notice 리스트
 
@@ -143,5 +180,46 @@ import { Link } from 'gatsby'
   variables={{
     first: 10,
     after: "",
+  }}
+/>
+
+### `boardNotice`
+> Notice 보기
+
+**Arguments**
+
+| Name | Description |
+| -------- | -------- | 
+| where (<Link to="/input/board/#BoardNoticeWhere">BoardNoticeWhere</Link>)  |  Where  |
+
+`Return Type`: String
+
+
+<GraphiQL
+  query="
+  query boardNotice(
+    $where: BoardNoticeWhere
+  ){
+    boardNotice(where: $where) {      
+      id
+      title
+      content
+      isTop
+      isView
+      serviceType
+      images {
+          id
+          contentId
+          imageKey
+          imageUrl
+      }
+    }
+  }
+  "
+  variables={{
+    where: {
+      id: 21,
+      langType: "KO"
+    }
   }}
 />
