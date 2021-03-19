@@ -4,9 +4,47 @@ title: 계정관리 Enum
 
 import { Link } from 'gatsby'
 
+### `AccountDirectionType`
+> 정렬 방향 타입
+
+```js:title=AccountDirectionType
+enum AccountDirectionType {
+  # 오름 차순 
+  ASC
+  # 내림 차순
+  DESC
+}
+```
+
+
+### `AccountGenderEnumType`
+> 계정 성별 타입
+
+```js:title=AccountGenderEnumType
+enum AccountGenderEnumType {
+  # 남성
+  MALE
+  # 여성
+  FEMALE
+}
+```
+
+
+### `AccountMemberConnctionFieldType`
+> 회원 목록 정렬 필드
+
+```js:title=AccountMemberConnctionFieldType
+enum AccountMemberConnctionFieldType {
+  # 고유 번호
+  ID
+  # 가입 유형
+  PROVIDER
+}
+```
+
+
 ### `AccountProviderEnumType`
 > 계정 제공 타입
-
 
 ```js:title=AccountProviderEnumType
 enum AccountProviderEnumType {
@@ -24,14 +62,31 @@ enum AccountProviderEnumType {
 ```
 
 
-### `AccountGenderEnumType`
-> 계정 성별 타입
+### `AccountSchoolConnctionFieldType`
+> 학교 목록 정렬 필드
 
-```js:title=AccountGenderEnumType
-enum AccountGenderEnumType {
-  # 남성
-  MALE
-  # 여성
-  FEMALE
+```js:title=AccountSchoolConnctionFieldType
+enum AccountSchoolConnctionFieldType {
+  # 고유 번호
+  ID
+  # 학교 유형 구분
+  GUBUN
+}
+```
+
+
+### `AccountSchoolGubunEnumType`
+> 학교 유형 구분
+
+```js:title=AccountSchoolGubunEnumType
+enum AccountSchoolGubunEnumType {
+  # 초등학교
+  ELEM
+  # 중학교
+  MIDD
+  # 고등학교
+  HIGH
+  # 대학교
+  UNIV
 }
 ```
