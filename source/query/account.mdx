@@ -26,10 +26,16 @@ import { Link } from 'gatsby'
         userId
         userName
         userEmail
+        gender
         provider
         accountCode
+        accountCodeName
         memberCode
+        memberCodeName
+        adminCode
+        adminCodeName
         createdAt
+        deletedAt
       }
     }
   "
@@ -52,10 +58,10 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| first (Int!)  | 페이즈값 디폴트 1  | 
-| after (Int) | 리스트 사이즈 개수 | 
-| where (String) | 필드 요청 |
-| orderBy (String) | 필터링 단어 | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| where  (<Link to="/input/account/#AccountMemberConnectionWhere">AccountMemberConnectionWhere</Link>)  | 회원 목록 Where  | 
+| orderBy (<Link to="/input/account/#AccountMemberConnectionOrder">AccountMemberConnectionOrder</Link>)  | 회원 목록 Orderby  | 
 
 <GraphiQL
   query="
@@ -77,10 +83,16 @@ import { Link } from 'gatsby'
           userId
           userName
           userEmail
+          gender
           provider
           accountCode
+          accountCodeName
           memberCode
+          memberCodeName
+          adminCode
+          adminCodeName
           createdAt
+          deletedAt
         }
       }
     }
@@ -103,9 +115,10 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| page (Int!)  | 페이즈값 디폴트 1  | 
-| size (Int!) | 리스트 사이즈 개수 | 
-| word (String) | 필터링 단어 | 
+| first (Int!)  | 요청개수   | 
+| after (String) | Cursor다음 페이지 String | 
+| where  (<Link to="/input/account/#AccountSchoolConnectionWhere">AccountSchoolConnectionWhere</Link>)  | 회원 목록 Where  | 
+| orderBy (<Link to="/input/account/#AccountSchoolConnectionOrder">AccountSchoolConnectionOrder</Link>)  | 회원 목록 Orderby  | 
 
 <GraphiQL
   query="
@@ -128,6 +141,7 @@ import { Link } from 'gatsby'
           schoolName
           schoolLink
           schoolAddress
+          schoolRegion
         }
       }
     }
@@ -147,8 +161,7 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| code (Int!)  | 코드정보  | 
-
+| where  (<Link to="/input/account/#AccountCodeConnectionWhere">AccountCodeConnectionWhere</Link>)  | 계정 코드정보 Where  | 
 
 <GraphiQL
   query="
@@ -167,7 +180,7 @@ import { Link } from 'gatsby'
   "
   variables={{
     where: {
-      code: 1,
+      code: 10300,
     }
   }}
 />
@@ -182,7 +195,7 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| userId (String!)  | 회원가입 유저ID  | 
+| where  (<Link to="/input/account/#AccountIsDuplicateUserIdWhere">AccountIsDuplicateUserIdWhere</Link>)  | 유저ID 중복체크 Where  | 
 
 <GraphiQL
   query="
@@ -192,7 +205,7 @@ import { Link } from 'gatsby'
   "
   variables={{
     where: {
-      userId: "howto38"
+      userId: "tech@luxrobo.com"
     }
   }}
 />
@@ -206,8 +219,7 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| provider (String!) | 서비스 프로바이더 정보
-| userEmail (String!)  | 회원가입 유저이메일  | 
+| where  (<Link to="/input/account/#AccountIsDuplicateUserEmailWhere">AccountIsDuplicateUserEmailWhere</Link>)  | 유저 이메일 중복체크 Where  | 
 
 <GraphiQL
   query="
@@ -218,31 +230,8 @@ import { Link } from 'gatsby'
   variables={{
     where: {
       provider: "LOCALS",
-      userEmail: "howto38@gmail.com"
+      userEmail: "tech@luxrobo.com"
     }
   }}
 />
 
-### `accountFindUserId` 
-`Type` : (String) 사용자 ID
-
-> 이메일정보를 통해서 사용자 ID를 찾는다.
-
-**Arguments**
-
-| Name | Description |
-| -------- | -------- | 
-| userEmail (String!)  | 회원가입 유저이메일  | 
-
-<GraphiQL
-  query="
-    query accountFindUserId($where: AccountFindUserIdWhere!) {
-      accountFindUserId(where: $where)
-    }
-  "
-  variables={{
-    where: {
-      userEmail: "howto38@gmail.com"
-    }
-  }}
-/>
