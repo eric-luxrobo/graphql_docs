@@ -4,6 +4,19 @@ title: 공지사항/FAQ Enum
 
 import { Link } from 'gatsby'
 
+### `BoardContentType`
+> Board 콘텐츠 타입
+
+```js:title=BoardContentType
+enum BoardContentType {
+  FAQ
+  NOTICE
+}
+```
+
+### `BoardDirection`
+> 정렬 방향 타입
+
 ```js:title=BoardDirection
 enum BoardDirection {
   ASC
@@ -11,18 +24,52 @@ enum BoardDirection {
 }
 ```
 
-```js:title=BoardImageServiceName
-enum BoardImageServiceName {
+### `BoardImageContentType`
+> 이미지 콘텐츠 타입
+
+```js:title=BoardImageContentType
+enum BoardImageContentType {
   NOTICE
   FAQ
   CONTACT
 }
 ```
 
+### `BoardLangType`
+> Board 언어 타입
+
+```js:title=BoardLangType
+enum BoardLangType {
+  KO
+  EN
+}
+```
+
+### `BoardServiceType`
+> Board 서비스 타입
+
 ```js:title=BoardServiceType
 enum BoardServiceType {
   HOME
   LMS
   MAKINGPACK
+}
+```
+
+### `BoardFaqConnctionField`
+> Board FAQ 목록 정렬 필드
+```js:title=BoardFaqConnctionField
+enum BoardFaqConnctionField {
+  # 고유 번호
+  ID
+}
+```
+
+### `BoardNoticeConnctionField`
+> Board Notice 목록 정렬 필드
+```js:title=BoardNoticeConnctionField
+enum BoardNoticeConnctionField {
+  # 고유 번호
+  ID
 }
 ```
