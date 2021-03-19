@@ -4,12 +4,10 @@ import styled from '@emotion/styled'
 import useKey from 'react-use/lib/useKey'
 import { boxShadow } from 'gatsby-theme-apollo-docs/src/components/search'
 import { breakpoints, colors, smallCaps } from 'gatsby-theme-apollo-core'
-import { transparentize } from 'polished'
 
 const Wrapper = styled.div({
   width: '100%',
   height: '100%',
-  //backgroundColor: transparentize(0.5, colors.text2),
   overflow: 'auto',
   position: 'fixed',
   top: 0,
