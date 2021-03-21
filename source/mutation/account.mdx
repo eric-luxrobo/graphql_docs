@@ -45,8 +45,8 @@ import { Link } from 'gatsby'
   "
   variables={{
     input: {
-      id: "1111",
-      authCode:"11111111",
+      id: "13",
+      authCode:"123456",
     },
   }}
 />
@@ -67,23 +67,31 @@ import { Link } from 'gatsby'
   "
   variables={{
     input: {
-      userId: "1111",
-      password:"11111111",
+      userId: "tech@luxrobo.com",
+      password:"1324qewr",
       userName: "월터",
       userEmail: "walter@gmail.com",
       gender: "MALE",
-      accountCode: 1,
-      memberCode: 1,
+      accountCode: 10302,
+      memberCode: 10402,
       provider: "LOCALS",
+      "school": {
+        "schoolName": "성남고등학교",
+        "schoolGubun": "고등학교",
+        "schoolLink": "http://www.sungnam.hs.kr",
+        "className": "국어/언어",
+        "classCode": 10202
+      }
     },
   }}
 />
+
+
 
 ### `loginAccount` 
 `Type` : (String) JWT 인증토큰정보 리턴 
 
 > 로그인
-
 
 `Input fields`
 * input : <Link to="/input/account/#LoginAccountInput">LoginAccountInput</Link>
@@ -96,35 +104,12 @@ import { Link } from 'gatsby'
   "
   variables={{
     input: {
-      userId: "howto38",
-      password: "11111111"
+      userId: "tech@luxrobo.com",
+      password: "1324qewr"
     }
   }}
 />
 
-
-### `resetAccountPassword`
-`Type` : (String) 
-
-> 비밀번호 리셋
-
-`Input fields`
-* input : userEmail(String!)
-
-
-
-<GraphiQL
-  query="
-  mutation resetAccountPassword( $input:ResetAccountPasswordInput! ){
-    resetAccountPassword( input: $input )
-  }
-  "
-  variables={{
-    input: {
-      userEmail: ""
-    }
-  }}
-/>
 
 
 ### `oauthLoginAccount` 
@@ -145,14 +130,60 @@ import { Link } from 'gatsby'
  
   variables={{
     input: {
-      userId: "howto38",
+      userId: "tech@luxrobo.com",
       userName: "walter",
-      userEmail: "walter@daum.net",
+      userEmail: "tech@korea.kr",
       provider: "GOOGLE",
-      accountCode: 1111,
-      memberCode: 2222,
-      accessToken: "1212122",
-      refreshToken: "we3e3432"
+      accountCode: 10301,
+      memberCode: 10401,
+      accessToken: "ya29.a0AfH...",
+      refreshToken: "mwdYxtKxXc..."
+    }
+  }}
+/>
+
+
+### `findAccountPassword`
+`Type` : (ID) 
+
+> 비밀번호 찾기
+
+`Input fields`
+* input : <Link to="/input/account/#FindAccountPasswordInput">FindAccountPasswordInput</Link>
+
+<GraphiQL
+  query="
+  mutation findAccountPassword( $input:FindAccountPasswordInput! ){
+    findAccountPassword( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      userId: "tech@luxrobo.com"
+    }
+  }}
+/>
+
+
+
+### `resetAccountPassword`
+`Type` : (Boolean) 
+
+> 비밀번호 리셋
+
+`Input fields`
+* input : <Link to="/input/account/#ResetAccountPasswordInput">ResetAccountPasswordInput</Link>
+
+<GraphiQL
+  query="
+  mutation resetAccountPassword( $input:ResetAccountPasswordInput! ){
+    resetAccountPassword( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      password: "1324qewr",
+      authCode: "bf0171c0817a11eb96b202d1013e21f8"
     }
   }}
 />
