@@ -78,11 +78,11 @@ import { Link } from 'gatsby'
 
 | Name | Description |
 | -------- | -------- | 
-| id (String!)  | ID  | 
-| serviceId (String!)  | 서비스 ID  | 
-| serviceName (<Link to="/object/enum/#BoardServiceName">BoardServiceName!</Link>) | 서비스 이름 타입
-| imageKey (Boolean) | 이미지 키
-| imageUrl (Boolean) | 이미지 URL
+| id (ID!)  | 고유번호  | 
+| contentId (ID!)  | 이미지 연결 콘텐츠 고유번호  | 
+| contentType (<Link to="/enum/#BoardImageContentType">BoardImageContentType</Link>)  | 콘텐츠 타입  | 
+| imageKey (String) | 이미지 키
+| imageUrl (String) | 이미지 URL
 | idx (Int) | 순서
 | createdAt (String) |
 
