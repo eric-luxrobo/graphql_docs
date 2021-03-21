@@ -9,7 +9,6 @@ import { Link } from 'gatsby'
 ### `createBoardFaq`
 > FAQ 등록
 
-
 `Input fields`
 * input : <Link to="/input/board/#CreateBoardFaqInput">CreateBoardFaqInput</Link>
 
@@ -29,8 +28,97 @@ import { Link } from 'gatsby'
       isView: true, 
       serviceType: "LMS", 
       langType: "KO",
-      langType: "KO",
       contentId: "1" 
+    }
+  }}
+/>
+
+### `updateBoardFaq`
+> FAQ 수정
+
+`Input fields`
+* input : <Link to="/input/board/#UpdateBoardFaqInput">UpdateBoardFaqInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation updateBoardFaq( $input:UpdateBoardFaqInput! ){
+    updateBoardFaq( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      title: "문의 제목", 
+      content: "문의 내용", 
+      faqCode: 20101, 
+      isView: true, 
+      serviceType: "LMS", 
+      langType: "KO",
+      id: 1
+    }
+  }}
+/>
+
+### `updateBoardFaqIsView`
+> FAQ 노출 유무 수정
+
+`Input fields`
+* input : <Link to="/input/board/#UpdateBoardIsViewInput">UpdateBoardIsViewInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation updateBoardFaqIsView( $input:UpdateBoardIsViewInput! ){
+    updateBoardFaqIsView( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: 1
+    }
+  }}
+/>
+
+### `deleteBoardFaq`
+> FAQ 삭제
+
+`Input fields`
+* input : <Link to="/input/board/#DeleteBoardInput">DeleteBoardInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation deleteBoardFaq( $input:DeleteBoardInput! ){
+    deleteBoardFaq( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: 1
+    }
+  }}
+/>
+
+### `deleteBoardLanguage`
+> Board 다국어 콘텐츠 삭제
+
+`Input fields`
+* input : <Link to="/input/board/#DeleteBoardInput">DeleteBoardInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation deleteBoardLanguage( $input:DeleteBoardInput! ){
+    deleteBoardLanguage( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: 1
     }
   }}
 />
@@ -57,7 +145,98 @@ import { Link } from 'gatsby'
       isTop: true, 
       isView: true, 
       serviceType: "LMS", 
+      langType: "KO",
       images: ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"],
+    }
+  }}
+/>
+
+### `updateBoardNotice`
+> Notice 수정
+
+`Input fields`
+* input : <Link to="/input/board/#UpdateBoardNoticeInput">UpdateBoardNoticeInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation updateBoardNotice( $input:UpdateBoardNoticeInput! ){
+    updateBoardNotice( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      title: "문의 제목", 
+      content: "문의 내용", 
+      isTop: true, 
+      isView: true, 
+      langType: "KO",
+      id: 1,
+      images: ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccq"],
+    }
+  }}
+/>
+
+### `updateBoardNoticeIsTop`
+> Notice 상단 고정 유무 수정
+
+`Input fields`
+* input : <Link to="/input/board/#UpdateBoardIsTopInput">UpdateBoardIsTopInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation updateBoardNoticeIsTop( $input:UpdateBoardIsTopInput! ){
+    updateBoardNoticeIsTop( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: 1
+    }
+  }}
+/>
+
+### `updateBoardNoticeIsView`
+> Notice 노출 유무 수정
+
+`Input fields`
+* input : <Link to="/input/board/#UpdateBoardIsViewInput">UpdateBoardIsViewInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation updateBoardNoticeIsView( $input:UpdateBoardIsViewInput! ){
+    updateBoardNoticeIsView( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: 1
+    }
+  }}
+/>
+
+### `deleteBoardNotice`
+> FAQ 삭제
+
+`Input fields`
+* input : <Link to="/input/board/#DeleteBoardInput">DeleteBoardInput</Link>
+
+`Return Type`: String
+
+<GraphiQL
+  query="
+  mutation deleteBoardNotice( $input:DeleteBoardInput! ){
+    deleteBoardNotice( input: $input )
+  }
+  "
+  variables={{
+    input: {
+      id: 1
     }
   }}
 />
